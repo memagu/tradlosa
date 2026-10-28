@@ -98,11 +98,16 @@
   function draw() {
     ctx.clearRect(0, 0, W, H);
     var scroll = window.scrollY || window.pageYOffset || 0;
-    // One coherent background layer moves slower than the page, like a
-    // distant network map. The cap keeps the graph from disappearing too far.
-    var shift = Math.min(180, scroll * 0.13);
-    var drift = Math.min(22, scroll * 0.012);
+    // The graph repeats vertically instead of hitting a hard cap. Scrolling
+    // keeps moving it forever, while a soft horizontal sway avoids a static
+    // background on very long pages.
+    var shift = (scroll * 0.13) % H;
+    var drift = Math.sin(scroll * 0.0009) * 18;
     var pos = nodes.map(function (n) { return posOf(n, shift, drift); });
+
+    for (var layer = -1; layer <= 1; layer++) {
+    ctx.save();
+    ctx.translate(0, layer * H);
 
     ctx.strokeStyle = 'rgba(11,111,122,.12)';
     ctx.lineWidth = 1;
@@ -173,6 +178,8 @@
       }
       ctx.restore();
     });
+    ctx.restore();
+    }
   }
 
   function tick(t) {

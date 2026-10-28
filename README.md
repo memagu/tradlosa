@@ -12,9 +12,9 @@ Ett statiskt studieverktyg för **ETSN11, Trådlösa nätverk och applikationer 
 
 Varje uppgift har färgkodade ämnes taggar som länkar till relevant sida i kursmaterialet. De tre officiella tentorna har även en länk till original-PDF:en.
 
-Sajten innehåller 54 frågor i den genererade frågebanken (6 prov), 92 begrepp och 36 artikelreferenser. 13 open-access-artiklar finns i `articles/`, och köteorikompendiet `course-material/QueuingSystems.pdf` finns också lokalt.
+Sajten innehåller 54 frågor i den genererade frågebanken (6 prov), 92 begrepp och 36 artikelreferenser. 13 open-access-artiklar finns i `articles/`, och köteorikompendiet `course-material/QueuingSystems.pdf` finns också lokalt. Tentamensbilderna beskärs automatiskt till innehållet; tom yta och rubriker för nästa del (`Part B/C`) tas bort.
 
-Varje fråga har en **Alla poäng**-knapp som fyller i hela poängraden direkt. Svarsalternativen går att klicka för att markera dem visuellt, men markeringen påverkar inte poängen och avslöjar inte rätt svar – poängen prickas fortfarande av manuellt. Bakgrunden är en långsam nätverksgraf med pulser längs länkarna; noderna tänds när pulser skickas och tas emot. Grafen parallax-scrollar med sidan.
+Varje fråga har en **Alla poäng**-knapp som fyller i hela poängraden direkt. Svarsalternativen numreras och går att klicka för att markera dem visuellt, men markeringen påverkar inte poängen och avslöjar inte rätt svar – poängen prickas fortfarande av manuellt. Bakgrunden är en långsam nätverksgraf med pulser längs länkarna; noderna tänds när pulser skickas och tas emot. Grafen parallax-scrollar mjukt och repeteras lodrätt, så den fortsätter röra sig även på mycket långa sidor.
 
 ## Struktur
 

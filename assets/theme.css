@@ -91,47 +91,62 @@ main{max-width:1220px}
 
 /* generated questions */
 .gen-prompt{font-size:.95rem;line-height:1.6}
+.source-note{margin:8px 0 0;padding:7px 10px;border-left:3px solid var(--warm-line);background:var(--warm-bg);color:var(--warm-ink);border-radius:6px;font-size:.76rem;line-height:1.45}
 .gen-prompt p{margin:0 0 10px}
 .gen-prompt ol,.gen-prompt ul{margin:8px 0 12px 1.3em;padding:0}
 .gen-prompt li{margin:4px 0}
-.gen-options{display:grid;gap:5px;margin:12px 0 0;padding:0;list-style:none}
+.gen-options{display:grid;gap:5px;margin:12px 0 0;padding:0;list-style:none;counter-reset:option}
 .gen-options li{
   position:relative;
-  padding:7px 10px;
+  padding:7px 34px 7px 10px;
   border:1px solid var(--line);
   border-radius:9px;
   background:#fff;
   font-size:.86rem;
   cursor:pointer;
+  counter-increment:option;
   transition:border-color .15s ease,background .15s ease,box-shadow .15s ease,transform .12s ease;
 }
 .gen-options li:hover{border-color:var(--accent);background:var(--accent-soft)}
 .gen-options li:active{transform:scale(.995)}
 .gen-options li:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .gen-options li::before{
-  content:"";
+  content:counter(option);
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  width:14px;
-  height:14px;
+  width:22px;
+  height:22px;
   margin-right:8px;
-  border:1.5px solid var(--muted);
+  border:1px solid var(--line);
   border-radius:50%;
-  vertical-align:-2px;
-  color:transparent;
-  font-size:9px;
-  font-weight:900;
+  background:var(--panel);
+  color:var(--muted);
+  font-size:.68rem;
+  font-weight:850;
   line-height:1;
+  vertical-align:-5px;
   transition:background .15s ease,border-color .15s ease,color .15s ease;
 }
+.gen-options li:hover::before{border-color:var(--accent);color:var(--accent)}
 .gen-options li.picked{
   border-color:var(--accent);
   background:var(--accent-soft);
   box-shadow:0 2px 8px rgba(11,111,122,.08);
   animation:option-pick .2s ease;
 }
-.gen-options li.picked::before{content:"✓";border-color:var(--accent);background:var(--accent);color:#fff}
+.gen-options li.picked::before{background:var(--accent);border-color:var(--accent);color:#fff}
+.gen-options li.picked::after{
+  content:"✓";
+  position:absolute;
+  right:11px;
+  top:50%;
+  transform:translateY(-50%);
+  color:var(--accent);
+  font-size:.88rem;
+  font-weight:900;
+  line-height:1;
+}
 @keyframes option-pick{0%{transform:scale(.99)}55%{transform:scale(1.008)}100%{transform:scale(1)}}
 @media (prefers-reduced-motion:reduce){
   .gen-options li{transition:none}

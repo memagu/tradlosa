@@ -11,7 +11,7 @@ from pathlib import Path
 from typing import Iterable
 
 import pymupdf
-from PIL import Image
+from PIL import Image, ImageChops
 
 ROOT = Path(__file__).resolve().parent.parent
 ASSETS = ROOT / "assets"
@@ -144,6 +144,7 @@ class Question:
     solution_html: str = ""
     llm_solution: str = ""
     source_label: str = ""
+    note: str = ""
 
 
 @dataclass
@@ -211,6 +212,12 @@ def parse_layout(
             endp, endy = unique[i + 1][1], unique[i + 1][2]
         else:
             endp, endy = doc.page_count - 1, doc[doc.page_count - 1].rect.height - 35
+        # A following "Part B/C" heading belongs to the next section, not
+        # to the current question. Cut the crop there instead of including it.
+        for _label, pp, py in parts:
+            if (pp, py) > (pno, y) and (pp, py) < (endp, endy):
+                endp, endy = pp, py
+                break
         segments = []
         for pn in range(pno, endp + 1):
             y0 = max(35, y - 8) if pn == pno else 35
@@ -243,6 +250,23 @@ def find_points(doc, q: Question, extra_text: str = "") -> float:
     return 0
 
 
+def trim_white(im: Image.Image, pad: int = 12) -> Image.Image | None:
+    """Crop pure white margins left over from the PDF page layout."""
+    background = Image.new("RGB", im.size, "white")
+    bbox = ImageChops.difference(im, background).getbbox()
+    if not bbox:
+        return None
+    left, top, right, bottom = bbox
+    return im.crop(
+        (
+            max(0, left - pad),
+            max(0, top - pad),
+            min(im.width, right + pad),
+            min(im.height, bottom + pad),
+        )
+    )
+
+
 def render_segments(
     doc, segments: list[Segment], x0: float = 55, x1: float = 540
 ) -> Image.Image | None:
@@ -256,7 +280,10 @@ def render_segments(
             colorspace=pymupdf.csRGB,
             alpha=False,
         )
-        imgs.append(Image.frombytes("RGB", (pix.width, pix.height), pix.samples))
+        im = Image.frombytes("RGB", (pix.width, pix.height), pix.samples)
+        im = trim_white(im)
+        if im is not None:
+            imgs.append(im)
     if not imgs:
         return None
     w = max(im.width for im in imgs)
@@ -266,7 +293,7 @@ def render_segments(
     for im in imgs:
         canvas.paste(im, ((w - im.width) // 2, y))
         y += im.height + GAP
-    return canvas
+    return trim_white(canvas)
 
 
 def save_webp(im: Image.Image, path: Path) -> None:
@@ -290,6 +317,8 @@ def build_official() -> list[Exam]:
             q.tags = Q_TAGS.get((date, q.n), ["basic"])
             if "performance" in q.tags and "queue" not in q.tags:
                 q.tags.append("queue")
+            if date == "2023-10-25" and q.n == 14:
+                q.note = "Figuren som uppgiften hänvisar till saknas i original-PDF:en."
             q.q_image = f"assets/exams/{date}/q{q.n:02d}.webp"
             img = render_segments(qdoc, q.segments)
             if img is not None:
@@ -423,6 +452,7 @@ def card_html(q: Question, date: str) -> str:
             f'rel="noopener noreferrer" title="Öppna uppgift {q.n} i original-PDF:en (sida {pdf_page})">'
             f'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M9 7h8v8"/></svg></a>'
         )
+    note = f'<p class="source-note">{esc(q.note)}</p>' if q.note else ""
     if q.prompt_html:
         options = ""
         if q.options:
@@ -432,11 +462,11 @@ def card_html(q: Question, date: str) -> str:
                 + "</ul>"
             )
         body = f'<div class="gen-prompt">{q.prompt_html}{options}</div>'
-        qbody = f'<div class="qbody"><div class="qscroll">{body}</div></div>'
+        qbody = f'<div class="qbody"><div class="qscroll">{body}{note}</div></div>'
     else:
         dims = q.q_size
         body = draw_block_html(q.q_image, f"Uppgift {q.n}", f"{date}-q{q.n}", dims)
-        qbody = f'<div class="qbody"><div class="qscroll">{body}</div></div>'
+        qbody = f'<div class="qbody"><div class="qscroll">{body}{note}</div></div>'
     return f"""
     <article class="qcard" id="{date}-q{q.n}" data-q="{q.n}">
       <div class="qcard-head">
@@ -605,7 +635,13 @@ def clean_excerpt(q: Question) -> str:
         text = re.sub(r"\(\d+\s*p\)", "", text).strip()
     if not text:
         text = "Bildfråga – öppna uppgiften för att se hela frågan."
-    return text[:240] + ("…" if len(text) > 240 else "")
+    text = re.sub(r"\s+([?!.,;:])", r"\1", text)
+    text = re.sub(r"\?{2,}", "?", text)
+    if len(text) > 240:
+        return text[:240].rstrip() + "…"
+    if not q.prompt_html and text[-1] not in ".?!…":
+        text += "…"
+    return text
 
 
 def all_tag_button(slug: str) -> str:
