@@ -822,12 +822,22 @@ def page_html(exams: list[Exam], practice: list[Exam], terms: list[dict]) -> str
     count = f"{len(exams)} tentor · {len(practice)} övningsprov · {sum(len(e.questions) for e in exams + practice)} uppgifter"
     terms_json = json.dumps(terms, ensure_ascii=False).replace("</", "<\\/")
     return f"""<!doctype html>
-<html lang="sv">
+<html lang="sv" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ETSN11 – trådlösa nätverk och applikationer</title>
 <meta name="description" content="Studieverktyg för ETSN11: riktiga tentor, genererade övningsprov och begreppsträning.">
+<script>
+(function () {{
+  try {{
+    var saved = localStorage.getItem('etsn11-theme');
+    document.documentElement.setAttribute('data-theme', saved === 'light' ? 'light' : 'dark');
+  }} catch (e) {{
+    document.documentElement.setAttribute('data-theme', 'dark');
+  }}
+}})();
+</script>
 <link rel="stylesheet" href="assets/site.css">
 <link rel="stylesheet" href="assets/theme.css">
 </head>
@@ -837,7 +847,14 @@ def page_html(exams: list[Exam], practice: list[Exam], terms: list[dict]) -> str
   <div class="topbar-inner">
     <div class="topbar-head">
       <div class="brand"><span class="brand-mark">ETSN11</span> <span>trådlösa nätverk</span></div>
-      <div class="count">{count}</div>
+      <div class="topbar-actions">
+        <div class="count">{count}</div>
+        <button type="button" class="theme-toggle" data-theme-toggle aria-label="Byt till ljust läge" title="Byt till ljust läge">
+          <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"/></svg>
+          <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <span class="theme-label">Ljust</span>
+        </button>
+      </div>
     </div>
     <nav class="tabs" role="tablist" aria-label="Välj del">{tabs}</nav>
   </div>

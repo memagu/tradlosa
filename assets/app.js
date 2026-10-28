@@ -98,3 +98,27 @@ document.addEventListener('click', function (e) {
     });
   });
 });
+
+// Persisted light/dark theme. Dark is the default for this study site.
+(function () {
+  var root = document.documentElement;
+  var toggle = document.querySelector('[data-theme-toggle]');
+  if (!toggle) return;
+  function sync() {
+    var light = root.getAttribute('data-theme') === 'light';
+    var label = light ? 'Mörkt' : 'Ljust';
+    var action = light ? 'Byt till mörkt läge' : 'Byt till ljust läge';
+    var text = toggle.querySelector('.theme-label');
+    if (text) text.textContent = label;
+    toggle.setAttribute('aria-label', action);
+    toggle.setAttribute('title', action);
+    toggle.setAttribute('aria-pressed', light ? 'true' : 'false');
+  }
+  toggle.addEventListener('click', function () {
+    var next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('etsn11-theme', next); } catch (e) {}
+    sync();
+  });
+  sync();
+})();

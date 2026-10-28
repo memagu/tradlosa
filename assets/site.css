@@ -309,34 +309,33 @@ footer{max-width:1000px;margin:0 auto;padding:0 20px 50px;color:var(--muted);fon
 @media print{
   .math-backdrop{display:none}
 }
-@media (prefers-color-scheme:dark){
-  :root{--bg:#14171c;--panel:#1b2027;--ink:#e8e5df;--muted:#9aa3ae;--accent:#e0a099;--accent-soft:#3a2624;--line:#2b323b;--shadow:0 10px 30px rgba(0,0,0,.25);--topbar:rgba(20,23,28,.9);--answer-bg:#161a20;--panel-fade:rgba(27,32,39,0);--answer-fade:rgba(22,26,32,0);--done:#7fc99a;--done-ink:#a7dfb9;--done-bg:#1b3328;--done-line:#2e5b40;--warm:#e8c05a;--warm-ink:#f0d28a;--warm-bg:#332a17;--warm-line:#5a4824}
-  .tab:hover{background:#252b33}
-  .tab[aria-selected="true"]{background:var(--ink);color:#14171c}
-  .qnav a{background:#252b33}
-  .points{background:#252b33}
-
-  .tag-pid{--tag-bg:#3a2624;--tag-fg:#f0b3ab}
-  .tag-model{--tag-bg:#332a18;--tag-fg:#e8c986}
-  .tag-step{--tag-bg:#35271a;--tag-fg:#eab88a}
-  .tag-freq{--tag-bg:#1d333a;--tag-fg:#8ecfdf}
-  .tag-stab{--tag-bg:#3a2229;--tag-fg:#efafc0}
-  .tag-nyquist{--tag-bg:#1e2c3e;--tag-fg:#a8c4e8}
-  .tag-sens{--tag-bg:#2d2438;--tag-fg:#c7aee6}
-  .tag-state{--tag-bg:#1e2a3e;--tag-fg:#a9c2ee}
-  .tag-kalman{--tag-bg:#29243d;--tag-fg:#bdb3f0}
-  .tag-out{--tag-bg:#25252f;--tag-fg:#bfc0d5}
-  .tag-comp{--tag-bg:#1b3328;--tag-fg:#9bd8bd}
-  .tag-struct{--tag-bg:#233018;--tag-fg:#b7d89a}
-  .tag-case{--tag-bg:#2b2822;--tag-fg:#cfc5b4}
-  .gradebar{background:#1b2027}
-  .grade-badge{background:#252b33;border-color:#2b323b}
-  .grade-badge.grade-3{background:#3a2624;color:#e0a099;border-color:transparent}
-  .grade-badge.grade-4{background:#1d333a;color:#8ecfdf;border-color:transparent}
-  .grade-badge.grade-5{background:#22351f;color:#9bd39b;border-color:transparent}
-  .scoring{background:#181c22}
-  .pt-box{border-color:#3a424c}
-  .qbody img,.answer-body img,.extra-figure{border-color:#2b323b}
-  .btn{border-color:#e8e5df;background:#e8e5df;color:#14171c}
-  .btn.ghost{background:transparent;color:var(--ink)}
-}
+html[data-theme="dark"]{--bg:#14171c;--panel:#1b2027;--ink:#e8e5df;--muted:#9aa3ae;--accent:#e0a099;--accent-soft:#3a2624;--line:#2b323b;--shadow:0 10px 30px rgba(0,0,0,.25);--topbar:rgba(20,23,28,.9);--answer-bg:#161a20;--panel-fade:rgba(27,32,39,0);--answer-fade:rgba(22,26,32,0);--done:#7fc99a;--done-ink:#a7dfb9;--done-bg:#1b3328;--done-line:#2e5b40;--warm:#e8c05a;--warm-ink:#f0d28a;--warm-bg:#332a17;--warm-line:#5a4824}
+html[data-theme="dark"] .tab:hover{background:#252b33}
+html[data-theme="dark"] .tab[aria-selected="true"]{background:var(--ink);color:#14171c}
+html[data-theme="dark"] .qnav a{background:#252b33}
+html[data-theme="dark"] .points{background:#252b33}
+html[data-theme="dark"] .tag-pid{--tag-bg:#3a2624;--tag-fg:#f0b3ab}
+html[data-theme="dark"] .tag-model{--tag-bg:#332a18;--tag-fg:#e8c986}
+html[data-theme="dark"] .tag-step{--tag-bg:#35271a;--tag-fg:#eab88a}
+html[data-theme="dark"] .tag-freq{--tag-bg:#1d333a;--tag-fg:#8ecfdf}
+html[data-theme="dark"] .tag-stab{--tag-bg:#3a2229;--tag-fg:#efafc0}
+html[data-theme="dark"] .tag-nyquist{--tag-bg:#1e2c3e;--tag-fg:#a8c4e8}
+html[data-theme="dark"] .tag-sens{--tag-bg:#2d2438;--tag-fg:#c7aee6}
+html[data-theme="dark"] .tag-state{--tag-bg:#1e2a3e;--tag-fg:#a9c2ee}
+html[data-theme="dark"] .tag-kalman{--tag-bg:#29243d;--tag-fg:#bdb3f0}
+html[data-theme="dark"] .tag-out{--tag-bg:#25252f;--tag-fg:#bfc0d5}
+html[data-theme="dark"] .tag-comp{--tag-bg:#1b3328;--tag-fg:#9bd8bd}
+html[data-theme="dark"] .tag-struct{--tag-bg:#233018;--tag-fg:#b7d89a}
+html[data-theme="dark"] .tag-case{--tag-bg:#2b2822;--tag-fg:#cfc5b4}
+html[data-theme="dark"] .gradebar{background:#1b2027}
+html[data-theme="dark"] .grade-badge{background:#252b33;border-color:#2b323b}
+html[data-theme="dark"] .grade-badge.grade-3{background:#3a2624;color:#e0a099;border-color:transparent}
+html[data-theme="dark"] .grade-badge.grade-4{background:#1d333a;color:#8ecfdf;border-color:transparent}
+html[data-theme="dark"] .grade-badge.grade-5{background:#22351f;color:#9bd39b;border-color:transparent}
+html[data-theme="dark"] .scoring{background:#181c22}
+html[data-theme="dark"] .pt-box{border-color:#3a424c}
+html[data-theme="dark"] .qbody img,
+html[data-theme="dark"] .answer-body img,
+html[data-theme="dark"] .extra-figure{border-color:#2b323b}
+html[data-theme="dark"] .btn{border-color:#e8e5df;background:#e8e5df;color:#14171c}
+html[data-theme="dark"] .btn.ghost{background:transparent;color:var(--ink)}
