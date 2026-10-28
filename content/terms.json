@@ -1,0 +1,1014 @@
+[
+  {
+    "id": "centralized",
+    "term": "Centraliserad arkitektur",
+    "definition": "Noder kommunicerar via en basstation eller accesspunkt, som kontrollerar mediumaccessen. Kommunikationen är normalt enkelhopp.",
+    "usage": "5G, LoRaWAN och WiFi-infrastruktur är typiska exempel där användare går via en basstation/AP.",
+    "topics": [
+      "arch"
+    ],
+    "source": "Network-architectures.pdf",
+    "page": 8
+  },
+  {
+    "id": "decentralized",
+    "term": "Decentraliserad arkitektur",
+    "definition": "Nätet är självorganiserande och noderna kommunicerar direkt med varandra, ofta multi-hop, utan en central kontrollenhet.",
+    "usage": "Ett ad-hoc-nät eller BLE Mesh där noder förmedlar trafik åt varandra.",
+    "topics": [
+      "arch"
+    ],
+    "source": "Network-architectures.pdf",
+    "page": 11
+  },
+  {
+    "id": "adhoc",
+    "term": "Ad-hoc-nät",
+    "definition": "Ett nät där noder kopplar upp sig direkt mot varandra utan fast infrastruktur.",
+    "usage": "Räddningsinsatser, fordonsnät och tillfälliga sensornät.",
+    "topics": [
+      "arch"
+    ],
+    "source": "Network-architectures.pdf",
+    "page": 14
+  },
+  {
+    "id": "mesh",
+    "term": "Mesh-nät",
+    "definition": "Noder fungerar både som värdar och som routrar; trafik kan hoppa via flera noder fram till en gateway/portal.",
+    "usage": "WiFi 6/7 mesh och BLE Mesh bygger på mesh-principen.",
+    "topics": [
+      "arch"
+    ],
+    "source": "Network-architectures.pdf",
+    "page": 17
+  },
+  {
+    "id": "gateway",
+    "term": "Gateway",
+    "definition": "En nod som kopplar samman det lokala nätet med ett annat nät, ofta Internet eller ett back-end-system.",
+    "usage": "Sensornätets sink kan fungera som gateway mot molnet.",
+    "topics": [
+      "arch"
+    ],
+    "source": "Network-architectures.pdf",
+    "page": 24
+  },
+  {
+    "id": "sink",
+    "term": "Sink",
+    "definition": "En nod som samlar in data från sensornoder och vidarebefordrar den till back-end.",
+    "usage": "Ett sensornät kan ha en eller flera sinks.",
+    "topics": [
+      "arch"
+    ],
+    "source": "Network-architectures.pdf",
+    "page": 63
+  },
+  {
+    "id": "backhaul",
+    "term": "Backhaul-länk",
+    "definition": "Förbindelsen mellan accessnätet och core-nätet/Internet. Kan vara fiber, radio, satellit eller ett annat fast nät.",
+    "usage": "En basstation behöver backhaul för att nå operatörens core-nät.",
+    "topics": [
+      "basic"
+    ],
+    "source": "Networks-and-applications-basic-concepts.pdf",
+    "page": 63
+  },
+  {
+    "id": "node-association",
+    "term": "Nodassociation",
+    "definition": "Processen när en nod hittar, autentiserar sig mot och ansluter till ett nät.",
+    "usage": "Innan en WiFi-klient kan skicka data måste den associera med en accesspunkt.",
+    "topics": [
+      "arch"
+    ],
+    "source": "Network-architectures.pdf",
+    "page": 22
+  },
+  {
+    "id": "mac",
+    "term": "MAC-protokoll",
+    "definition": "Medium Access Control avgör när noder får sända på ett delat medium och hanterar kollisioner.",
+    "usage": "WiFi använder CSMA/CA och LoRa använder klasstillhörighet för att styra sändning.",
+    "topics": [
+      "arch"
+    ],
+    "source": "Network-architectures.pdf",
+    "page": 26
+  },
+  {
+    "id": "contention-based",
+    "term": "Contention-based MAC",
+    "definition": "Noder tävlar om mediet; kollisioner kan uppstå och hanteras med backoff eller omsändning.",
+    "usage": "ALOHA och CSMA är contention-based.",
+    "topics": [
+      "arch"
+    ],
+    "source": "Network-architectures.pdf",
+    "page": 30
+  },
+  {
+    "id": "contention-free",
+    "term": "Contention-free MAC",
+    "definition": "Mediet delas ut schemalagt så att noder inte kolliderar.",
+    "usage": "TDMA och OFDMA är contention-free.",
+    "topics": [
+      "arch"
+    ],
+    "source": "Network-architectures.pdf",
+    "page": 30
+  },
+  {
+    "id": "tdma",
+    "term": "TDMA",
+    "definition": "Tidsmultiplexering där varje användare får en tidslucka att sända i.",
+    "usage": "Används för att undvika kollisioner i schemalagda nät.",
+    "topics": [
+      "arch"
+    ],
+    "source": "Network-architectures.pdf",
+    "page": 31
+  },
+  {
+    "id": "ofdma",
+    "term": "OFDMA",
+    "definition": "Ortogonal frekvensmultiplexering där olika användare tilldelas olika subbärvågor under samma symboltid.",
+    "usage": "WiFi 6 och 5G använder OFDMA för effektiv resursdelning.",
+    "topics": [
+      "arch"
+    ],
+    "source": "Network-architectures.pdf",
+    "page": 32
+  },
+  {
+    "id": "hidden-terminal",
+    "term": "Hidden terminal-problemet",
+    "definition": "Två sändare som inte hör varandra kan sända samtidigt och kollidera vid mottagaren.",
+    "usage": "Löses med t.ex. RTS/CTS eller contention-free MAC.",
+    "topics": [
+      "arch"
+    ],
+    "source": "Network-architectures.pdf",
+    "page": 35
+  },
+  {
+    "id": "aodv",
+    "term": "AODV",
+    "definition": "Reaktivt routingprotokoll för ad-hoc-nät: en rutt söks först när trafik ska skickas, med RREQ/RREP.",
+    "usage": "Lämpligt i mobila ad-hoc-nät där topologin ändras.",
+    "topics": [
+      "arch"
+    ],
+    "source": "Network-architectures.pdf",
+    "page": 51
+  },
+  {
+    "id": "position-routing",
+    "term": "Positionsbaserad routing",
+    "definition": "Routning som använder nodernas geografiska positioner för att välja nästa hopp.",
+    "usage": "GPSR är ett exempel; kan användas i fordonsnät.",
+    "topics": [
+      "arch"
+    ],
+    "source": "Network-architectures.pdf",
+    "page": 54
+  },
+  {
+    "id": "geocast",
+    "term": "Geocast",
+    "definition": "Meddelanden skickas till alla noder inom ett geografiskt relevansområde.",
+    "usage": "Varningar om farlig väg kan skickas till fordon i området.",
+    "topics": [
+      "arch"
+    ],
+    "source": "Network-architectures.pdf",
+    "page": 45
+  },
+  {
+    "id": "unicast",
+    "term": "Unicast",
+    "definition": "Data skickas från en sändare till en specifik mottagare.",
+    "usage": "En förfrågan till en server är unicast.",
+    "topics": [
+      "arch"
+    ],
+    "source": "Network-architectures.pdf",
+    "page": 45
+  },
+  {
+    "id": "single-hop",
+    "term": "Single-hop",
+    "definition": "Noden kommunicerar direkt med gateway/basstation utan mellanliggande noder.",
+    "usage": "Centraliserade nät använder oftast single-hop.",
+    "topics": [
+      "arch"
+    ],
+    "source": "Network-architectures.pdf",
+    "page": 38
+  },
+  {
+    "id": "multi-hop",
+    "term": "Multi-hop",
+    "definition": "Data skickas via en eller flera mellanliggande noder innan den når målet.",
+    "usage": "Mesh- och ad-hoc-nät använder multi-hop.",
+    "topics": [
+      "arch"
+    ],
+    "source": "Network-architectures.pdf",
+    "page": 40
+  },
+  {
+    "id": "bluetooth",
+    "term": "Bluetooth",
+    "definition": "Klassisk trådlös PAN-teknik på 2,4 GHz med master/slave och frekvenshopp.",
+    "usage": "Trådlösa headset och korta länkar mellan telefoner och tillbehör.",
+    "topics": [
+      "pan"
+    ],
+    "source": "Personal-Area-Networks-PAN.pdf",
+    "page": 10
+  },
+  {
+    "id": "ble",
+    "term": "Bluetooth Low Energy",
+    "definition": "Lågenergi-PAN för icke-tidskritiska applikationer, med mesh och multi-hop i BLE Mesh.",
+    "usage": "Smart hem, sensorer och små batteridrivna enheter.",
+    "topics": [
+      "pan"
+    ],
+    "source": "Personal-Area-Networks-PAN.pdf",
+    "page": 18
+  },
+  {
+    "id": "ble-mesh",
+    "term": "BLE Mesh",
+    "definition": "Decentraliserat mesh-nät av BLE-noder utan central hubb; relay-noder vidarebefordrar meddelanden.",
+    "usage": "Belysning och sensorer i ett smart hem.",
+    "topics": [
+      "pan"
+    ],
+    "source": "Personal-Area-Networks-PAN.pdf",
+    "page": 19
+  },
+  {
+    "id": "zigbee",
+    "term": "ZigBee",
+    "definition": "IEEE 802.15.4-baserad PAN-teknik med mesh, koordinator och låg energiförbrukning.",
+    "usage": "Smart hem och industriella sensornät.",
+    "topics": [
+      "pan"
+    ],
+    "source": "Personal-Area-Networks-PAN.pdf",
+    "page": 22
+  },
+  {
+    "id": "wpan",
+    "term": "WPAN",
+    "definition": "Trådlöst personligt nätverk med kort räckvidd, typiskt runt en person eller ett hem.",
+    "usage": "Bluetooth och ZigBee är WPAN-tekniker.",
+    "topics": [
+      "pan"
+    ],
+    "source": "Personal-Area-Networks-PAN.pdf",
+    "page": 5
+  },
+  {
+    "id": "frequency-hopping",
+    "term": "Frekvenshopp",
+    "definition": "Sändaren byter bärfrekvens enligt ett mönster under en transmission.",
+    "usage": "Minskar interferens i olicensierade band och försvårar avlyssning; används i Bluetooth.",
+    "topics": [
+      "pan"
+    ],
+    "source": "Personal-Area-Networks-PAN.pdf",
+    "page": 13
+  },
+  {
+    "id": "coordinator",
+    "term": "ZigBee-koordinator",
+    "definition": "Den nod som startar och kontrollerar ett ZigBee-nät; fungerar som rot i mesh-trädet.",
+    "usage": "ZigBee-koordinatorn hanterar nätets adresser och säkerhet.",
+    "topics": [
+      "pan"
+    ],
+    "source": "Personal-Area-Networks-PAN.pdf",
+    "page": 23
+  },
+  {
+    "id": "relay-node",
+    "term": "Relay-nod",
+    "definition": "Nod som vidarebefordrar trafik mellan andra noder i ett mesh-nät.",
+    "usage": "BLE Mesh relay-noder ökar räckvidden.",
+    "topics": [
+      "pan"
+    ],
+    "source": "Personal-Area-Networks-PAN.pdf",
+    "page": 20
+  },
+  {
+    "id": "beacon",
+    "term": "Beacon",
+    "definition": "Periodisk kontrollsignal som annonserar ett nät och dess timing.",
+    "usage": "ZigBee beacon-enabled MAC använder beacons för att synkronisera noder.",
+    "topics": [
+      "pan"
+    ],
+    "source": "Personal-Area-Networks-PAN.pdf",
+    "page": 25
+  },
+  {
+    "id": "lpwan",
+    "term": "LPWAN",
+    "definition": "Low-Power Wide-Area Network: lång räckvidd, låg effekt och låg datatakt för IoT.",
+    "usage": "LoRa, NB-IoT och LTE-M är LPWAN-tekniker.",
+    "topics": [
+      "lpwan"
+    ],
+    "source": "Low-Power-Wide-Area-Networks-LPWAN.pdf",
+    "page": 10
+  },
+  {
+    "id": "lora",
+    "term": "LoRa",
+    "definition": "LPWAN-teknik med chirp spread spectrum och lång räckvidd; används i olicensierat band.",
+    "usage": "Miljösensorer och jordbruk med batteridrivna noder.",
+    "topics": [
+      "lpwan"
+    ],
+    "source": "Low-Power-Wide-Area-Networks-LPWAN.pdf",
+    "page": 13
+  },
+  {
+    "id": "lorawan",
+    "term": "LoRaWAN",
+    "definition": "Nätverksarkitektur/protokoll ovanpå LoRa med end devices, gateways och en nätverksserver.",
+    "usage": "Ett publikt LoRaWAN-nät kan användas av många applikationer.",
+    "topics": [
+      "lpwan"
+    ],
+    "source": "Low-Power-Wide-Area-Networks-LPWAN.pdf",
+    "page": 14
+  },
+  {
+    "id": "nbiot",
+    "term": "NB-IoT",
+    "definition": "Cellulär LPWAN-teknik för stationära enheter som sänder lite data då och då.",
+    "usage": "Vattenmätare och sensorer inomhus med bra täckning.",
+    "topics": [
+      "lpwan"
+    ],
+    "source": "Low-Power-Wide-Area-Networks-LPWAN.pdf",
+    "page": 30
+  },
+  {
+    "id": "ltem",
+    "term": "LTE-M",
+    "definition": "Förenklad LTE för maskinkommunikation med lägre komplexitet och stöd för mobilitet.",
+    "usage": "Spårning av containrar och fordon.",
+    "topics": [
+      "lpwan"
+    ],
+    "source": "Low-Power-Wide-Area-Networks-LPWAN.pdf",
+    "page": 30
+  },
+  {
+    "id": "drx",
+    "term": "DRX",
+    "definition": "Discontinuous Reception: enheten sover och lyssnar bara periodiskt för att spara energi.",
+    "usage": "Viktigt för batteridrivna NB-IoT/LTE-M-enheter.",
+    "topics": [
+      "lpwan"
+    ],
+    "source": "Low-Power-Wide-Area-Networks-LPWAN.pdf",
+    "page": 37
+  },
+  {
+    "id": "class-a",
+    "term": "LoRa Class A",
+    "definition": "LoRa-enhet som sänder uplink och sedan öppnar två korta mottagningsfönster; lägst energiförbrukning.",
+    "usage": "Batteridrivna sensorer som främst sänder uppåt.",
+    "topics": [
+      "lpwan"
+    ],
+    "source": "Low-Power-Wide-Area-Networks-LPWAN.pdf",
+    "page": 21
+  },
+  {
+    "id": "resource-constrained",
+    "term": "Resursbegränsad enhet",
+    "definition": "Enhet med starka begränsningar i energi, beräkningskapacitet, minne eller bandbredd.",
+    "usage": "Sensorer som drivs av batteri eller solceller.",
+    "topics": [
+      "lpwan"
+    ],
+    "source": "Network-architectures.pdf",
+    "page": 62
+  },
+  {
+    "id": "ealoha",
+    "term": "E-ALOHA",
+    "definition": "Förbättrad ALOHA som används av Argos för korta meddelanden från många sändare.",
+    "usage": "Argos-sändare använder E-ALOHA för att minska kollisioner.",
+    "topics": [
+      "ntn"
+    ],
+    "source": "Non-Terrestrial-Networks-NTN.pdf",
+    "page": 29
+  },
+  {
+    "id": "wifi6",
+    "term": "WiFi 6/7",
+    "definition": "IEEE 802.11ax/be: hög kapacitet, OFDMA, MU-MIMO och mesh-funktioner.",
+    "usage": "Kontor, hem och industriella nät med många enheter.",
+    "topics": [
+      "wifi"
+    ],
+    "source": "IEEE-802.11-WiFi.pdf",
+    "page": 1
+  },
+  {
+    "id": "mu-mimo",
+    "term": "MU-MIMO",
+    "definition": "Multi-user MIMO: en accesspunkt med flera antenner kan samtidigt betjäna flera användare.",
+    "usage": "WiFi 6 och 5G använder MU-MIMO för högre kapacitet.",
+    "topics": [
+      "wifi"
+    ],
+    "source": "IEEE-802.11-WiFi.pdf",
+    "page": 1
+  },
+  {
+    "id": "mcca",
+    "term": "MCCA",
+    "definition": "Mesh Coordinated Channel Access: deterministisk kanalaccess mellan mesh-noder i WiFi mesh.",
+    "usage": "Används för att undvika kollisioner mellan mesh-länkar.",
+    "topics": [
+      "wifi"
+    ],
+    "source": "IEEE-802.11-WiFi.pdf",
+    "page": 1
+  },
+  {
+    "id": "hwmp",
+    "term": "HWMP",
+    "definition": "Hybrid Wireless Mesh Protocol: kombinerar proaktivt träd och reaktiv AODV-baserad vägval i WiFi mesh.",
+    "usage": "Används av WiFi 6/7 mesh för path selection.",
+    "topics": [
+      "wifi"
+    ],
+    "source": "IEEE-802.11-WiFi.pdf",
+    "page": 1
+  },
+  {
+    "id": "portal",
+    "term": "Mesh-portal",
+    "definition": "Den mesh-nod som har en anslutning till Internet och fungerar som gateway för mesh-nätet.",
+    "usage": "Hosts i ett WiFi-mesh når Internet via portalen.",
+    "topics": [
+      "wifi"
+    ],
+    "source": "IEEE-802.11-WiFi.pdf",
+    "page": 1
+  },
+  {
+    "id": "host-node",
+    "term": "Host-nod",
+    "definition": "Nod som ansluter till mesh-nätet och kommunicerar via en mesh-nod, men inte routar mesh-trafik.",
+    "usage": "En laptop i ett WiFi-mesh är en host node.",
+    "topics": [
+      "wifi"
+    ],
+    "source": "IEEE-802.11-WiFi.pdf",
+    "page": 1
+  },
+  {
+    "id": "5g",
+    "term": "5G",
+    "definition": "Femte generationens mobilnät med eMBB, URLLC och mMTC som tjänsteklasser.",
+    "usage": "Industriell automation, mobil bredband och massiva sensornät.",
+    "topics": [
+      "cellular"
+    ],
+    "source": "Cellular-Mobile-Networks.pdf",
+    "page": 1
+  },
+  {
+    "id": "urllc",
+    "term": "URLLC",
+    "definition": "Ultra-Reliable Low-Latency Communication: mycket låg latens och hög tillförlitlighet.",
+    "usage": "Tidskritiska applikationer som fjärrstyrda robotar.",
+    "topics": [
+      "cellular"
+    ],
+    "source": "Cellular-Mobile-Networks.pdf",
+    "page": 1
+  },
+  {
+    "id": "embb",
+    "term": "eMBB",
+    "definition": "Enhanced Mobile Broadband: hög datatakt för mobil bredbandstrafik.",
+    "usage": "Video och stora filöverföringar över mobilnät.",
+    "topics": [
+      "cellular"
+    ],
+    "source": "Cellular-Mobile-Networks.pdf",
+    "page": 1
+  },
+  {
+    "id": "mmtc",
+    "term": "mMTC",
+    "definition": "Massive Machine-Type Communication: många enheter med små datamängder och låg energi.",
+    "usage": "IoT-sensorer och mätare i stor skala.",
+    "topics": [
+      "cellular"
+    ],
+    "source": "Cellular-Mobile-Networks.pdf",
+    "page": 1
+  },
+  {
+    "id": "cran",
+    "term": "C-RAN",
+    "definition": "Cloud/Centralized RAN: BBU samlas i ett datacenter och kopplas till distribuerade RRH:er i basstationerna.",
+    "usage": "Minskar kostnad och möjliggör central koordinering i 4G/5G.",
+    "topics": [
+      "cellular"
+    ],
+    "source": "Cellular-Mobile-Networks.pdf",
+    "page": 1
+  },
+  {
+    "id": "rrh",
+    "term": "RRH",
+    "definition": "Remote Radio Head: antenn- och radioutrustning ute vid basstationen i en C-RAN.",
+    "usage": "Flera RRH:er kan anslutas till samma centrala BBU.",
+    "topics": [
+      "cellular"
+    ],
+    "source": "Cellular-Mobile-Networks.pdf",
+    "page": 1
+  },
+  {
+    "id": "slicing",
+    "term": "Nätverksslicing",
+    "definition": "Logisk uppdelning av ett fysiskt nät i flera virtuella nät med egna resurser och egenskaper.",
+    "usage": "En operatör kan reservera kapacitet åt en kund i 5G.",
+    "topics": [
+      "cellular"
+    ],
+    "source": "Cellular-Mobile-Networks.pdf",
+    "page": 1
+  },
+  {
+    "id": "private5g",
+    "term": "Privat 5G",
+    "definition": "Ett 5G-nät dedikerat till en organisation, antingen via slicing eller egen infrastruktur.",
+    "usage": "Fabriker och hamnar som behöver egen kontroll och täckning.",
+    "topics": [
+      "cellular"
+    ],
+    "source": "Cellular-Mobile-Networks.pdf",
+    "page": 1
+  },
+  {
+    "id": "ntn",
+    "term": "NTN",
+    "definition": "Non-Terrestrial Network: nät som använder satelliter, HAP/LAP eller andra plattformar ovan jord.",
+    "usage": "Internet via satellit och täckning i glesbygd.",
+    "topics": [
+      "ntn"
+    ],
+    "source": "Non-Terrestrial-Networks-NTN.pdf",
+    "page": 7
+  },
+  {
+    "id": "leo",
+    "term": "LEO",
+    "definition": "Low Earth Orbit: låg satellitbana, typiskt 500-2000 km, med låg fördröjning och stora konstellationer.",
+    "usage": "Starlink och Iridium använder LEO.",
+    "topics": [
+      "ntn"
+    ],
+    "source": "Non-Terrestrial-Networks-NTN.pdf",
+    "page": 11
+  },
+  {
+    "id": "starlink",
+    "term": "Starlink",
+    "definition": "LEO-baserat bredbandsnät från SpaceX; används ofta som backhaul.",
+    "usage": "Internet till avlägsna platser eller fordon.",
+    "topics": [
+      "ntn"
+    ],
+    "source": "Non-Terrestrial-Networks-NTN.pdf",
+    "page": 13
+  },
+  {
+    "id": "argos",
+    "term": "Argos",
+    "definition": "Globalt satellitsystem för resursbegränsad telemetri, med låg datatakt och i huvudsak enkelriktad kommunikation.",
+    "usage": "Spårning av djur och miljösensorer.",
+    "topics": [
+      "ntn"
+    ],
+    "source": "Non-Terrestrial-Networks-NTN.pdf",
+    "page": 24
+  },
+  {
+    "id": "iridium",
+    "term": "Iridium",
+    "definition": "LEO-satellitnät för global röst och data, med länkar mellan satelliterna.",
+    "usage": "Satellittelefoner och kommunikation i avlägsna områden.",
+    "topics": [
+      "ntn"
+    ],
+    "source": "Non-Terrestrial-Networks-NTN.pdf",
+    "page": 33
+  },
+  {
+    "id": "space-relay",
+    "term": "Space relay",
+    "definition": "Satellit som tar emot och vidarebefordrar en länk, till exempel när det inte finns fri sikt mellan två noder.",
+    "usage": "Används i interplanetär kommunikation för att böja länken runt planeter.",
+    "topics": [
+      "space"
+    ],
+    "source": "Interplanetary-networks.pdf",
+    "page": 1
+  },
+  {
+    "id": "deep-space-delay",
+    "term": "Djymfördröjning",
+    "definition": "Lång propagationstid i rymden, till exempel cirka 1,3 s mellan jorden och månen.",
+    "usage": "Påverkar protokollval och kräver tålamod i retransmissioner.",
+    "topics": [
+      "space"
+    ],
+    "source": "Interplanetary-networks.pdf",
+    "page": 18
+  },
+  {
+    "id": "space-link",
+    "term": "Space link",
+    "definition": "En kommunikationslänk mellan en rymdfarkost och markstation eller mellan rymdfarkoster.",
+    "usage": "Kan vara radio eller optisk och ofta enkelriktad på länknivå.",
+    "topics": [
+      "space"
+    ],
+    "source": "Interplanetary-networks.pdf",
+    "page": 19
+  },
+  {
+    "id": "dtn",
+    "term": "DTN",
+    "definition": "Delay- and Disruption-Tolerant Network: overlay-nät som klarar intermittenta länkar med store-and-forward.",
+    "usage": "Rymdkommunikation, reindeer herding och avlägsna sensornät.",
+    "topics": [
+      "dtn"
+    ],
+    "source": "Delay-tolerant-networking.pdf",
+    "page": 1
+  },
+  {
+    "id": "store-forward",
+    "term": "Store-and-forward",
+    "definition": "Noden sparar data tills en kontakt med nästa nod finns och skickar då vidare.",
+    "usage": "DTN-noder lagrar bundles under långa avbrott.",
+    "topics": [
+      "dtn"
+    ],
+    "source": "Delay-tolerant-networking.pdf",
+    "page": 1
+  },
+  {
+    "id": "bundle",
+    "term": "Bundle protocol",
+    "definition": "DTN:s overlay-protokoll som kapslar in data i bundles och hanterar förvaring och vidarebefordran.",
+    "usage": "Används i DTN-arkitekturer för att knyta samman olika länkar.",
+    "topics": [
+      "dtn"
+    ],
+    "source": "Delay-tolerant-networking.pdf",
+    "page": 1
+  },
+  {
+    "id": "ltp",
+    "term": "LTP",
+    "definition": "Licklider Transmission Protocol: ett DTN-protokoll för långa, osäkra rymdlänkar med selektiv ARQ.",
+    "usage": "Används i deep-space-länkar där ACK kan ta lång tid.",
+    "topics": [
+      "space"
+    ],
+    "source": "Interplanetary-networks.pdf",
+    "page": 21
+  },
+  {
+    "id": "contact",
+    "term": "Kontakt",
+    "definition": "En tidsperiod då två noder kan kommunicera med varandra.",
+    "usage": "DTN-routing planerar utifrån kända kontakter.",
+    "topics": [
+      "dtn"
+    ],
+    "source": "Delay-tolerant-networking.pdf",
+    "page": 1
+  },
+  {
+    "id": "custody",
+    "term": "Custody transfer",
+    "definition": "En DTN-nod tar ansvar för att data levereras vidare och kan spara den tills en säker överlämning sker.",
+    "usage": "Används för att öka tillförlitligheten i DTN.",
+    "topics": [
+      "dtn"
+    ],
+    "source": "Delay-tolerant-networking.pdf",
+    "page": 1
+  },
+  {
+    "id": "acoustic",
+    "term": "Akustisk kommunikation",
+    "definition": "Ljudvågor i vatten; dominerande undervattenskommunikation med lång räckvidd men låg datatakt och hög fördröjning.",
+    "usage": "Undervattensmodem och JANUS.",
+    "topics": [
+      "underwater"
+    ],
+    "source": "Underwater-networks.pdf",
+    "page": 13
+  },
+  {
+    "id": "underwater-optical",
+    "term": "Optisk undervattenskommunikation",
+    "definition": "Ljus/laser med hög datatakt men kräver i stort sett fri sikt och kort räckvidd.",
+    "usage": "Aqua-Fi och korta länkar mellan undervattensfarkoster.",
+    "topics": [
+      "underwater"
+    ],
+    "source": "Underwater-networks.pdf",
+    "page": 10
+  },
+  {
+    "id": "underwater-rf",
+    "term": "RF under vatten",
+    "definition": "Radiovågor kan användas under vatten men dämpas starkt och fungerar bäst på korta avstånd/låga frekvenser.",
+    "usage": "Kompletterar akustik och optik i undervattensnät.",
+    "topics": [
+      "underwater"
+    ],
+    "source": "Underwater-networks.pdf",
+    "page": 8
+  },
+  {
+    "id": "janus",
+    "term": "JANUS",
+    "definition": "En öppen akustisk kommunikationsstandard för undervattensnät med wake-up-toner och MAC-regler.",
+    "usage": "NATO och forskning använder JANUS för interoperabilitet.",
+    "topics": [
+      "underwater"
+    ],
+    "source": "Underwater-networks.pdf",
+    "page": 16
+  },
+  {
+    "id": "iout",
+    "term": "IoUT",
+    "definition": "Internet of Underwater Things: nät av undervattenssensorer och farkoster som samlar och delar data.",
+    "usage": "Miljöövervakning och oljeläckagedetektion.",
+    "topics": [
+      "underwater"
+    ],
+    "source": "Underwater-networks.pdf",
+    "page": 20
+  },
+  {
+    "id": "auv",
+    "term": "AUV",
+    "definition": "Autonomous Underwater Vehicle: autonom undervattensfarkost som kan transporteras och samla data.",
+    "usage": "Används som mobil nod i undervattens-DTN.",
+    "topics": [
+      "underwater"
+    ],
+    "source": "Underwater-networks.pdf",
+    "page": 27
+  },
+  {
+    "id": "underwater-localization",
+    "term": "Lokalisering under vatten",
+    "definition": "GPS fungerar inte under vattnet; positionering sker med akustiska signaler eller kända referenspunkter.",
+    "usage": "Viktigt för att veta var sensorer och farkoster befinner sig.",
+    "topics": [
+      "underwater"
+    ],
+    "source": "Underwater-networks.pdf",
+    "page": 24
+  },
+  {
+    "id": "cloud",
+    "term": "Cloud computing",
+    "definition": "On-demand-beräknings- och lagringsresurser i datacenter, nås över nätet.",
+    "usage": "Back-end-tjänster och databehandling.",
+    "topics": [
+      "backend"
+    ],
+    "source": "Users-and-back-ends.pdf",
+    "page": 11
+  },
+  {
+    "id": "edge",
+    "term": "Edge computing",
+    "definition": "Beräkning placeras nära användarna/sensorerna för att minska latens och nätlast.",
+    "usage": "Robotik och tidskritiska applikationer.",
+    "topics": [
+      "backend"
+    ],
+    "source": "Users-and-back-ends.pdf",
+    "page": 16
+  },
+  {
+    "id": "fog",
+    "term": "Fog computing",
+    "definition": "Distribuerad molnkapacitet närmare användarna, mellan edge och centralt moln.",
+    "usage": "Fördelar beräkning över flera nivåer för låg latens.",
+    "topics": [
+      "backend"
+    ],
+    "source": "Users-and-back-ends.pdf",
+    "page": 16
+  },
+  {
+    "id": "cdn",
+    "term": "CDN",
+    "definition": "Content Delivery Network: cache-servrar nära användarna distribuerar innehåll och minskar latens/last.",
+    "usage": "Videostreaming och stora webbsidor.",
+    "topics": [
+      "backend"
+    ],
+    "source": "Users-and-back-ends.pdf",
+    "page": 17
+  },
+  {
+    "id": "mm1",
+    "term": "M/M/1",
+    "definition": "Kösystem med Poisson-ankomster, exponentialfördelade servicetider, en server och obegränsad kö.",
+    "usage": "Analys av en webbserver eller CPU.",
+    "topics": [
+      "performance"
+    ],
+    "source": "Users-and-back-ends.pdf",
+    "page": 55
+  },
+  {
+    "id": "md1",
+    "term": "M/D/1",
+    "definition": "Kösystem med Poisson-ankomster och deterministiska servicetider.",
+    "usage": "När servicetiden är nästan konstant.",
+    "topics": [
+      "performance"
+    ],
+    "source": "Users-and-back-ends.pdf",
+    "page": 56
+  },
+  {
+    "id": "mg1",
+    "term": "M/G/1",
+    "definition": "Kösystem med Poisson-ankomster och allmän servicefördelningsfördelning; P-K-formeln används.",
+    "usage": "Modellerar service med varians.",
+    "topics": [
+      "performance"
+    ],
+    "source": "Users-and-back-ends.pdf",
+    "page": 56
+  },
+  {
+    "id": "utilization",
+    "term": "Utilization",
+    "definition": "Andelen tid servern är upptagen, ρ = λ/μ för en server.",
+    "usage": "Mäter belastning i ett kösystem.",
+    "topics": [
+      "performance"
+    ],
+    "source": "Users-and-back-ends.pdf",
+    "page": 52
+  },
+  {
+    "id": "throughput",
+    "term": "Throughput",
+    "definition": "Genomsnittlig avgångsrate av jobb från systemet, ofta λ_eff.",
+    "usage": "Vid blockering är throughput lägre än ankomstrate.",
+    "topics": [
+      "performance"
+    ],
+    "source": "Users-and-back-ends.pdf",
+    "page": 53
+  },
+  {
+    "id": "response-time",
+    "term": "Responsetid",
+    "definition": "Genomsnittlig total tid ett jobb tillbringar i systemet, inklusive kö och service.",
+    "usage": "Används för att bedöma användarupplevelse.",
+    "topics": [
+      "performance"
+    ],
+    "source": "Users-and-back-ends.pdf",
+    "page": 23
+  },
+  {
+    "id": "littles-law",
+    "term": "Littles lag",
+    "definition": "För stabila system gäller N = λ · T: antal jobb i systemet är ankomstrate gånger responsetid.",
+    "usage": "Kopplar ihop kölängd, throughput och responsetid.",
+    "topics": [
+      "performance"
+    ],
+    "source": "Users-and-back-ends.pdf",
+    "page": 50
+  },
+  {
+    "id": "pk-formula",
+    "term": "P-K-formeln",
+    "definition": "Pollaczek-Khinchine-formeln ger medelantalet jobb i ett M/G/1-system utifrån ankomst- och servicetidsmoment.",
+    "usage": "Används för M/D/1 och M/G/1.",
+    "topics": [
+      "performance"
+    ],
+    "source": "Users-and-back-ends.pdf",
+    "page": 56
+  },
+  {
+    "id": "poisson",
+    "term": "Poissonprocess",
+    "definition": "Modell för slumpmässiga ankomster där antalet ankomster i ett intervall är Poissonfördelat och ankomsttiderna är exponentialfördelade.",
+    "usage": "Trafikmodellering i kösystem.",
+    "topics": [
+      "probability"
+    ],
+    "source": "Review-of-probability-theory-and-statistics.pdf",
+    "page": 20
+  },
+  {
+    "id": "exponential",
+    "term": "Exponentialfördelning",
+    "definition": "Minneslös fördelning för tider mellan händelser eller servicetider.",
+    "usage": "Används i M/M/1 och som modell för interarrivaltider.",
+    "topics": [
+      "probability"
+    ],
+    "source": "Review-of-probability-theory-and-statistics.pdf",
+    "page": 22
+  },
+  {
+    "id": "slotted-aloha",
+    "term": "Slotted ALOHA",
+    "definition": "ALOHA med tidsluckor; en nod får bara sända i början av en slot, vilket minskar kollisionsfönstret.",
+    "usage": "Maximal teoretisk effektivitet är 1/e.",
+    "topics": [
+      "performance"
+    ],
+    "source": "Users-and-back-ends.pdf",
+    "page": 42
+  },
+  {
+    "id": "blocking",
+    "term": "Blockering",
+    "definition": "Ett ankommande jobb avvisas när systemet är fullt.",
+    "usage": "Analyseras med Erlang B eller ändliga kömodeller.",
+    "topics": [
+      "performance"
+    ],
+    "source": "Users-and-back-ends.pdf",
+    "page": 57
+  },
+  {
+    "id": "erlang-b",
+    "term": "Erlang B",
+    "definition": "Formel för blockeringssannolikhet i M/M/m/m-system utan kö.",
+    "usage": "Dimensionering av länk- och serverkapacitet.",
+    "topics": [
+      "performance"
+    ],
+    "source": "Users-and-back-ends.pdf",
+    "page": 57
+  },
+  {
+    "id": "stability",
+    "term": "Stabilitet",
+    "definition": "Ett kösystem är stabilt när ankomstraten är lägre än servicekapaciteten, annars växer kön.",
+    "usage": "M < D eller λ < μ för en server.",
+    "topics": [
+      "performance"
+    ],
+    "source": "Users-and-back-ends.pdf",
+    "page": 31
+  },
+  {
+    "id": "queue",
+    "term": "Kö",
+    "definition": "Jobb som väntar på service i ett system.",
+    "usage": "Kömodeller används för att dimensionera servrar.",
+    "topics": [
+      "performance"
+    ],
+    "source": "Users-and-back-ends.pdf",
+    "page": 28
+  }
+]

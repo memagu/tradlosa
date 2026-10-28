@@ -1,0 +1,1144 @@
+[
+  {
+    "id": "a-arch-central",
+    "part": "A",
+    "points": 6,
+    "prompt": "<p>Which of the following statements are true for a <strong>centralized</strong> network architecture? (6p)</p>",
+    "options": [
+      "The access point/base station controls medium access.",
+      "Nodes normally communicate with the access point using single-hop links.",
+      "5G and LoRa networks are examples of centralized architectures.",
+      "Nodes organize themselves without any central controller.",
+      "A centralized architecture always requires multi-hop communication.",
+      "ZigBee mesh is a purely centralized architecture.",
+      "A gateway is never needed in a centralized network.",
+      "The base station can coordinate when nodes transmit."
+    ],
+    "solution": "<p><strong>True:</strong> 1, 2, 3, 8. <strong>False:</strong> 4, 5, 6, 7.</p><p>Centralized means that a base station/AP coordinates the nodes; direct single-hop access is typical. ZigBee mesh is decentralized, and a gateway is still needed for Internet connectivity.</p>",
+    "tags": [
+      "arch"
+    ],
+    "source_label": "Källa: Network-architectures.pdf s. 8",
+    "topics": [
+      "arch"
+    ]
+  },
+  {
+    "id": "a-arch-decentral",
+    "part": "A",
+    "points": 6,
+    "prompt": "<p>Which of the following statements are true for a <strong>decentralized</strong> network architecture? (6p)</p>",
+    "options": [
+      "Nodes can organize themselves without a fixed base station.",
+      "Multi-hop forwarding is common in decentralized networks.",
+      "BLE Mesh and ZigBee mesh are decentralized architectures.",
+      "A central access point controls all medium access.",
+      "Decentralized networks always use single-hop communication.",
+      "Routing is never needed in a decentralized network.",
+      "All decentralized networks are time-critical.",
+      "Nodes can communicate directly with each other."
+    ],
+    "solution": "<p><strong>True:</strong> 1, 2, 3, 8. <strong>False:</strong> 4, 5, 6, 7.</p><p>Ad-hoc and mesh networks are self-organized and often multi-hop. Routing is an important part of multi-hop decentralized networks.</p>",
+    "tags": [
+      "arch"
+    ],
+    "source_label": "Källa: Network-architectures.pdf s. 11",
+    "topics": [
+      "arch"
+    ]
+  },
+  {
+    "id": "a-arch-mesh",
+    "part": "A",
+    "points": 6,
+    "prompt": "<p>Which statements are true for a <strong>wireless mesh network</strong>? (6p)</p>",
+    "options": [
+      "Mesh nodes can forward data for other nodes.",
+      "A portal connects the mesh to the Internet.",
+      "Hosts can connect to the mesh via any mesh node.",
+      "A mesh network can only have one node.",
+      "Mesh networks never use routing.",
+      "Mesh nodes must always be mobile.",
+      "A mesh network is always a DTN.",
+      "Data can travel over multiple hops before reaching the portal."
+    ],
+    "solution": "<p><strong>True:</strong> 1, 2, 3, 8. <strong>False:</strong> 4, 5, 6, 7.</p><p>Mesh nodes provide forwarding and path selection; the portal is the Internet gateway. Hosts communicate through mesh nodes.</p>",
+    "tags": [
+      "arch"
+    ],
+    "source_label": "Källa: Network-architectures.pdf s. 17",
+    "topics": [
+      "arch"
+    ]
+  },
+  {
+    "id": "a-pan",
+    "part": "A",
+    "points": 6,
+    "prompt": "<p>Which statements are true for <strong>personal area networks (PAN)</strong>? (6p)</p>",
+    "options": [
+      "BLE is intended for non-critical applications.",
+      "ZigBee can form a mesh network.",
+      "BLE Mesh uses relay nodes to extend coverage.",
+      "BLE only supports single-hop communication.",
+      "ZigBee requires a cellular base station.",
+      "Bluetooth uses frequency hopping in the 2.4 GHz band.",
+      "ZigBee has no coordinator node.",
+      "PAN technologies are typically short-range."
+    ],
+    "solution": "<p><strong>True:</strong> 1, 2, 3, 6, 8. <strong>False:</strong> 4, 5, 7.</p><p>BLE Mesh is decentralized and multi-hop. ZigBee uses a coordinator and a mesh; Bluetooth classic uses frequency hopping.</p>",
+    "tags": [
+      "pan"
+    ],
+    "source_label": "Källa: Personal-Area-Networks-PAN.pdf s. 18",
+    "topics": [
+      "pan"
+    ]
+  },
+  {
+    "id": "a-lpwan",
+    "part": "A",
+    "points": 6,
+    "prompt": "<p>Which statements are true for <strong>LPWAN</strong> technologies? (6p)</p>",
+    "options": [
+      "LoRa is designed for long range and low energy.",
+      "NB-IoT uses licensed cellular spectrum.",
+      "LoRaWAN uses gateways and a network server.",
+      "LoRa typically provides very high data rates.",
+      "NB-IoT is a decentralized ad-hoc technology.",
+      "LTE-M is a cellular LPWAN variant.",
+      "LPWAN is aimed at resource-constrained devices.",
+      "LoRa requires a licensed frequency band."
+    ],
+    "solution": "<p><strong>True:</strong> 1, 2, 3, 6, 7. <strong>False:</strong> 4, 5, 8.</p><p>LPWAN trades data rate for range and energy. LoRa is used in unlicensed bands; NB-IoT/LTE-M are cellular and centralized.</p>",
+    "tags": [
+      "lpwan",
+      "cellular"
+    ],
+    "source_label": "Källa: Low-Power-Wide-Area-Networks-LPWAN.pdf s. 10 · Artiklar: <a href=\"https://doi.org/10.1016/j.icte.2017.03.004\" target=\"_blank\" rel=\"noopener noreferrer\">Rashmi Sharan Sinha</a> · <a href=\"articles/semtech-2024-lorawan.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Semtech</a>",
+    "topics": [
+      "lpwan"
+    ]
+  },
+  {
+    "id": "a-wifi",
+    "part": "A",
+    "points": 6,
+    "prompt": "<p>Which statements are true for <strong>WiFi 6/7 mesh</strong>? (6p)</p>",
+    "options": [
+      "OFDMA can be used for more efficient channel access.",
+      "MU-MIMO allows an access point to serve multiple users simultaneously.",
+      "A mesh portal connects the mesh to the Internet.",
+      "HWMP is a path-selection protocol for WiFi mesh.",
+      "WiFi mesh always uses a single-hop architecture.",
+      "MCCA is a contention-free mesh channel access mechanism.",
+      "WiFi 6/7 is a delay-tolerant networking technology.",
+      "WiFi mesh has no routing function."
+    ],
+    "solution": "<p><strong>True:</strong> 1, 2, 3, 4, 6. <strong>False:</strong> 5, 7, 8.</p><p>WiFi 6/7 adds OFDMA and MU-MIMO. Mesh uses HWMP for path selection and MCCA for coordinated access; it is not a DTN.</p>",
+    "tags": [
+      "wifi",
+      "arch"
+    ],
+    "source_label": "Källa: IEEE-802.11-WiFi.pdf s. 1 · Artiklar: <a href=\"articles/lopez-perez-2019-80211be.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">David López-Pérez</a> · <a href=\"articles/bellalta-2016-80211ax.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Boris Bellalta</a>",
+    "topics": [
+      "wifi"
+    ]
+  },
+  {
+    "id": "a-cell",
+    "part": "A",
+    "points": 6,
+    "prompt": "<p>Which statements are true for <strong>5G and C-RAN</strong>? (6p)</p>",
+    "options": [
+      "URLLC targets very low latency and high reliability.",
+      "eMBB targets high data rates.",
+      "mMTC targets massive numbers of low-power devices.",
+      "C-RAN separates the BBU from the remote radio heads.",
+      "Network slicing can create logically separate networks.",
+      "C-RAN places the BBU in every base station.",
+      "5G can only be used for satellite communication.",
+      "Network slicing requires a separate physical antenna for every user."
+    ],
+    "solution": "<p><strong>True:</strong> 1, 2, 3, 4, 5. <strong>False:</strong> 6, 7, 8.</p><p>C-RAN centralizes BBUs and distributes RRHs. Slicing is logical, not a separate antenna per user.</p>",
+    "tags": [
+      "cellular"
+    ],
+    "source_label": "Källa: Cellular-Mobile-Networks.pdf s. 1 · Artiklar: <a href=\"https://www.ericsson.com/en/reports-and-papers/white-papers/5g-wireless-access-an-overview\" target=\"_blank\" rel=\"noopener noreferrer\">Ericsson</a> · <a href=\"https://doi.org/10.1109/COMST.2014.2355255\" target=\"_blank\" rel=\"noopener noreferrer\">Aleksandra Checko</a>",
+    "topics": [
+      "cellular"
+    ]
+  },
+  {
+    "id": "a-ntn",
+    "part": "A",
+    "points": 6,
+    "prompt": "<p>Which statements are true for <strong>satellite/NTN</strong> systems? (6p)</p>",
+    "options": [
+      "Starlink is a LEO broadband system often used as backhaul.",
+      "Argos is aimed at low-rate, resource-constrained sensors.",
+      "Iridium provides global voice and data via LEO satellites.",
+      "LEO satellites generally have lower delay than GEO satellites.",
+      "Argos provides high-rate full-duplex video.",
+      "Starlink is designed only for one-way telemetry.",
+      "GEO satellites are always closer to Earth than LEO satellites.",
+      "Satellite links can be used where terrestrial coverage is missing."
+    ],
+    "solution": "<p><strong>True:</strong> 1, 2, 3, 4, 8. <strong>False:</strong> 5, 6, 7.</p><p>Argos is low-rate telemetry; Starlink is broadband. LEO is closer than GEO.</p>",
+    "tags": [
+      "ntn"
+    ],
+    "source_label": "Källa: Non-Terrestrial-Networks-NTN.pdf s. 13 · Artiklar: <a href=\"articles/kodheli-2021-satcom-survey.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Oltjon Kodheli</a> · <a href=\"articles/gomez-2021-iridium-energy.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Carles Gomez</a>",
+    "topics": [
+      "ntn"
+    ]
+  },
+  {
+    "id": "a-dtn",
+    "part": "A",
+    "points": 6,
+    "prompt": "<p>Which statements are true for <strong>delay-tolerant networking (DTN)</strong>? (6p)</p>",
+    "options": [
+      "DTN uses store-and-forward.",
+      "Bundle protocol is a DTN protocol.",
+      "DTN protocols are implemented as an overlay, often above the transport layer.",
+      "DTN requires a continuous end-to-end connection.",
+      "DTN is suitable for non-critical applications.",
+      "LTP is a DTN protocol for long-delay links.",
+      "DTN only supports single-hop communication.",
+      "DTN is always time-critical."
+    ],
+    "solution": "<p><strong>True:</strong> 1, 2, 3, 5, 6. <strong>False:</strong> 4, 7, 8.</p><p>DTN tolerates intermittent links by storing data until the next contact. LTP and Bundle are DTN protocols; it is not for hard real-time traffic.</p>",
+    "tags": [
+      "dtn",
+      "space"
+    ],
+    "source_label": "Källa: Delay-tolerant-networking.pdf s. 1 · Artikel: <a href=\"articles/warthman-2015-dtn-tutorial.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Forrest Warthman</a>",
+    "topics": [
+      "dtn"
+    ]
+  },
+  {
+    "id": "a-underwater",
+    "part": "A",
+    "points": 6,
+    "prompt": "<p>Which statements are true for <strong>underwater wireless networks</strong>? (6p)</p>",
+    "options": [
+      "Acoustic communication can provide long range but low data rate.",
+      "Optical communication requires approximately line-of-sight.",
+      "JANUS is an underwater acoustic communication standard.",
+      "GPS works well for localization underwater.",
+      "Radio communication at high frequencies has very long underwater range.",
+      "AUVs can act as mobile nodes in underwater networks.",
+      "Underwater networks can use DTN solutions.",
+      "Acoustic communication has lower propagation delay than radio in air."
+    ],
+    "solution": "<p><strong>True:</strong> 1, 2, 3, 6, 7. <strong>False:</strong> 4, 5, 8.</p><p>GPS radio does not penetrate water well. Acoustic waves travel slowly compared with radio; JANUS is an acoustic standard.</p>",
+    "tags": [
+      "underwater"
+    ],
+    "source_label": "Källa: Underwater-networks.pdf s. 13 · Artiklar: <a href=\"articles/gussen-2016-underwater-survey.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Camila M. G. Gussen</a> · <a href=\"articles/lu-2019-conet.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Huimin Lu</a>",
+    "topics": [
+      "underwater"
+    ]
+  },
+  {
+    "id": "a-backend",
+    "part": "A",
+    "points": 6,
+    "prompt": "<p>Which statements are true for <strong>cloud, edge, fog and CDN</strong>? (6p)</p>",
+    "options": [
+      "Edge computing moves computation closer to users.",
+      "A CDN caches content closer to users.",
+      "Fog computing distributes cloud-like resources closer to the edge.",
+      "A CDN is exactly the same thing as fog computing.",
+      "Cloud computing provides on-demand resources over a network.",
+      "Edge computing always means a central data center.",
+      "Fog computing eliminates the need for any network.",
+      "CDNs can reduce latency and network load."
+    ],
+    "solution": "<p><strong>True:</strong> 1, 2, 3, 5, 8. <strong>False:</strong> 4, 6, 7.</p><p>Fog is broader than CDN; CDN is a content-caching architecture. Edge is near the user, not central.</p>",
+    "tags": [
+      "backend"
+    ],
+    "source_label": "Källa: Users-and-back-ends.pdf s. 16 · Artiklar: <a href=\"articles/tarneberg-2019-fog-thesis.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">William Tärneberg</a> · <a href=\"articles/goian-2019-video-caching.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Huda S. Goian</a>",
+    "topics": [
+      "backend"
+    ]
+  },
+  {
+    "id": "a-perf",
+    "part": "A",
+    "points": 6,
+    "prompt": "<p>Which statements are true for <strong>queueing models</strong>? (6p)</p>",
+    "options": [
+      "For M/M/1, utilization is ρ = λ/μ.",
+      "A stable single-server system requires λ < μ.",
+      "Little's law is N = λT.",
+      "M/M/1 has deterministic service times.",
+      "M/D/1 has deterministic service times.",
+      "Throughput is always λ, even when requests are blocked.",
+      "Utilization can exceed 1 in a stable system.",
+      "The Pollaczek-Khinchine formula is used for M/G/1."
+    ],
+    "solution": "<p><strong>True:</strong> 1, 2, 3, 5, 8. <strong>False:</strong> 4, 6, 7.</p><p>M/M/1 has exponential service; M/D/1 has deterministic service. With blocking, effective throughput is lower than λ.</p>",
+    "tags": [
+      "performance",
+      "probability"
+    ],
+    "source_label": "Källa: Users-and-back-ends.pdf s. 55",
+    "topics": [
+      "performance"
+    ]
+  },
+  {
+    "id": "a-routing",
+    "part": "A",
+    "points": 6,
+    "prompt": "<p>Which statements are true for <strong>routing in ad-hoc networks</strong>? (6p)</p>",
+    "options": [
+      "AODV is a reactive routing protocol.",
+      "Position-based routing uses node positions.",
+      "Geocast sends a message to nodes in a geographic area.",
+      "AODV is a proactive protocol that always maintains all routes.",
+      "Geocast is a unicast protocol to one fixed node.",
+      "Multi-hop routing can forward data through intermediate nodes.",
+      "Position-based routing never needs position information.",
+      "Broadcast sends a message to all reachable nodes."
+    ],
+    "solution": "<p><strong>True:</strong> 1, 2, 3, 6, 8. <strong>False:</strong> 4, 5, 7.</p><p>AODV discovers routes on demand. Geocast targets a zone; broadcast floods to all reachable nodes.</p>",
+    "tags": [
+      "arch"
+    ],
+    "source_label": "Källa: Network-architectures.pdf s. 51",
+    "topics": [
+      "arch"
+    ]
+  },
+  {
+    "id": "a-resource",
+    "part": "A",
+    "points": 6,
+    "prompt": "<p>Which statements are true for <strong>resource-constrained networking</strong>? (6p)</p>",
+    "options": [
+      "Devices often have limited energy and computing power.",
+      "LoRa and NB-IoT can be suitable technologies.",
+      "Multi-hop communication can extend coverage.",
+      "Resource-constrained devices always have mains power.",
+      "WiFi 6 is always the best choice for battery-powered sensors.",
+      "Energy-efficient MAC protocols are important.",
+      "Resource-constrained networking is the same thing as DTN.",
+      "Low data rate can be an acceptable trade-off for long battery life."
+    ],
+    "solution": "<p><strong>True:</strong> 1, 2, 3, 6, 8. <strong>False:</strong> 4, 5, 7.</p><p>Resource constraints drive low-power MAC and LPWAN choices; DTN is a different concept.</p>",
+    "tags": [
+      "arch",
+      "lpwan"
+    ],
+    "source_label": "Källa: Network-architectures.pdf s. 62",
+    "topics": [
+      "arch"
+    ]
+  },
+  {
+    "id": "a-space",
+    "part": "A",
+    "points": 6,
+    "prompt": "<p>Which statements are true for <strong>space communication</strong>? (6p)</p>",
+    "options": [
+      "Deep-space links can have very long propagation delays.",
+      "A space relay can forward a link when there is no direct line of sight.",
+      "Optical and radio communication can be used in space.",
+      "Acoustic communication is commonly used between planets.",
+      "Spacecraft often rely on solar power.",
+      "DTN concepts can be useful for space networks.",
+      "Space links always have very low delay.",
+      "A space relay is always a base station on a planet."
+    ],
+    "solution": "<p><strong>True:</strong> 1, 2, 3, 5, 6. <strong>False:</strong> 4, 7, 8.</p><p>Space relays are satellites that bend/forward links; acoustic communication is not used in space.</p>",
+    "tags": [
+      "space",
+      "ntn"
+    ],
+    "source_label": "Källa: Interplanetary-networks.pdf s. 1 · Artikel: <a href=\"https://doi.org/10.1007/s11432-018-9386-5\" target=\"_blank\" rel=\"noopener noreferrer\">Kanglian Zhao</a>",
+    "topics": [
+      "space"
+    ]
+  },
+  {
+    "id": "b-mm1",
+    "part": "B",
+    "points": 15,
+    "prompt": "<p>A server receives requests as a Poisson process with λ = 8 requests/s. Service times are exponential with mean 0.08 s. Model it as M/M/1 with an unlimited queue.</p><ol><li>What is the utilization?</li><li>What is the throughput?</li><li>What is the average number of requests in the system?</li><li>What is the average response time?</li></ol>",
+    "options": [],
+    "solution": "<p><strong>Solution</strong></p><p>μ = 1/0.08 = 12.5 requests/s. ρ = λ/μ = 8/12.5 = 0.64.</p><p>Throughput = λ = 8 requests/s (no blocking).</p><p>For M/M/1: N = ρ/(1−ρ) = 0.64/0.36 ≈ 1.78 requests.</p><p>Little: T = N/λ = 1.78/8 ≈ 0.222 s.</p>",
+    "tags": [
+      "performance",
+      "probability"
+    ],
+    "source_label": "Källa: Users-and-back-ends.pdf s. 55",
+    "topics": [
+      "performance"
+    ]
+  },
+  {
+    "id": "b-md1",
+    "part": "B",
+    "points": 15,
+    "prompt": "<p>Repeat the previous system, but assume deterministic service times with the same mean 0.08 s. Model it as M/D/1.</p><ol><li>What is the utilization?</li><li>What is the average number of requests in the system?</li><li>What is the average response time?</li></ol>",
+    "options": [],
+    "solution": "<p><strong>Solution</strong></p><p>ρ = λ/μ = 0.64. For deterministic service, E[X²] = (0.08)² = 0.0064.</p><p>P-K: N = ρ + λ²E[X²]/(2(1−ρ)) = 0.64 + 64·0.0064/0.72 ≈ 0.64 + 0.569 = 1.209.</p><p>T = N/λ ≈ 1.209/8 ≈ 0.151 s.</p>",
+    "tags": [
+      "performance",
+      "probability"
+    ],
+    "source_label": "Källa: Users-and-back-ends.pdf s. 56",
+    "topics": [
+      "performance"
+    ]
+  },
+  {
+    "id": "b-poisson",
+    "part": "B",
+    "points": 15,
+    "prompt": "<p>Data packets arrive as a Poisson process with λ = 3 packets/s.</p><ol><li>What is the probability of exactly 4 arrivals during 2 seconds?</li><li>What is the probability of zero arrivals during 1 second?</li><li>What is the expected number of arrivals during 4 seconds?</li></ol>",
+    "options": [],
+    "solution": "<p><strong>Solution</strong></p><p>For 2 s, mean = 6: P(N=4) = e<sup>−6</sup>6<sup>4</sup>/4! ≈ 0.1339.</p><p>For 1 s, mean = 3: P(N=0) = e<sup>−3</sup> ≈ 0.0498.</p><p>For 4 s, expected number = 3·4 = 12.</p>",
+    "tags": [
+      "probability",
+      "performance"
+    ],
+    "source_label": "Källa: Review-of-probability-theory-and-statistics.pdf s. 20",
+    "topics": [
+      "probability"
+    ]
+  },
+  {
+    "id": "b-aloha",
+    "part": "B",
+    "points": 15,
+    "prompt": "<p>Four devices use slotted ALOHA. In each slot, A and B transmit with probability 0.2 and C and D with probability 0.3, independently. Assume a frame is successful only if exactly one device transmits.</p><ol><li>What is the probability that a slot is empty?</li><li>What is the probability of exactly one transmission?</li><li>What is the probability of a collision?</li></ol>",
+    "options": [],
+    "solution": "<p><strong>Solution</strong></p><p>P(empty) = 0.8·0.8·0.7·0.7 = 0.3136.</p><p>P(exactly one) = 0.2·0.8·0.7·0.7 + 0.8·0.2·0.7·0.7 + 0.8·0.8·0.3·0.7 + 0.8·0.8·0.7·0.3 = 0.392.</p><p>P(collision) = 1 − 0.3136 − 0.392 = 0.2944.</p>",
+    "tags": [
+      "performance",
+      "probability",
+      "arch"
+    ],
+    "source_label": "Källa: Users-and-back-ends.pdf s. 42",
+    "topics": [
+      "performance"
+    ]
+  },
+  {
+    "id": "b-delay",
+    "part": "B",
+    "points": 15,
+    "prompt": "<p>A ground station sends a 10 kbit message to the Moon over a 1 Mbit/s link. The distance is 384,400 km and the signal travels at 3·10<sup>8</sup> m/s. Ignore processing and queueing.</p><ol><li>What is the propagation delay?</li><li>What is the transmission time?</li><li>What is the total one-way delay?</li></ol>",
+    "options": [],
+    "solution": "<p><strong>Solution</strong></p><p>Propagation: 384,400,000 / 3·10<sup>8</sup> ≈ 1.281 s.</p><p>Transmission: 10,000 / 1,000,000 = 0.01 s.</p><p>Total = 1.281 + 0.01 ≈ 1.291 s.</p>",
+    "tags": [
+      "space",
+      "performance"
+    ],
+    "source_label": "Källa: Interplanetary-networks.pdf s. 18",
+    "topics": [
+      "space"
+    ]
+  },
+  {
+    "id": "b-limited",
+    "part": "B",
+    "points": 15,
+    "prompt": "<p>A queueing system has at most 3 requests. Measurements give P(0)=0.19, P(1)=0.23, P(2)=0.26 and P(3)=0.32. New requests arrive with λ = 4 requests/s and are blocked if the system is full. Service rate is μ = 5 requests/s.</p><ol><li>What is the average number of requests in the system?</li><li>What is the blocking probability?</li><li>What is the effective throughput?</li><li>What is the average response time for accepted requests?</li></ol>",
+    "options": [],
+    "solution": "<p><strong>Solution</strong></p><p>N = 0·0.19 + 1·0.23 + 2·0.26 + 3·0.32 = 1.71.</p><p>Blocking probability = P(3) = 0.32.</p><p>λ<sub>eff</sub> = λ(1 − P<sub>block</sub>) = 4·0.68 = 2.72 requests/s.</p><p>Little: T = N/λ<sub>eff</sub> = 1.71/2.72 ≈ 0.629 s.</p>",
+    "tags": [
+      "performance",
+      "probability"
+    ],
+    "source_label": "Källa: Users-and-back-ends.pdf s. 57",
+    "topics": [
+      "performance"
+    ]
+  },
+  {
+    "id": "c-hospital",
+    "part": "C",
+    "points": 15,
+    "prompt": "<p><strong>Scenario:</strong> A 12-storey hospital wants to track about 1000 medical carts. The most important requirement is to know which floor a cart is on. The building has WiFi and wired Internet. Propose an end-to-end network system and motivate your choices.</p>",
+    "options": [],
+    "solution": "<p><strong>Example solution</strong></p><ul><li>Use a low-power indoor technology such as BLE or ZigBee with anchors on each floor; tags on the carts.</li><li>Anchors form a centralized or mesh network and forward data to floor gateways.</li><li>Gateways use the hospital LAN/WiFi as backhaul to a cloud/back-end service.</li><li>Floor-level accuracy is sufficient, so RSSI/trilateration can be used; no GPS is needed indoors.</li><li>Consider battery life, privacy, and redundancy; 1000 devices require capacity planning.</li></ul>",
+    "tags": [
+      "arch",
+      "pan",
+      "lpwan",
+      "backend"
+    ],
+    "source_label": "Källa: Network-architectures.pdf s. 6",
+    "topics": [
+      "arch"
+    ]
+  },
+  {
+    "id": "c-farm",
+    "part": "C",
+    "points": 15,
+    "prompt": "<p><strong>Scenario:</strong> A farm wants to monitor 20 cows with hourly position updates. The pasture is large and cellular coverage is weak. Data should reach a cloud service. Propose a complete network system.</p>",
+    "options": [],
+    "solution": "<p><strong>Example solution</strong></p><ul><li>Use battery/solar-powered LPWAN tags (LoRa or NB-IoT if coverage exists).</li><li>Deploy a LoRa gateway with backhaul (fiber/4G/satellite) to the Internet.</li><li>Send data to a cloud back-end for storage and visualization.</li><li>Use duty cycling/energy-efficient MAC; hourly updates are non-critical.</li><li>If no gateway coverage, use a DTN/mobile gateway for store-and-forward.</li></ul>",
+    "tags": [
+      "lpwan",
+      "ntn",
+      "backend",
+      "arch"
+    ],
+    "source_label": "Källa: Low-Power-Wide-Area-Networks-LPWAN.pdf s. 4 · Artikel: <a href=\"https://doi.org/10.1016/j.icte.2017.03.004\" target=\"_blank\" rel=\"noopener noreferrer\">Rashmi Sharan Sinha</a>",
+    "topics": [
+      "lpwan"
+    ]
+  },
+  {
+    "id": "c-underwater",
+    "part": "C",
+    "points": 15,
+    "prompt": "<p><strong>Scenario:</strong> Monitor oil spills around offshore platforms. You have underwater sensors, AUVs, small boats and a cloud server. Design an end-to-end system.</p>",
+    "options": [],
+    "solution": "<p><strong>Example solution</strong></p><ul><li>Use acoustic links for long-range underwater sensor data; optical links for short high-rate AUV transfers.</li><li>JANUS can provide an interoperable acoustic MAC.</li><li>AUVs collect data from sensors and carry it to surface gateways/boats (DTN/store-and-forward).</li><li>Surface nodes use satellite or cellular backhaul to the cloud.</li><li>Localization cannot rely on GPS underwater; use acoustic ranging or known positions.</li></ul>",
+    "tags": [
+      "underwater",
+      "dtn",
+      "ntn",
+      "backend"
+    ],
+    "source_label": "Källa: Underwater-networks.pdf s. 25 · Artiklar: <a href=\"articles/gussen-2016-underwater-survey.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Camila M. G. Gussen</a> · <a href=\"articles/lu-2019-conet.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Huimin Lu</a>",
+    "topics": [
+      "underwater"
+    ]
+  },
+  {
+    "id": "c-satellite",
+    "part": "C",
+    "points": 15,
+    "prompt": "<p><strong>Scenario:</strong> Environmental sensors are spread over a remote region with no terrestrial network. Design a satellite-based monitoring system with low maintenance and low energy use.</p>",
+    "options": [],
+    "solution": "<p><strong>Example solution</strong></p><ul><li>Use Argos or a similar low-rate satellite IoT system for small, infrequent sensor messages.</li><li>Use Starlink or another broadband satellite link for a local gateway if higher data rates are needed.</li><li>Solar panels and batteries plus DRX/duty cycling reduce energy use.</li><li>Satellite links provide backhaul to a cloud back-end.</li><li>Store-and-forward/DTN can handle intermittent contacts.</li></ul>",
+    "tags": [
+      "ntn",
+      "space",
+      "backend",
+      "dtn"
+    ],
+    "source_label": "Källa: Non-Terrestrial-Networks-NTN.pdf s. 24 · Artiklar: <a href=\"articles/kodheli-2021-satcom-survey.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Oltjon Kodheli</a> · <a href=\"articles/gomez-2021-iridium-energy.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Carles Gomez</a>",
+    "topics": [
+      "ntn"
+    ]
+  },
+  {
+    "id": "c-disaster",
+    "part": "C",
+    "points": 15,
+    "prompt": "<p><strong>Scenario:</strong> A humanitarian emergency has destroyed the terrestrial network. Relief teams need local communication and a link to the Internet. Design a network architecture.</p>",
+    "options": [],
+    "solution": "<p><strong>Example solution</strong></p><ul><li>Deploy a rapidly installable WiFi/mesh network for local teams.</li><li>Use satellite backhaul (Starlink/VSAT) at a gateway/portal.</li><li>Use DTN/store-and-forward for intermittent links and delay-tolerant data.</li><li>Prioritize voice, messaging and sensor data; use edge/fog processing locally.</li><li>Power via generators/solar and plan for limited capacity.</li></ul>",
+    "tags": [
+      "arch",
+      "ntn",
+      "dtn",
+      "backend"
+    ],
+    "source_label": "Källa: Delay-tolerant-networking.pdf s. 1 · Artikel: <a href=\"articles/warthman-2015-dtn-tutorial.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Forrest Warthman</a>",
+    "topics": [
+      "dtn"
+    ]
+  },
+  {
+    "id": "c-factory",
+    "part": "C",
+    "points": 15,
+    "prompt": "<p><strong>Scenario:</strong> A factory wants private 5G for AGVs and robots with low latency, plus massive sensor data and video. Design the network and explain the role of edge computing.</p>",
+    "options": [],
+    "solution": "<p><strong>Example solution</strong></p><ul><li>Deploy a private 5G network or a dedicated slice of a public 5G network.</li><li>Use URLLC for robot control and eMBB for video; mMTC for sensors.</li><li>Place edge computing near the factory to reduce latency.</li><li>Use a local backhaul and redundant links; integrate with the factory IT/OT network.</li><li>Plan security, isolation and coverage indoors.</li></ul>",
+    "tags": [
+      "cellular",
+      "backend",
+      "arch"
+    ],
+    "source_label": "Källa: Cellular-Mobile-Networks.pdf s. 1 · Artikel: <a href=\"articles/ji-2018-urllc-5g.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Hyoungju Ji</a>",
+    "topics": [
+      "cellular"
+    ]
+  },
+  {
+    "id": "a-basic",
+    "part": "A",
+    "points": 6,
+    "prompt": "<p>Which statements are true for <strong>basic networked systems</strong>? (6p)</p>",
+    "options": [
+      "A host sends and receives data via a network link.",
+      "A gateway connects two networks or a local network to the Internet.",
+      "All nodes in a local network always need a global IP address.",
+      "Time-critical applications typically need low latency.",
+      "Non-critical applications can tolerate more delay.",
+      "A backhaul link connects an access network to the core/Internet.",
+      "A router and a host are always the same thing.",
+      "Physical/MAC addresses are used within a local network."
+    ],
+    "solution": "<p><strong>True:</strong> 1, 2, 4, 5, 6, 8. <strong>False:</strong> 3, 7.</p><p>Nodes behind a gateway can use private/local addresses; routers forward between networks, while hosts are endpoints.</p>",
+    "tags": [
+      "basic",
+      "arch"
+    ],
+    "source_label": "Källa: Networks-and-applications-basic-concepts.pdf s. 5",
+    "topics": [
+      "basic"
+    ]
+  },
+  {
+    "id": "a-adhoc-mac",
+    "part": "A",
+    "points": 6,
+    "prompt": "<p>Which statements are true for <strong>ad-hoc MAC and routing</strong>? (6p)</p>",
+    "options": [
+      "Contention-based MAC allows nodes to compete for the medium.",
+      "The hidden terminal problem can cause collisions at the receiver.",
+      "AODV discovers routes on demand.",
+      "Contention-free MAC completely eliminates the need for scheduling.",
+      "RTS/CTS can help with the hidden terminal problem.",
+      "Geocast sends data to a geographic zone.",
+      "All ad-hoc networks must use a central base station.",
+      "Broadcast sends data to all reachable nodes."
+    ],
+    "solution": "<p><strong>True:</strong> 1, 2, 3, 5, 6, 8. <strong>False:</strong> 4, 7.</p><p>Contention-free MAC requires scheduling/coordination. Ad-hoc networks do not need a central base station.</p>",
+    "tags": [
+      "arch"
+    ],
+    "source_label": "Källa: Network-architectures.pdf s. 30",
+    "topics": [
+      "arch"
+    ]
+  },
+  {
+    "id": "a-backhaul-power",
+    "part": "A",
+    "points": 6,
+    "prompt": "<p>Which statements are true for <strong>backhaul, positioning and power</strong>? (6p)</p>",
+    "options": [
+      "Fiber and radio links can be used as backhaul.",
+      "A gateway can connect a local network to the Internet.",
+      "GPS works well indoors for all sensor nodes.",
+      "Battery and solar power are common for remote sensors.",
+      "Mains power is always available in sensor networks.",
+      "The backhaul link can be a bottleneck.",
+      "Localization can use radio signal strength or acoustic ranging.",
+      "A sensor network never needs a power source."
+    ],
+    "solution": "<p><strong>True:</strong> 1, 2, 4, 6, 7. <strong>False:</strong> 3, 5, 8.</p><p>GPS is unreliable indoors. Remote sensors often use batteries/solar, and backhaul capacity must be planned.</p>",
+    "tags": [
+      "basic",
+      "arch"
+    ],
+    "source_label": "Källa: Networks-and-applications-basic-concepts.pdf s. 63",
+    "topics": [
+      "basic"
+    ]
+  },
+  {
+    "id": "a-lpwan-compare",
+    "part": "A",
+    "points": 6,
+    "prompt": "<p>Which statements compare <strong>LoRa and NB-IoT</strong> correctly? (6p)</p>",
+    "options": [
+      "LoRa can operate in unlicensed bands.",
+      "NB-IoT uses licensed cellular spectrum.",
+      "LoRa is typically centralized around gateways.",
+      "NB-IoT is designed for very high data rates.",
+      "Both are aimed at low-power, long-range IoT.",
+      "NB-IoT is a decentralized ad-hoc technology.",
+      "LoRa supports different device classes with different receive behavior.",
+      "LTE-M is a cellular LPWAN technology."
+    ],
+    "solution": "<p><strong>True:</strong> 1, 2, 3, 5, 7, 8. <strong>False:</strong> 4, 6.</p><p>NB-IoT is cellular and centralized. LPWAN technologies trade data rate for range and energy.</p>",
+    "tags": [
+      "lpwan",
+      "cellular"
+    ],
+    "source_label": "Källa: Low-Power-Wide-Area-Networks-LPWAN.pdf s. 13",
+    "topics": [
+      "lpwan"
+    ]
+  },
+  {
+    "id": "a-pan-compare",
+    "part": "A",
+    "points": 6,
+    "prompt": "<p>Which statements compare <strong>BLE and ZigBee</strong> correctly? (6p)</p>",
+    "options": [
+      "BLE Mesh is decentralized and supports multi-hop.",
+      "ZigBee is based on IEEE 802.15.4.",
+      "ZigBee networks use a coordinator.",
+      "BLE Mesh requires a central hub for all traffic.",
+      "ZigBee can form a mesh network.",
+      "BLE is intended for time-critical industrial control by default.",
+      "Both are PAN technologies aimed at short-range communication.",
+      "ZigBee uses frequency hopping in the 60 GHz band."
+    ],
+    "solution": "<p><strong>True:</strong> 1, 2, 3, 5, 7. <strong>False:</strong> 4, 6, 8.</p><p>BLE Mesh has no central hub; ZigBee uses a coordinator. Both are short-range PAN technologies.</p>",
+    "tags": [
+      "pan"
+    ],
+    "source_label": "Källa: Personal-Area-Networks-PAN.pdf s. 18",
+    "topics": [
+      "pan"
+    ]
+  },
+  {
+    "id": "a-wifi-mesh",
+    "part": "A",
+    "points": 6,
+    "prompt": "<p>Which statements are true for the <strong>WiFi mesh architecture</strong>? (6p)</p>",
+    "options": [
+      "A portal is the mesh node connected to the Internet.",
+      "Hosts connect to the mesh through a mesh node.",
+      "HWMP provides path selection.",
+      "MCCA is a coordinated channel access mechanism.",
+      "All mesh nodes must be connected by fiber.",
+      "Mesh nodes can forward data for other mesh nodes.",
+      "WiFi mesh is a delay-tolerant network by definition.",
+      "The mesh can use multi-hop forwarding."
+    ],
+    "solution": "<p><strong>True:</strong> 1, 2, 3, 4, 6, 8. <strong>False:</strong> 5, 7.</p><p>WiFi mesh uses wireless mesh links, HWMP and MCCA. It is not a DTN by definition.</p>",
+    "tags": [
+      "wifi",
+      "arch"
+    ],
+    "source_label": "Källa: IEEE-802.11-WiFi.pdf s. 1",
+    "topics": [
+      "wifi"
+    ]
+  },
+  {
+    "id": "a-cran-slicing",
+    "part": "A",
+    "points": 6,
+    "prompt": "<p>Which statements are true for <strong>C-RAN and network slicing</strong>? (6p)</p>",
+    "options": [
+      "C-RAN centralizes BBUs and distributes RRHs.",
+      "Network slicing can isolate resources for different services.",
+      "URLLC is a 5G service class for low latency.",
+      "C-RAN requires a separate physical network for every user.",
+      "mMTC is aimed at massive numbers of devices.",
+      "eMBB is aimed at high data rates.",
+      "Network slicing is only possible in WiFi.",
+      "A private 5G network can use a dedicated slice."
+    ],
+    "solution": "<p><strong>True:</strong> 1, 2, 3, 5, 6, 8. <strong>False:</strong> 4, 7.</p><p>Slicing is logical. C-RAN separates BBU/RRH; 5G defines eMBB, URLLC and mMTC.</p>",
+    "tags": [
+      "cellular"
+    ],
+    "source_label": "Källa: Cellular-Mobile-Networks.pdf s. 1",
+    "topics": [
+      "cellular"
+    ]
+  },
+  {
+    "id": "a-sat-iot",
+    "part": "A",
+    "points": 6,
+    "prompt": "<p>Which statements are true for <strong>satellite IoT</strong>? (6p)</p>",
+    "options": [
+      "Argos is suitable for low-rate sensor telemetry.",
+      "Starlink is a LEO broadband system.",
+      "Iridium uses inter-satellite links.",
+      "Argos is designed for high-rate video streaming.",
+      "LEO satellites typically have lower delay than GEO.",
+      "Satellite links can provide backhaul in remote areas.",
+      "GPS is a satellite navigation system, not a communication backhaul.",
+      "All satellite systems provide free global Internet."
+    ],
+    "solution": "<p><strong>True:</strong> 1, 2, 3, 5, 6, 7. <strong>False:</strong> 4, 8.</p><p>Argos is low-rate; Starlink/Iridium are broadband/voice-data systems. Satellite coverage can be used as backhaul.</p>",
+    "tags": [
+      "ntn"
+    ],
+    "source_label": "Källa: Non-Terrestrial-Networks-NTN.pdf s. 24",
+    "topics": [
+      "ntn"
+    ]
+  },
+  {
+    "id": "a-dtn-space",
+    "part": "A",
+    "points": 6,
+    "prompt": "<p>Which statements are true for <strong>DTN in space</strong>? (6p)</p>",
+    "options": [
+      "Deep-space links can have minutes of propagation delay.",
+      "Store-and-forward is central to DTN.",
+      "LTP can be used for long-delay space links.",
+      "Bundle protocol is a DTN protocol.",
+      "DTN requires continuous end-to-end connectivity.",
+      "A space relay can help when there is no direct line of sight.",
+      "TCP is always the best transport protocol for deep space.",
+      "Contacts may be scheduled in advance."
+    ],
+    "solution": "<p><strong>True:</strong> 1, 2, 3, 4, 6, 8. <strong>False:</strong> 5, 7.</p><p>DTN tolerates intermittent links; TCP's assumptions do not fit long-delay space paths.</p>",
+    "tags": [
+      "dtn",
+      "space"
+    ],
+    "source_label": "Källa: Interplanetary-networks.pdf s. 21",
+    "topics": [
+      "space"
+    ]
+  },
+  {
+    "id": "a-underwater-tech",
+    "part": "A",
+    "points": 6,
+    "prompt": "<p>Which statements are true for <strong>underwater communication technologies</strong>? (6p)</p>",
+    "options": [
+      "Acoustic links can cover long ranges at low data rates.",
+      "Optical links can provide high rates over short line-of-sight distances.",
+      "RF links can be used underwater but are strongly attenuated.",
+      "JANUS is an acoustic communication standard.",
+      "GPS works well at depth.",
+      "AUVs can act as mobile data mules.",
+      "Acoustic communication has very low propagation delay.",
+      "Multi-hop underwater networks are impossible."
+    ],
+    "solution": "<p><strong>True:</strong> 1, 2, 3, 4, 6. <strong>False:</strong> 5, 7, 8.</p><p>GPS is unavailable underwater. Acoustic propagation is slow compared with radio; multi-hop and DTN can be used.</p>",
+    "tags": [
+      "underwater"
+    ],
+    "source_label": "Källa: Underwater-networks.pdf s. 7",
+    "topics": [
+      "underwater"
+    ]
+  },
+  {
+    "id": "a-perf-2",
+    "part": "A",
+    "points": 6,
+    "prompt": "<p>Which statements are true for <strong>performance metrics</strong>? (6p)</p>",
+    "options": [
+      "Utilization is the fraction of time the server is busy.",
+      "Throughput is the average departure rate.",
+      "Response time includes queueing and service time.",
+      "Little's law applies only to M/M/1.",
+      "A stable queue requires demand below capacity.",
+      "Blocking reduces effective throughput.",
+      "M/D/1 has exponential service times.",
+      "The P-K formula applies to M/G/1."
+    ],
+    "solution": "<p><strong>True:</strong> 1, 2, 3, 5, 6, 8. <strong>False:</strong> 4, 7.</p><p>Little's law applies to stable conservative systems. M/D/1 has deterministic service.</p>",
+    "tags": [
+      "performance"
+    ],
+    "source_label": "Källa: Users-and-back-ends.pdf s. 52",
+    "topics": [
+      "performance"
+    ]
+  },
+  {
+    "id": "a-app-stack",
+    "part": "A",
+    "points": 6,
+    "prompt": "<p>Which statements are true for <strong>application protocol stacks</strong>? (6p)</p>",
+    "options": [
+      "Time-critical applications need low latency and low jitter.",
+      "TCP is reliable but can add retransmission delay.",
+      "QUIC can provide secure, low-latency transport.",
+      "Non-critical applications can tolerate some delay.",
+      "All applications require a global IP address on every sensor.",
+      "UDP has no built-in reliability.",
+      "The transport protocol is always the same for all applications.",
+      "Application requirements influence protocol choice."
+    ],
+    "solution": "<p><strong>True:</strong> 1, 2, 3, 4, 6, 8. <strong>False:</strong> 5, 7.</p><p>Sensors behind a gateway may not need a global IP. Protocol choice depends on latency, reliability and energy requirements.</p>",
+    "tags": [
+      "basic"
+    ],
+    "source_label": "Källa: Networks-and-applications-basic-concepts.pdf s. 27",
+    "topics": [
+      "basic"
+    ]
+  },
+  {
+    "id": "a-vehicular",
+    "part": "A",
+    "points": 6,
+    "prompt": "<p>Which statements are true for <strong>vehicular/ad-hoc applications</strong>? (6p)</p>",
+    "options": [
+      "Vehicle-to-vehicle communication can use ad-hoc links.",
+      "Geocast can warn vehicles in a relevant area.",
+      "URLLC can support low-latency vehicle control.",
+      "Vehicular networks always require a central base station.",
+      "Position-based routing can use GPS coordinates.",
+      "DTN is suitable for time-critical braking control.",
+      "Multi-hop forwarding can extend coverage.",
+      "AODV is a reactive routing protocol."
+    ],
+    "solution": "<p><strong>True:</strong> 1, 2, 3, 5, 7, 8. <strong>False:</strong> 4, 6.</p><p>VANETs can be infrastructure-less or use infrastructure. DTN is not suitable for hard real-time braking.</p>",
+    "tags": [
+      "arch",
+      "cellular"
+    ],
+    "source_label": "Källa: Network-architectures.pdf s. 51",
+    "topics": [
+      "arch"
+    ]
+  },
+  {
+    "id": "a-resource-mac",
+    "part": "A",
+    "points": 6,
+    "prompt": "<p>Which statements are true for <strong>energy-efficient MAC</strong>? (6p)</p>",
+    "options": [
+      "Duty cycling lets a device sleep between transmissions.",
+      "Contention-based MAC can waste energy on collisions.",
+      "Scheduling can reduce collisions and energy use.",
+      "A device should always keep its radio on to save energy.",
+      "DRX is a cellular power-saving mechanism.",
+      "Class A LoRa devices have short receive windows.",
+      "Energy consumption is irrelevant for battery-powered sensors.",
+      "Beacons can help synchronize sleep schedules."
+    ],
+    "solution": "<p><strong>True:</strong> 1, 2, 3, 5, 6, 8. <strong>False:</strong> 4, 7.</p><p>Sleeping radios save energy; keeping the radio on wastes battery. DRX and beaconing help coordination.</p>",
+    "tags": [
+      "arch",
+      "lpwan"
+    ],
+    "source_label": "Källa: Low-Power-Wide-Area-Networks-LPWAN.pdf s. 37",
+    "topics": [
+      "lpwan"
+    ]
+  },
+  {
+    "id": "a-scenario-design",
+    "part": "A",
+    "points": 6,
+    "prompt": "<p>Which statements are good principles for <strong>system design scenarios</strong>? (6p)</p>",
+    "options": [
+      "Start from application requirements such as latency and reliability.",
+      "Choose a network architecture that matches coverage and mobility.",
+      "Always choose the technology with the highest peak data rate.",
+      "Consider energy, maintenance and cost.",
+      "Use a backhaul link to reach the core/cloud.",
+      "Ignore security and privacy if the budget is low.",
+      "Use edge/fog computing when latency matters.",
+      "A design should explain why the chosen protocols fit the scenario."
+    ],
+    "solution": "<p><strong>True:</strong> 1, 2, 4, 5, 7, 8. <strong>False:</strong> 3, 6.</p><p>The highest peak rate is not always appropriate. Requirements, energy, cost, security and backhaul must be balanced.</p>",
+    "tags": [
+      "arch",
+      "backend"
+    ],
+    "source_label": "Källa: Introduction.pdf s. 13",
+    "topics": [
+      "arch"
+    ]
+  },
+  {
+    "id": "b-mm1-2",
+    "part": "B",
+    "points": 15,
+    "prompt": "<p>A server has Poisson arrivals with λ = 5 requests/s and exponential service with mean 0.1 s. Model it as M/M/1.</p><ol><li>What is μ?</li><li>What is the utilization?</li><li>What is the average number in the system?</li><li>What is the average response time?</li></ol>",
+    "options": [],
+    "solution": "<p><strong>Solution</strong></p><p>μ = 1/0.1 = 10 requests/s; ρ = 5/10 = 0.5.</p><p>N = ρ/(1−ρ) = 0.5/0.5 = 1 request.</p><p>T = N/λ = 1/5 = 0.2 s.</p>",
+    "tags": [
+      "performance",
+      "probability"
+    ],
+    "source_label": "Källa: Users-and-back-ends.pdf s. 55",
+    "topics": [
+      "performance"
+    ]
+  },
+  {
+    "id": "b-md1-2",
+    "part": "B",
+    "points": 15,
+    "prompt": "<p>Use the same λ = 5 requests/s and mean service time 0.1 s, but now service times are deterministic (M/D/1).</p><ol><li>What is the utilization?</li><li>What is the average number in the system?</li><li>What is the average response time?</li></ol>",
+    "options": [],
+    "solution": "<p><strong>Solution</strong></p><p>ρ = 5/10 = 0.5; E[X²] = 0.1² = 0.01.</p><p>N = ρ + λ²E[X²]/(2(1−ρ)) = 0.5 + 25·0.01/1 = 0.75 requests.</p><p>T = N/λ = 0.75/5 = 0.15 s.</p>",
+    "tags": [
+      "performance",
+      "probability"
+    ],
+    "source_label": "Källa: Users-and-back-ends.pdf s. 56",
+    "topics": [
+      "performance"
+    ]
+  },
+  {
+    "id": "b-poisson-2",
+    "part": "B",
+    "points": 15,
+    "prompt": "<p>Packets arrive as a Poisson process with λ = 2 packets/s.</p><ol><li>What is P(exactly 3 arrivals in 1 s)?</li><li>What is P(0 arrivals in 2 s)?</li><li>What is the expected number in 3 s?</li></ol>",
+    "options": [],
+    "solution": "<p><strong>Solution</strong></p><p>P(3 in 1 s) = e<sup>−2</sup>2³/3! ≈ 0.1804.</p><p>P(0 in 2 s) = e<sup>−4</sup> ≈ 0.0183.</p><p>Expected number in 3 s = 2·3 = 6.</p>",
+    "tags": [
+      "probability",
+      "performance"
+    ],
+    "source_label": "Källa: Review-of-probability-theory-and-statistics.pdf s. 20",
+    "topics": [
+      "probability"
+    ]
+  },
+  {
+    "id": "b-aloha-2",
+    "part": "B",
+    "points": 15,
+    "prompt": "<p>Three devices use slotted ALOHA with transmission probabilities 0.1, 0.2 and 0.3 in each slot, independently. A slot succeeds only with exactly one transmission.</p><ol><li>What is P(empty)?</li><li>What is P(exactly one)?</li><li>What is P(collision)?</li></ol>",
+    "options": [],
+    "solution": "<p><strong>Solution</strong></p><p>P(empty) = 0.9·0.8·0.7 = 0.504.</p><p>P(exactly one) = 0.1·0.8·0.7 + 0.9·0.2·0.7 + 0.9·0.8·0.3 = 0.398.</p><p>P(collision) = 1 − 0.504 − 0.398 = 0.098.</p>",
+    "tags": [
+      "performance",
+      "probability",
+      "arch"
+    ],
+    "source_label": "Källa: Users-and-back-ends.pdf s. 42",
+    "topics": [
+      "performance"
+    ]
+  },
+  {
+    "id": "b-limited-2",
+    "part": "B",
+    "points": 15,
+    "prompt": "<p>A finite queue has P(0)=0.1, P(1)=0.2, P(2)=0.3 and P(3)=0.4. Arrivals are λ=3 requests/s and blocked when the system is full. Service rate is μ=4 requests/s.</p><ol><li>What is the average number in the system?</li><li>What is the blocking probability?</li><li>What is the effective throughput?</li><li>What is the average response time for accepted requests?</li></ol>",
+    "options": [],
+    "solution": "<p><strong>Solution</strong></p><p>N = 0·0.1 + 1·0.2 + 2·0.3 + 3·0.4 = 2.0.</p><p>P<sub>block</sub> = 0.4; λ<sub>eff</sub> = 3·0.6 = 1.8 requests/s.</p><p>T = N/λ<sub>eff</sub> = 2.0/1.8 ≈ 1.111 s.</p>",
+    "tags": [
+      "performance",
+      "probability"
+    ],
+    "source_label": "Källa: Users-and-back-ends.pdf s. 57",
+    "topics": [
+      "performance"
+    ]
+  },
+  {
+    "id": "b-delay-2",
+    "part": "B",
+    "points": 15,
+    "prompt": "<p>A 100 kbit message is sent to Mars at 2 Mbit/s. The distance is 225 million km, and the signal speed is 3·10<sup>8</sup> m/s.</p><ol><li>What is the propagation delay?</li><li>What is the transmission time?</li><li>What is the total one-way delay?</li></ol>",
+    "options": [],
+    "solution": "<p><strong>Solution</strong></p><p>Propagation = 225·10<sup>9</sup>/3·10<sup>8</sup> = 750 s.</p><p>Transmission = 100,000/2,000,000 = 0.05 s.</p><p>Total ≈ 750.05 s, i.e. about 12.5 minutes.</p>",
+    "tags": [
+      "space",
+      "performance"
+    ],
+    "source_label": "Källa: Interplanetary-networks.pdf s. 18",
+    "topics": [
+      "space"
+    ]
+  },
+  {
+    "id": "c-smartcity",
+    "part": "C",
+    "points": 15,
+    "prompt": "<p><strong>Scenario:</strong> A city district wants high-density public WiFi and 5G for residents, cameras and buses. Design the access, backhaul and back-end architecture.</p>",
+    "options": [],
+    "solution": "<p><strong>Example solution</strong></p><ul><li>Use WiFi 6/7 access points and 5G small cells for high-density coverage.</li><li>Connect access points via fiber/radio backhaul to a core network.</li><li>Use edge servers for latency-sensitive video analytics; cloud for storage.</li><li>Separate public, camera and bus traffic with VLANs/slicing and security policies.</li><li>Plan capacity and interference; use licensed spectrum for 5G.</li></ul>",
+    "tags": [
+      "wifi",
+      "cellular",
+      "arch",
+      "backend"
+    ],
+    "source_label": "Källa: IEEE-802.11-WiFi.pdf s. 1",
+    "topics": [
+      "wifi"
+    ]
+  },
+  {
+    "id": "c-platoon",
+    "part": "C",
+    "points": 15,
+    "prompt": "<p><strong>Scenario:</strong> Scania tests truck platooning with one leader and up to four followers. The trucks need low-latency, reliable communication. Propose a network design.</p>",
+    "options": [],
+    "solution": "<p><strong>Example solution</strong></p><ul><li>Use 5G URLLC or a dedicated short-range radio link for platoon control.</li><li>Use V2V links between trucks and a cellular backhaul to the fleet backend.</li><li>Keep safety-critical control local/edge to minimize latency.</li><li>Add redundancy and fail-safe behavior for connectivity loss.</li><li>Use mMTC/eMBB for non-critical telemetry and video.</li></ul>",
+    "tags": [
+      "cellular",
+      "arch",
+      "performance"
+    ],
+    "source_label": "Källa: Cellular-Mobile-Networks.pdf s. 1",
+    "topics": [
+      "cellular"
+    ]
+  },
+  {
+    "id": "c-rural",
+    "part": "C",
+    "points": 15,
+    "prompt": "<p><strong>Scenario:</strong> A rural village needs Internet access for schools, a clinic and sensors. Terrestrial fiber is too expensive. Design a solution.</p>",
+    "options": [],
+    "solution": "<p><strong>Example solution</strong></p><ul><li>Use satellite backhaul (Starlink/VSAT) for the village gateway.</li><li>Distribute access with WiFi/mesh and LPWAN for sensors.</li><li>Place an edge/cache server for educational content and clinic data.</li><li>Use solar/battery power and monitor energy use.</li><li>Plan for high satellite latency and possible outages; DTN for non-critical data.</li></ul>",
+    "tags": [
+      "ntn",
+      "lpwan",
+      "backend",
+      "dtn"
+    ],
+    "source_label": "Källa: Non-Terrestrial-Networks-NTN.pdf s. 16",
+    "topics": [
+      "ntn"
+    ]
+  },
+  {
+    "id": "c-reindeer",
+    "part": "C",
+    "points": 15,
+    "prompt": "<p><strong>Scenario:</strong> A Sámi community wants to track reindeer and get basic Internet at remote camps. Connectivity is poor. Propose an architecture.</p>",
+    "options": [],
+    "solution": "<p><strong>Example solution</strong></p><ul><li>Use LPWAN tags and a gateway for reindeer position updates.</li><li>Use satellite backhaul for the gateway/Internet access.</li><li>Use DTN/store-and-forward for intermittent links and non-critical data.</li><li>Use solar/battery power at remote sites.</li><li>Provide WiFi at camps for email/web; prioritize basic services.</li></ul>",
+    "tags": [
+      "lpwan",
+      "ntn",
+      "dtn",
+      "backend"
+    ],
+    "source_label": "Källa: Delay-tolerant-networking.pdf s. 1",
+    "topics": [
+      "dtn"
+    ]
+  },
+  {
+    "id": "c-habitat",
+    "part": "C",
+    "points": 15,
+    "prompt": "<p><strong>Scenario:</strong> An underwater habitat needs local communication and data transfer to the surface. Design an underwater network with sensors and AUVs.</p>",
+    "options": [],
+    "solution": "<p><strong>Example solution</strong></p><ul><li>Use acoustic links for long-range sensor data and JANUS for interoperability.</li><li>Use optical links for short high-rate AUV transfers.</li><li>AUVs act as mobile data mules to surface gateways (DTN).</li><li>Use acoustic localization/ranging because GPS is unavailable.</li><li>Surface gateway uses satellite/coastal backhaul to the cloud.</li></ul>",
+    "tags": [
+      "underwater",
+      "dtn",
+      "ntn",
+      "backend"
+    ],
+    "source_label": "Källa: Underwater-networks.pdf s. 25",
+    "topics": [
+      "underwater"
+    ]
+  },
+  {
+    "id": "c-mars",
+    "part": "C",
+    "points": 15,
+    "prompt": "<p><strong>Scenario:</strong> A future Mars base needs Internet-like communication with Earth and local communication between habitats and rovers. Design the network.</p>",
+    "options": [],
+    "solution": "<p><strong>Example solution</strong></p><ul><li>Use deep-space radio/optical links with DTN and LTP.</li><li>Use space relays to handle occultation and long delays.</li><li>Build a local Mars network (WiFi/mesh) for habitats and rovers.</li><li>Use store-and-forward and scheduled contacts; TCP is not suitable end-to-end.</li><li>Plan for solar power and high latency; use local caching/edge computing.</li></ul>",
+    "tags": [
+      "space",
+      "dtn",
+      "ntn",
+      "arch"
+    ],
+    "source_label": "Källa: Interplanetary-networks.pdf s. 21",
+    "topics": [
+      "space"
+    ]
+  }
+]

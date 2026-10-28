@@ -1,0 +1,14 @@
+health
+__pycache__/
+*.py[cod]
+.ruff_cache/
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log
+site/
+# Inlämnade studenttentor: hålls utanför publicerad repo av privacy-skäl.
+old-exams/2024-04-10.pdf
+old-exams/2025-08-28.pdf
+old-exams/2026-04-tenta.pdf

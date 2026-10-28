@@ -1,0 +1,592 @@
+[
+  {
+    "id": "lopez-perez-2019-80211be",
+    "title": "IEEE 802.11be Extremely High Throughput: The Next Generation of Wi-Fi Technology Beyond 802.11ax",
+    "authors": "David López-Pérez; Adrian Garcia-Rodriguez; Lorenzo Galati-Giordano; Mika Kasslin; Klaus Doppler",
+    "year": 2019,
+    "venue": "IEEE Communications Magazine, 57(9), 113–119",
+    "url": "https://doi.org/10.1109/MCOM.001.1900338",
+    "pdf": "articles/lopez-perez-2019-80211be.pdf",
+    "access": "open",
+    "topics": [
+      "wifi",
+      "performance"
+    ],
+    "source_lecture": "IEEE-802.11-WiFi.pdf",
+    "note": "Required reading for the WiFi lecture: Wi-Fi 7 features beyond 802.11ax (320 MHz, 4096-QAM, multi-link operation). Open arXiv version downloaded."
+  },
+  {
+    "id": "bellalta-2016-80211ax",
+    "title": "IEEE 802.11ax: High-efficiency WLANs",
+    "authors": "Boris Bellalta",
+    "year": 2016,
+    "venue": "IEEE Wireless Communications, 23(1), 38–46",
+    "url": "https://doi.org/10.1109/MWC.2016.7422404",
+    "pdf": "articles/bellalta-2016-80211ax.pdf",
+    "access": "open",
+    "topics": [
+      "wifi",
+      "performance"
+    ],
+    "source_lecture": "IEEE-802.11-WiFi.pdf",
+    "note": "Slide source for IEEE 802.11ax mechanisms: OFDMA, MU-MIMO, spatial reuse and high-efficiency WLAN operation."
+  },
+  {
+    "id": "carrano-2011-80211s",
+    "title": "IEEE 802.11s Multihop MAC: A Tutorial",
+    "authors": "Ricardo C. Carrano; Luiz C. S. Magalhães; Débora C. Muchaluat-Saade; Célio V. N. de Albuquerque",
+    "year": 2011,
+    "venue": "IEEE Communications Surveys & Tutorials, 13(1), 52–67",
+    "url": "https://doi.org/10.1109/SURV.2011.040210.00037",
+    "pdf": null,
+    "access": "restricted",
+    "topics": [
+      "wifi",
+      "architectures"
+    ],
+    "source_lecture": "IEEE-802.11-WiFi.pdf",
+    "note": "Slide source for the IEEE 802.11s mesh architecture, HWMP path selection, MCCA and portal announcements. Paywalled at IEEE Xplore."
+  },
+  {
+    "id": "sinha-2017-lpwan-survey",
+    "title": "A survey on LPWA technology: LoRa and NB-IoT",
+    "authors": "Rashmi Sharan Sinha; Yiqiao Wei; Seung-Hoon Hwang",
+    "year": 2017,
+    "venue": "ICT Express, 3(1), 14–21",
+    "url": "https://doi.org/10.1016/j.icte.2017.03.004",
+    "pdf": null,
+    "access": "open",
+    "topics": [
+      "lpwan",
+      "cellular",
+      "performance"
+    ],
+    "source_lecture": "Low-Power-Wide-Area-Networks-LPWAN.pdf",
+    "note": "Required reading: compares LoRa and NB-IoT on PHY/MAC, range, data rate, payload and energy consumption. Gold OA (CC BY-NC-ND) at Elsevier; automated PDF download was blocked, so only the DOI landing page is recorded."
+  },
+  {
+    "id": "ericsson-2020-5g-overview",
+    "title": "5G Wireless Access: an Overview",
+    "authors": "Ericsson",
+    "year": 2020,
+    "venue": "Ericsson White Paper 1/28423-FGB1010937",
+    "url": "https://www.ericsson.com/en/reports-and-papers/white-papers/5g-wireless-access-an-overview",
+    "pdf": null,
+    "access": "web",
+    "topics": [
+      "cellular",
+      "basic",
+      "architectures"
+    ],
+    "source_lecture": "Cellular-Mobile-Networks.pdf",
+    "note": "Required reading (pp. 1–6) for the cellular lecture and reused in the basic-concepts and LPWAN lectures: 5G capabilities, use cases and network architecture."
+  },
+  {
+    "id": "rohde-schwarz-2019-power-saving",
+    "title": "Power saving methods for LTE-M and NB-IoT devices",
+    "authors": "Rohde & Schwarz",
+    "year": 2019,
+    "venue": "Rohde & Schwarz White Paper",
+    "url": "https://www.rohde-schwarz.com/us/solutions/wireless-communications-testing/iot-m2m-testing/iot-power-consumption-testing/iot-power-consumption-testing_233864.html",
+    "pdf": null,
+    "access": "web",
+    "topics": [
+      "lpwan",
+      "cellular",
+      "performance"
+    ],
+    "source_lecture": "Low-Power-Wide-Area-Networks-LPWAN.pdf",
+    "note": "Required reading (pp. 1–10): PSM and eDRX power-saving mechanisms and their applicability to LTE-M and NB-IoT devices."
+  },
+  {
+    "id": "semtech-2024-lorawan",
+    "title": "LoRa® and LoRaWAN® (AN1200.86)",
+    "authors": "Semtech",
+    "year": 2024,
+    "venue": "Semtech Technical Paper AN1200.86",
+    "url": "https://www.semtech.com/uploads/technology/LoRa/lora-and-lorawan.pdf",
+    "pdf": "articles/semtech-2024-lorawan.pdf",
+    "access": "open",
+    "topics": [
+      "lpwan",
+      "architectures"
+    ],
+    "source_lecture": "Low-Power-Wide-Area-Networks-LPWAN.pdf",
+    "note": "Current Semtech technical overview of LoRa/LoRaWAN, used for the LPWAN protocol stack, device classes and network elements. Supersedes the older 'A Technical Overview' version cited on the slides."
+  },
+  {
+    "id": "checko-2015-cran",
+    "title": "Cloud RAN for Mobile Networks—A Technology Overview",
+    "authors": "Aleksandra Checko; Henrik L. Christiansen; Ying Yan; Lara Scolari; Georgios Kardaras; Michael S. Berger; Lars Dittmann",
+    "year": 2015,
+    "venue": "IEEE Communications Surveys & Tutorials, 17(1), 405–426",
+    "url": "https://doi.org/10.1109/COMST.2014.2355255",
+    "pdf": null,
+    "access": "restricted",
+    "topics": [
+      "cellular",
+      "architectures",
+      "performance"
+    ],
+    "source_lecture": "Cellular-Mobile-Networks.pdf",
+    "note": "Required reading (Sections I–II): Cloud RAN architecture, fronthaul requirements and functional splits. Paywalled at IEEE Xplore."
+  },
+  {
+    "id": "kodheli-2021-satcom-survey",
+    "title": "Satellite Communications in the New Space Era: A Survey and Future Challenges",
+    "authors": "Oltjon Kodheli; Eva Lagunas; Nicola Maturo; Shree Krishna Sharma; Bhavani Shankar; Jesus Fabian Mendoza Montoya; Juan Carlos Merlano Duncan; Danilo Spano; Symeon Chatzinotas; Steven Kisseleff; Jorge Querol; Lei Lei; Thang X. Vu; George Goussetis",
+    "year": 2021,
+    "venue": "IEEE Communications Surveys & Tutorials, 23(1), 70–109",
+    "url": "https://doi.org/10.1109/COMST.2020.3028247",
+    "pdf": "articles/kodheli-2021-satcom-survey.pdf",
+    "access": "open",
+    "topics": [
+      "ntn",
+      "space",
+      "architectures"
+    ],
+    "source_lecture": "Non-Terrestrial-Networks-NTN.pdf",
+    "note": "Required reading (Sections I–III): survey of satellite communications, constellation types, 5G integration and open challenges. Open arXiv version downloaded."
+  },
+  {
+    "id": "gomez-2021-iridium",
+    "title": "On the Energy Performance of Iridium Satellite IoT Technology",
+    "authors": "Carles Gomez; Seyed Mahdi Darroudi; Héctor Naranjo; Josep Paradells",
+    "year": 2021,
+    "venue": "Sensors, 21(21), 7235",
+    "url": "https://doi.org/10.3390/s21217235",
+    "pdf": "articles/gomez-2021-iridium-energy.pdf",
+    "access": "open",
+    "topics": [
+      "ntn",
+      "space",
+      "performance"
+    ],
+    "source_lecture": "Non-Terrestrial-Networks-NTN.pdf",
+    "note": "Required reading (Sections 1–3): measured energy performance of Iridium satellite IoT, relevant to battery-powered NTN designs. MDPI open access."
+  },
+  {
+    "id": "argos-how-it-works",
+    "title": "How Argos Works?",
+    "authors": "Argos / CLS",
+    "year": null,
+    "venue": "Argos satellite system (website)",
+    "url": "https://www.argos-system.org/about-argos/how-argos-works/",
+    "pdf": null,
+    "access": "web",
+    "topics": [
+      "ntn",
+      "space"
+    ],
+    "source_lecture": "Non-Terrestrial-Networks-NTN.pdf",
+    "note": "Required web reading: Argos system architecture, data collection and Doppler-based localization used as an NTN example."
+  },
+  {
+    "id": "starlink-wikipedia",
+    "title": "Starlink",
+    "authors": "Wikipedia contributors",
+    "year": null,
+    "venue": "Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Starlink",
+    "pdf": null,
+    "access": "web",
+    "topics": [
+      "ntn",
+      "space"
+    ],
+    "source_lecture": "Non-Terrestrial-Networks-NTN.pdf",
+    "note": "Required web reading: Starlink constellation, services and role as a relay for space communication."
+  },
+  {
+    "id": "iridium-wikipedia",
+    "title": "Iridium Communications",
+    "authors": "Wikipedia contributors",
+    "year": null,
+    "venue": "Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Iridium_Communications",
+    "pdf": null,
+    "access": "web",
+    "topics": [
+      "ntn",
+      "space"
+    ],
+    "source_lecture": "Non-Terrestrial-Networks-NTN.pdf",
+    "note": "Required web reading: Iridium LEO constellation, cross-links and IoT services."
+  },
+  {
+    "id": "zhao-2018-deepspace",
+    "title": "Network protocol architectures for future deep-space internetworking",
+    "authors": "Kanglian Zhao; Qinyu Zhang",
+    "year": 2018,
+    "venue": "Science China Information Sciences, 61(4), 1–16",
+    "url": "https://doi.org/10.1007/s11432-018-9386-5",
+    "pdf": null,
+    "access": "restricted",
+    "topics": [
+      "space",
+      "architectures",
+      "ntn"
+    ],
+    "source_lecture": "Interplanetary-networks.pdf",
+    "note": "Required reading for the interplanetary networks lecture: protocol architectures and the IPN/DTN stack for deep-space internetworking. Paywalled at Springer."
+  },
+  {
+    "id": "mukherjee-2013-space",
+    "title": "Communication Technologies and Architectures for Space Network and Interplanetary Internet",
+    "authors": "Joyeeta Mukherjee; Byrav Ramamurthy",
+    "year": 2013,
+    "venue": "IEEE Communications Surveys & Tutorials, 15(2), 881–897",
+    "url": "https://doi.org/10.1109/SURV.2012.062612.00134",
+    "pdf": null,
+    "access": "restricted",
+    "topics": [
+      "space",
+      "architectures",
+      "ntn"
+    ],
+    "source_lecture": "Interplanetary-networks.pdf",
+    "note": "Slide source on space network architectures and the Interplanetary Internet protocol stack. Paywalled at IEEE Xplore."
+  },
+  {
+    "id": "warthman-2015-dtn-tutorial",
+    "title": "Delay- and Disruption-Tolerant Networks (DTNs): A Tutorial",
+    "authors": "Forrest Warthman",
+    "year": 2015,
+    "venue": "IPNSIG / NASA, version 3.2",
+    "url": "https://www.nasa.gov/wp-content/uploads/2023/09/dtn-tutorial-v3.2-0.pdf",
+    "pdf": "articles/warthman-2015-dtn-tutorial.pdf",
+    "access": "open",
+    "topics": [
+      "dtn",
+      "basic",
+      "architectures"
+    ],
+    "source_lecture": "Delay-tolerant-networking.pdf",
+    "note": "Required reading (pp. 1–32): the DTN tutorial explaining bundle-layer store-and-forward, custody transfer and opportunistic contacts."
+  },
+  {
+    "id": "rahman-2015-dtn-underwater",
+    "title": "Delay-tolerant networks (DTNs) for underwater communications",
+    "authors": "R. H. Rahman; M. R. Frater",
+    "year": 2015,
+    "venue": "Advances in Delay-Tolerant Networks (DTNs), Woodhead Publishing, chapter",
+    "url": "https://doi.org/10.1533/9780857098467.1.81",
+    "pdf": null,
+    "access": "restricted",
+    "topics": [
+      "dtn",
+      "underwater"
+    ],
+    "source_lecture": "Underwater-networks.pdf",
+    "note": "Slide source on applying DTN store-and-forward to intermittently connected underwater networks. Paywalled book chapter."
+  },
+  {
+    "id": "sjodin-2017-wifi-reindeer",
+    "title": "WiFi Hotspots for Reindeer Herding and other Delay-Tolerant Applications",
+    "authors": "Samuel Sjödin",
+    "year": 2017,
+    "venue": "Luleå University of Technology (DiVA student thesis)",
+    "url": "http://urn.kb.se/resolve?urn=urn:nbn:se:ltu:diva-66977",
+    "pdf": null,
+    "access": "open",
+    "topics": [
+      "dtn",
+      "wifi",
+      "project"
+    ],
+    "source_lecture": "Delay-tolerant-networking.pdf",
+    "note": "Slide source directly tied to the reindeer-herding scenario: portable WiFi hotspots as a delay-tolerant access solution. Open in DiVA, but the repository blocks automated PDF download."
+  },
+  {
+    "id": "gussen-2016-underwater",
+    "title": "A Survey of Underwater Wireless Communication Technologies",
+    "authors": "Camila M. G. Gussen; Paulo S. R. Diniz; Marcello L. R. Campos; Wallace A. Martins; Felipe M. Costa; Jonathan N. Gois",
+    "year": 2016,
+    "venue": "Journal of Communication and Information Systems, 31(1), 242–255",
+    "url": "https://doi.org/10.14209/jcis.2016.22",
+    "pdf": "articles/gussen-2016-underwater-survey.pdf",
+    "access": "open",
+    "topics": [
+      "underwater",
+      "architectures"
+    ],
+    "source_lecture": "Underwater-networks.pdf",
+    "note": "Required reading: survey of acoustic, optical and RF underwater communication technologies, channel impairments and network design."
+  },
+  {
+    "id": "petroccia-2017-janus",
+    "title": "JANUS-Based Services for Operationally Relevant Underwater Applications",
+    "authors": "Roberto Petroccia; Joao Alves; Giovanni Zappa",
+    "year": 2017,
+    "venue": "IEEE Journal of Oceanic Engineering, 42(4), 994–1006",
+    "url": "https://doi.org/10.1109/JOE.2017.2722018",
+    "pdf": null,
+    "access": "restricted",
+    "topics": [
+      "underwater",
+      "architectures"
+    ],
+    "source_lecture": "Underwater-networks.pdf",
+    "note": "Required reading (Chapters I–II): the JANUS underwater acoustic signalling standard and its operational services. Paywalled at IEEE Xplore."
+  },
+  {
+    "id": "domingo-2012-iout",
+    "title": "An overview of the Internet of Underwater Things",
+    "authors": "Mari Carmen Domingo",
+    "year": 2012,
+    "venue": "Journal of Network and Computer Applications, 35(6), 1879–1890",
+    "url": "https://doi.org/10.1016/j.jnca.2012.07.012",
+    "pdf": null,
+    "access": "restricted",
+    "topics": [
+      "underwater",
+      "architectures"
+    ],
+    "source_lecture": "Underwater-networks.pdf",
+    "note": "Required reading (Chapters 1–3): Internet of Underwater Things concept, architecture and research challenges. Paywalled at Elsevier."
+  },
+  {
+    "id": "heidemann-2012-underwater",
+    "title": "Underwater sensor networks: applications, advances and challenges",
+    "authors": "John Heidemann; Milica Stojanovic; Michele Zorzi",
+    "year": 2012,
+    "venue": "Philosophical Transactions of the Royal Society A, 370(1958), 158–175",
+    "url": "https://doi.org/10.1098/rsta.2011.0214",
+    "pdf": null,
+    "access": "restricted",
+    "topics": [
+      "underwater",
+      "performance"
+    ],
+    "source_lecture": "Introduction.pdf",
+    "note": "Slide source: applications, technical advances and open challenges of underwater sensor networks. Paywalled at the Royal Society."
+  },
+  {
+    "id": "lu-2019-conet",
+    "title": "CONet: A Cognitive Ocean Network",
+    "authors": "Huimin Lu; Dong Wang; Yujie Li; Jianru Li; Xin Li; Hyoungseop Kim; Seiichi Serikawa; Iztok Humar",
+    "year": 2019,
+    "venue": "IEEE Wireless Communications, 26(3), 90–96",
+    "url": "https://doi.org/10.1109/MWC.2019.1800325",
+    "pdf": "articles/lu-2019-conet.pdf",
+    "access": "open",
+    "topics": [
+      "underwater",
+      "architectures"
+    ],
+    "source_lecture": "Underwater-networks.pdf",
+    "note": "Slide source: cognitive ocean network architecture combining underwater sensing, communication and computing. Open arXiv version downloaded."
+  },
+  {
+    "id": "li-2018-caching",
+    "title": "A Survey of Caching Techniques in Cellular Networks: Research Issues and Challenges in Content Placement and Delivery Strategies",
+    "authors": "Liying Li; Guodong Zhao; Rick S. Blum",
+    "year": 2018,
+    "venue": "IEEE Communications Surveys & Tutorials, 20(3), 1710–1732",
+    "url": "https://doi.org/10.1109/COMST.2018.2820021",
+    "pdf": "articles/li-2018-caching-survey.pdf",
+    "access": "open",
+    "topics": [
+      "backend",
+      "cellular",
+      "performance"
+    ],
+    "source_lecture": "Users-and-back-ends.pdf",
+    "note": "Slide source on content placement and delivery in cache-enabled cellular networks. Accepted manuscript from the University of Glasgow repository downloaded."
+  },
+  {
+    "id": "goian-2019-caching",
+    "title": "Popularity-Based Video Caching Techniques for Cache-Enabled Networks: A Survey",
+    "authors": "Huda S. Goian; Omar Y. Al-Jarrah; Sami Muhaidat; Yousof Al-Hammadi; Paul Yoo; Mehrdad Dianati",
+    "year": 2019,
+    "venue": "IEEE Access, 7, 27699–27719",
+    "url": "https://doi.org/10.1109/ACCESS.2019.2898734",
+    "pdf": "articles/goian-2019-video-caching.pdf",
+    "access": "open",
+    "topics": [
+      "backend",
+      "performance"
+    ],
+    "source_lecture": "Users-and-back-ends.pdf",
+    "note": "Required reading (Section I): popularity-based video caching for the WebFilmz back-end/CDN scenario. IEEE Access open access."
+  },
+  {
+    "id": "tarneberg-2019-fog-thesis",
+    "title": "The confluence of Cloud computing, 5G, and IoT in the Fog",
+    "authors": "William Tärneberg",
+    "year": 2019,
+    "venue": "PhD thesis, Lund University",
+    "url": "https://portal.research.lu.se/files/60915803/thesis_final.pdf",
+    "pdf": "articles/tarneberg-2019-fog-thesis.pdf",
+    "access": "open",
+    "topics": [
+      "backend",
+      "architectures",
+      "performance"
+    ],
+    "source_lecture": "Users-and-back-ends.pdf",
+    "note": "Required reading (Chapters 1 and 4, Chapters 2–3 optional): edge/fog computing, resource management and performance for cloud/5G/IoT back-ends."
+  },
+  {
+    "id": "kihl-2004-queuing",
+    "title": "Queuing systems",
+    "authors": "Maria Kihl",
+    "year": 2004,
+    "venue": "Lecture notes, Lund University",
+    "url": null,
+    "pdf": "course-material/QueuingSystems.pdf",
+    "access": "open",
+    "topics": [
+      "backend",
+      "performance",
+      "probability"
+    ],
+    "source_lecture": "Users-and-back-ends.pdf",
+    "note": "Lokal kurs-PDF (106 sidor) med köteori: Kapitel 1–3, 4.1 och 5.1 rekommenderas i kursen. Används för M/M/1, M/G/1, Little och prestandaberäkningar."
+  },
+  {
+    "id": "younis-2018-ioe",
+    "title": "Internet of everything and everybody: Architecture and service virtualization",
+    "authors": "Mohamed Younis",
+    "year": 2018,
+    "venue": "Computer Communications, 131, 66–72",
+    "url": "https://doi.org/10.1016/j.comcom.2018.07.008",
+    "pdf": null,
+    "access": "restricted",
+    "topics": [
+      "architectures",
+      "basic"
+    ],
+    "source_lecture": "Introduction.pdf",
+    "note": "Slide source introducing the Internet of Everything and service virtualisation as the course's broad architectural framing. Paywalled at Elsevier."
+  },
+  {
+    "id": "ferrer-2019-satellite-iot-mac",
+    "title": "Review and Evaluation of MAC Protocols for Satellite IoT Systems Using Nanosatellites",
+    "authors": "Tomás Ferrer; Sandra Céspedes; Alex Becerra",
+    "year": 2019,
+    "venue": "Sensors, 19(8), 1947",
+    "url": "https://doi.org/10.3390/s19081947",
+    "pdf": "articles/ferrer-2019-satellite-iot-mac.pdf",
+    "access": "open",
+    "topics": [
+      "ntn",
+      "space",
+      "performance"
+    ],
+    "source_lecture": "Non-Terrestrial-Networks-NTN.pdf",
+    "note": "Slide source: review and evaluation of MAC protocols for nanosatellite IoT systems. MDPI open access."
+  },
+  {
+    "id": "ji-2018-urllc",
+    "title": "Ultra-Reliable and Low-Latency Communications in 5G Downlink: Physical Layer Aspects",
+    "authors": "Hyoungju Ji; Sunho Park; Jeongho Yeo; Younsun Kim; Juho Lee; Byonghyo Shim",
+    "year": 2018,
+    "venue": "IEEE Wireless Communications, 25(3), 124–130",
+    "url": "https://doi.org/10.1109/MWC.2018.1700294",
+    "pdf": "articles/ji-2018-urllc-5g.pdf",
+    "access": "open",
+    "topics": [
+      "cellular",
+      "performance"
+    ],
+    "source_lecture": "Cellular-Mobile-Networks.pdf",
+    "note": "Slide source on URLLC physical-layer design (short TTI, reliability, latency) for time-critical 5G applications. Open arXiv version downloaded."
+  },
+  {
+    "id": "zhou-2010-zigbee-mac",
+    "title": "Analysis and design of ZigBee MAC layers protocol",
+    "authors": "Min Zhou; Zhang-long Nie",
+    "year": 2010,
+    "venue": "2010 International Conference on Future Information Technology and Management Engineering (FITME), 211–215",
+    "url": "https://doi.org/10.1109/FITME.2010.5654824",
+    "pdf": null,
+    "access": "restricted",
+    "topics": [
+      "pan",
+      "performance"
+    ],
+    "source_lecture": "Personal-Area-Networks-PAN.pdf",
+    "note": "Slide source on ZigBee/IEEE 802.15.4 MAC layer design and analysis. Paywalled at IEEE Xplore."
+  },
+  {
+    "id": "bluetooth-wikipedia",
+    "title": "Bluetooth",
+    "authors": "Wikipedia contributors",
+    "year": null,
+    "venue": "Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Bluetooth",
+    "pdf": null,
+    "access": "web",
+    "topics": [
+      "pan",
+      "basic"
+    ],
+    "source_lecture": "Personal-Area-Networks-PAN.pdf",
+    "note": "Required web reading for the PAN lecture: Bluetooth piconet/scatternet operation and protocol stack."
+  },
+  {
+    "id": "bluetooth-le-wikipedia",
+    "title": "Bluetooth Low Energy",
+    "authors": "Wikipedia contributors",
+    "year": null,
+    "venue": "Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Bluetooth_Low_Energy",
+    "pdf": null,
+    "access": "web",
+    "topics": [
+      "pan",
+      "lpwan"
+    ],
+    "source_lecture": "Personal-Area-Networks-PAN.pdf",
+    "note": "Required web reading: BLE roles, advertising/connection modes and low-power operation."
+  },
+  {
+    "id": "zigbee-wikipedia",
+    "title": "Zigbee",
+    "authors": "Wikipedia contributors",
+    "year": null,
+    "venue": "Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Zigbee",
+    "pdf": null,
+    "access": "web",
+    "topics": [
+      "pan",
+      "architectures"
+    ],
+    "source_lecture": "Personal-Area-Networks-PAN.pdf",
+    "note": "Required web reading: Zigbee/IEEE 802.15.4 mesh and tree topologies used in the PAN lecture."
+  },
+  {
+    "id": "probability-theory-wikipedia",
+    "title": "Probability theory",
+    "authors": "Wikipedia contributors",
+    "year": null,
+    "venue": "Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Probability_theory",
+    "pdf": null,
+    "access": "web",
+    "topics": [
+      "probability",
+      "basic"
+    ],
+    "source_lecture": "Review-of-probability-theory-and-statistics.pdf",
+    "note": "Background reading for the probability review: sample spaces, events and axioms of probability."
+  },
+  {
+    "id": "probabilitycourse",
+    "title": "Introduction to Probability, Statistics, and Random Processes",
+    "authors": "Hossein Pishro-Nik",
+    "year": null,
+    "venue": "ProbabilityCourse.com (online textbook)",
+    "url": "https://www.probabilitycourse.com/",
+    "pdf": null,
+    "access": "web",
+    "topics": [
+      "probability",
+      "basic"
+    ],
+    "source_lecture": "Review-of-probability-theory-and-statistics.pdf",
+    "note": "Recommended online review of probability theory and random variables, cited in the probability lecture."
+  }
+]
