@@ -4,10 +4,10 @@ Ett statiskt studieverktyg för **ETSN11, Trådlösa nätverk och applikationer 
 
 ## Innehåll
 
-- **Alla frågor** – alla 132 frågor på ett ställe, med ämnesfilter och en toggle för AI-genererade övningsprov (på som standard).
 - **Riktiga tentor** – sex tentamenstillfällen. Tre har officiella lösningar; tre är exempel på inlämnade tentor där frågorna visas utan studentsvar.
 - **Övningsprov** – sex genererade prov med samma 90-poängsstruktur som de riktiga tentorna (del A/B/C). Frågorna är AI-genererade från kursmaterialet men är inte officiella tentafrågor; kontrollera dem mot kursmaterialet.
 - **Begrepp** – slumpad matchning mellan definition/användning och begrepp. Rätt par låses direkt, får en visuell kabel och ger poäng/streak. Varje runda har fler svarsalternativ än frågor och extra distraktorer.
+- **Alla frågor** – alla 132 frågor på ett ställe, med ämnesfilter och ett reglage för AI-genererade övningsprov (på som standard).
 - **Kursmaterial** – alla föreläsnings-PDF:er samt de artiklar och whitepapers som föreläsningarna hänvisar till.
 
 Varje uppgift har färgkodade ämnes taggar som länkar till relevant sida i kursmaterialet. De tre officiella tentorna har även en länk till original-PDF:en.

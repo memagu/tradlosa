@@ -653,12 +653,16 @@ def all_panel_html(exams: list[Exam], practice: list[Exam]) -> str:
     return f"""<section class="category-head all-head">
   <p class="eyebrow">Alla frågor</p>
   <h1>Hitta rätt uppgift</h1>
-  <p>Filtrera på ämne och välj om AI-genererade övningsprov ska ingå. AI-genererade frågor är på som standard.</p>
+  <p>Filtrera på ämne och välj om AI-genererade övningsprov ska ingå. De ingår som standard.</p>
 </section>
 <div class="filter-panel">
   <div class="filter-top">
-    <div><span class="filter-title">Filtrera på ämne</span><span class="filter-sub">Flera val matchar något av ämnena.</span></div>
-    <label class="all-toggle"><input type="checkbox" data-all-generated checked> Visa AI-genererade övningsprov</label>
+    <div class="filter-heading"><strong>Filtrera på ämne</strong><span>Välj ett eller flera ämnen – frågor som matchar minst ett visas.</span></div>
+    <label class="all-toggle">
+      <input type="checkbox" data-all-generated checked aria-label="Visa AI-genererade övningsprov">
+      <span class="toggle-track" aria-hidden="true"><span class="toggle-thumb"></span></span>
+      <span class="toggle-label">Visa AI-genererade övningsprov</span>
+    </label>
   </div>
   <div class="filter-chips">{chips}</div>
   <div class="filter-foot"><span data-filter-count>Visar {total} av {total} frågor</span><button type="button" class="btn ghost small" data-filter-clear>Rensa filter</button></div>
@@ -774,10 +778,10 @@ def practice_panel_html(sets: list[Exam]) -> str:
 
 
 def page_html(exams: list[Exam], practice: list[Exam], terms: list[dict]) -> str:
-    tabs = f"""<button class="tab" id="tab-all" role="tab" aria-controls="exam-all" aria-selected="true" tabindex="0">Alla frågor</button>
-<button class="tab" id="tab-real" role="tab" aria-controls="cat-real" aria-selected="false" tabindex="-1">Riktiga tentor</button>
+    tabs = f"""<button class="tab" id="tab-real" role="tab" aria-controls="cat-real" aria-selected="true" tabindex="0">Riktiga tentor</button>
 <button class="tab" id="tab-practice" role="tab" aria-controls="cat-practice" aria-selected="false" tabindex="-1">Övningsprov</button>
 <button class="tab" id="tab-terms" role="tab" aria-controls="cat-terms" aria-selected="false" tabindex="-1">Begrepp</button>
+<button class="tab" id="tab-all" role="tab" aria-controls="exam-all" aria-selected="false" tabindex="-1">Alla frågor</button>
 <button class="tab" id="tab-material" role="tab" aria-controls="cat-material" aria-selected="false" tabindex="-1">Kursmaterial</button>"""
     count = f"{len(exams)} tentor · {len(practice)} övningsprov · {sum(len(e.questions) for e in exams + practice)} uppgifter"
     terms_json = json.dumps(terms, ensure_ascii=False).replace("</", "<\\/")
@@ -803,10 +807,7 @@ def page_html(exams: list[Exam], practice: list[Exam], terms: list[dict]) -> str
   </div>
 </div>
 <main>
-  <section id="exam-all" role="tabpanel" aria-labelledby="tab-all">
-    {all_panel_html(exams, practice)}
-  </section>
-  <section id="cat-real" role="tabpanel" aria-labelledby="tab-real" data-switch-scope hidden>
+  <section id="cat-real" role="tabpanel" aria-labelledby="tab-real" data-switch-scope>
     {official_panel_html(exams)}
   </section>
   <section id="cat-practice" role="tabpanel" aria-labelledby="tab-practice" data-switch-scope hidden>
@@ -814,6 +815,9 @@ def page_html(exams: list[Exam], practice: list[Exam], terms: list[dict]) -> str
   </section>
   <section id="cat-terms" role="tabpanel" aria-labelledby="tab-terms" hidden>
     {terms_panel_html()}
+  </section>
+  <section id="exam-all" role="tabpanel" aria-labelledby="tab-all" hidden>
+    {all_panel_html(exams, practice)}
   </section>
   <section id="cat-material" role="tabpanel" aria-labelledby="tab-material" hidden>
     {material_panel_html()}
