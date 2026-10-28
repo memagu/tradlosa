@@ -172,7 +172,7 @@
     var open = e.target.closest('[data-open-all]');
     var close = e.target.closest('[data-close-all]');
     if (!open && !close) return;
-    var panel = e.target.closest('[role="tabpanel"], .standalone');
+    var panel = e.target.closest('[data-score-panel]') || e.target.closest('[role="tabpanel"], .standalone');
     if (!panel) panel = document;
     if (open) {
       panel.querySelectorAll('details.answer img').forEach(function (img) { img.loading = 'eager'; });

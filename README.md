@@ -5,13 +5,13 @@ Ett statiskt studieverktyg för **ETSN11, Trådlösa nätverk och applikationer 
 ## Innehåll
 
 - **Riktiga tentor** – sex tentamenstillfällen. Tre har officiella lösningar; tre är exempel på inlämnade tentor där frågorna visas utan studentsvar.
-- **Övningsprov** – sex genererade prov med samma 90-poängsstruktur som de riktiga tentorna (del A/B/C). Frågorna är genererade från kursmaterialet och granskade, men är inte officiella tentafrågor.
+- **Övningsprov** – sex genererade prov med samma 90-poängsstruktur som de riktiga tentorna (del A/B/C). Frågorna är AI-genererade från kursmaterialet men är inte officiella tentafrågor; kontrollera dem mot kursmaterialet.
 - **Begrepp** – slumpad matchning mellan definition/användning och begrepp. Rätt par låses direkt, får en visuell kabel och ger poäng/streak. Varje runda har fler svarsalternativ än frågor och extra distraktorer.
 - **Kursmaterial** – alla föreläsnings-PDF:er samt de artiklar och whitepapers som föreläsningarna hänvisar till.
 
 Varje uppgift har färgkodade ämnes taggar som länkar till relevant sida i kursmaterialet. De tre officiella tentorna har även en länk till original-PDF:en.
 
-Sajten innehåller 54 frågor i den genererade frågebanken (6 prov), 92 begrepp och 36 artikelreferenser, varav 14 open-access-PDF:er finns lokalt. Köteorikompendiet `QueuingSystems.pdf` ligger också i kursmaterialet.
+Sajten innehåller 54 frågor i den genererade frågebanken (6 prov), 92 begrepp och 36 artikelreferenser. 13 open-access-artiklar finns i `articles/`, och köteorikompendiet `course-material/QueuingSystems.pdf` finns också lokalt.
 
 Varje fråga har en **Alla poäng**-knapp som fyller i hela poängraden direkt. Bakgrunden är en långsam nätverksgraf med pulser längs länkarna; noderna tänds när pulser skickas och tas emot. Grafen parallax-scrollar med sidan.
 

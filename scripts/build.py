@@ -477,12 +477,12 @@ def exam_panel_html(exam: Exam) -> str:
         note = '<div class="exam-note"><strong>Obs:</strong> lösningsdokumentet saknar officiella svar för de fem första flervalsfrågorna. Övriga lösningar finns.</div>'
     eyebrow = "ETSN11 · Genererad övning" if exam.generated else "ETSN11 · Riktig tenta"
     meta = (
-        f"{len(exam.questions)} uppgifter · {TOTAL} p · AI-genererad och granskad övning"
+        f"{len(exam.questions)} uppgifter · {TOTAL} p · AI-genererad övning · kontrollera mot kursmaterialet"
         if exam.generated
         else f"{len(exam.questions)} uppgifter · {TOTAL} p · officiell lösning där den finns"
     )
     if exam.generated:
-        note = '<div class="exam-note"><strong>Övningsprov:</strong> frågorna är genererade från kursmaterialet och granskade, men de är inte officiella tentafrågor. Använd dem för att träna bredd.</div>'
+        note = '<div class="exam-note"><strong>Övningsprov:</strong> frågorna är AI-genererade från kursmaterialet. De är inte officiella tentafrågor – kontrollera alltid mot föreläsningar och artiklar.</div>'
     return f"""<section class="exam-panel switch-panel" id="exam-{exam.date}" data-score-panel>
   <header class="exam-head">
     <p class="eyebrow">{eyebrow}</p>
@@ -693,7 +693,7 @@ def practice_panel_html(sets: list[Exam]) -> str:
     return f"""<section class="category-head">
   <p class="eyebrow">Övningsprov</p>
   <h1>Genererade övningsprov</h1>
-  <p>Frågorna är genererade från kursmaterialet och granskade. De är inte officiella tentor, men följer samma bredd och poängfördelning.</p>
+  <p>Frågorna är AI-genererade från kursmaterialet och följer samma bredd och poängfördelning som tentorna. De är inte officiella tentor – kontrollera alltid mot kursmaterialet.</p>
 </section>
 <div class="switcher" data-switcher>{buttons}</div>
 {panels}"""

@@ -50,7 +50,10 @@ after download. No HTML landing pages were kept.
 | Heidemann et al., "Underwater sensor networks: applications, advances and challenges" | Phil. Trans. R. Soc. A 370(1958), 2012 | [10.1098/rsta.2011.0214](https://doi.org/10.1098/rsta.2011.0214) |
 | Younis, "Internet of everything and everybody: Architecture and service virtualization" | Computer Communications 131, 2018 | [10.1016/j.comcom.2018.07.008](https://doi.org/10.1016/j.comcom.2018.07.008) |
 | Zhou, Nie, "Analysis and design of ZigBee MAC layers protocol" | FITME 2010 | [10.1109/FITME.2010.5654824](https://doi.org/10.1109/FITME.2010.5654824) |
-| Kihl, "Queuing systems", lecture notes, 2004 | Lund University | **not found** — distributed via Canvas |
+
+## Lokal kurs-PDF (1)
+
+- **Kihl, "Queuing systems", lecture notes, 2004** — `../course-material/QueuingSystems.pdf` (106 sidor). Används av köteori- och prestandafrågorna; finns nu lokalt i kursmaterialet.
 
 ## Web sources (10)
 
@@ -66,7 +69,7 @@ after download. No HTML landing pages were kept.
 
 - The lecture slides contain no separate "other relevant articles" appendix; the list above
   combines the explicit `Literature` slides with the articles named in slide `Source:` lines.
-- Kihl's queueing lecture notes are not publicly available; only the Canvas course page has them.
+- Kihl's queueing lecture notes were originally not available online; the course PDF is now included locally as `course-material/QueuingSystems.pdf`.
 - The Rohde & Schwarz white paper PDF is behind a JS download form, so only the product/white-paper
   page is recorded. The Ericsson white paper page likewise did not serve a PDF to automated requests.
 - Some per-slide sources were deliberately not chased (e.g. Wikipedia technology pages already covered

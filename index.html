@@ -2281,7 +2281,7 @@
         <summary><span class="chev" aria-hidden="true"></span><span class="label">Visa LLM-lösning</span></summary>
         <div class="answer-body"><div class="answer-inner"><div class="answer-scroll"><div class="answer-text">
           <p class="answer-warning"><strong>Officiell lösning saknas.</strong> Följande är ett LLM-förslag som utgår från kursmaterialet. Kontrollera alltid mot föreläsningar och artiklar.</p>
-          <p><strong>LLM-förslag:</strong> (a) Antal ankomster under 3 min är Poisson(6); P(≥5) = 1 − P(0..4) ≈ 1 − 0,285 = 0,715. (b) M/M/5/5 med A = λ/μ = 2·4 = 8 Erlang; blocking = Erlang B(5,8) ≈ 0,458? Beräkna med formeln. (c) Medelantal upptagna slotar = A(1−B) ≈ 8(1−B).</p>
+          <p><strong>LLM-förslag:</strong> (a) Antal ankomster under 3 min är Poisson(6); P(≥5) = 1 − P(0..4) ≈ 1 − 0,285 = 0,715. (b) M/M/5/5 med A = λ/μ = 2·4 = 8 Erlang. Erlang B(5,8) = (8⁵/5!) / Σ<sub>k=0</sub><sup>5</sup>(8<sup>k</sup>/k!) ≈ 0,479. (c) Medelantal upptagna slotar = A(1−B) ≈ 8(1−0,479) ≈ 4,17.</p><p>Använd gärna kursens köteorikompendium för Erlang B-formeln.</p>
         </div></div></div></div>
       </details>
     </article>
@@ -2303,7 +2303,7 @@
         <summary><span class="chev" aria-hidden="true"></span><span class="label">Visa LLM-lösning</span></summary>
         <div class="answer-body"><div class="answer-inner"><div class="answer-scroll"><div class="answer-text">
           <p class="answer-warning"><strong>Officiell lösning saknas.</strong> Följande är ett LLM-förslag som utgår från kursmaterialet. Kontrollera alltid mot föreläsningar och artiklar.</p>
-          <p><strong>LLM-förslag:</strong> (a) Med 3 piloter får en användare som begär pilot alltid plats om högst 3 av 4 begär; om alla 4 begär får 3 av 4 plats. Sannolikheten blir P(övriga ≤2) + 0,75·P(övriga=3) ≈ 0,996. (b) Jämför förväntad tid: alternativa 1 kräver 2 lyckade sändningar à 300 bitar, alternativ 2 kräver 3 à 200 bitar; beräkna förväntat antal coherence-intervall per lyckad pilot (1/(0,25·q)) och multiplicera med 10 ms. Räkna med respektive pilotallokering; välj det mindre väntevärdet.</p>
+          <p><strong>LLM-förslag:</strong> (a) Låt X vara antalet övriga användare som begär pilot. X~Bin(3,0,25). En användare får pilot om X≤2, plus 3/4 chans om X=3. Detta ger ungefär 0,996. (b) Med 2 piloter är sannolikheten att en begärande användare får pilot ungefär 0,945; med 3 piloter ungefär 0,996. En användare med 500 bitar behöver 2 lyckade sändningar à 300 bitar (alt. 1) eller 3 à 200 bitar (alt. 2). Väntevärdet för antal coherence-intervall per lyckad sändning är 1/(0,25·q). Det ger cirka 8,46 intervall (0,085 s) för alternativ 1 och 12,05 intervall (0,120 s) för alternativ 2. Alternativ 1 är alltså snabbast.</p>
         </div></div></div></div>
       </details>
     </article>
@@ -2358,14 +2358,14 @@
     <section class="category-head">
   <p class="eyebrow">Övningsprov</p>
   <h1>Genererade övningsprov</h1>
-  <p>Frågorna är genererade från kursmaterialet och granskade. De är inte officiella tentor, men följer samma bredd och poängfördelning.</p>
+  <p>Frågorna är AI-genererade från kursmaterialet och följer samma bredd och poängfördelning som tentorna. De är inte officiella tentor – kontrollera alltid mot kursmaterialet.</p>
 </section>
 <div class="switcher" data-switcher><button type="button" data-panel-target="exam-gen-A" aria-pressed="false">Övningsprov A</button><button type="button" data-panel-target="exam-gen-B" aria-pressed="false">Övningsprov B</button><button type="button" data-panel-target="exam-gen-C" aria-pressed="false">Övningsprov C</button><button type="button" data-panel-target="exam-gen-D" aria-pressed="false">Övningsprov D</button><button type="button" data-panel-target="exam-gen-E" aria-pressed="false">Övningsprov E</button><button type="button" data-panel-target="exam-gen-F" aria-pressed="false">Övningsprov F</button></div>
 <section class="exam-panel switch-panel" id="exam-gen-A" data-score-panel>
   <header class="exam-head">
     <p class="eyebrow">ETSN11 · Genererad övning</p>
     <h1>Övningsprov A</h1>
-    <p class="meta">9 uppgifter · 90 p · AI-genererad och granskad övning</p>
+    <p class="meta">9 uppgifter · 90 p · AI-genererad övning · kontrollera mot kursmaterialet</p>
     <div class="gradebar" data-exam="gen-A" data-total="90" data-boundaries='{"3": 45, "4": 60, "5": 75}'>
       <div class="grade-score-wrap">
         <span class="grade-label">Dina poäng</span>
@@ -2386,7 +2386,7 @@
       </div>
     </div>
   </header>
-  <div class="exam-note"><strong>Övningsprov:</strong> frågorna är genererade från kursmaterialet och granskade, men de är inte officiella tentafrågor. Använd dem för att träna bredd.</div>
+  <div class="exam-note"><strong>Övningsprov:</strong> frågorna är AI-genererade från kursmaterialet. De är inte officiella tentafrågor – kontrollera alltid mot föreläsningar och artiklar.</div>
   <div class="questions">
     <article class="qcard" id="gen-A-q1" data-q="1">
       <div class="qcard-head">
@@ -2563,7 +2563,7 @@
   <header class="exam-head">
     <p class="eyebrow">ETSN11 · Genererad övning</p>
     <h1>Övningsprov B</h1>
-    <p class="meta">9 uppgifter · 90 p · AI-genererad och granskad övning</p>
+    <p class="meta">9 uppgifter · 90 p · AI-genererad övning · kontrollera mot kursmaterialet</p>
     <div class="gradebar" data-exam="gen-B" data-total="90" data-boundaries='{"3": 45, "4": 60, "5": 75}'>
       <div class="grade-score-wrap">
         <span class="grade-label">Dina poäng</span>
@@ -2584,7 +2584,7 @@
       </div>
     </div>
   </header>
-  <div class="exam-note"><strong>Övningsprov:</strong> frågorna är genererade från kursmaterialet och granskade, men de är inte officiella tentafrågor. Använd dem för att träna bredd.</div>
+  <div class="exam-note"><strong>Övningsprov:</strong> frågorna är AI-genererade från kursmaterialet. De är inte officiella tentafrågor – kontrollera alltid mot föreläsningar och artiklar.</div>
   <div class="questions">
     <article class="qcard" id="gen-B-q1" data-q="1">
       <div class="qcard-head">
@@ -2761,7 +2761,7 @@
   <header class="exam-head">
     <p class="eyebrow">ETSN11 · Genererad övning</p>
     <h1>Övningsprov C</h1>
-    <p class="meta">9 uppgifter · 90 p · AI-genererad och granskad övning</p>
+    <p class="meta">9 uppgifter · 90 p · AI-genererad övning · kontrollera mot kursmaterialet</p>
     <div class="gradebar" data-exam="gen-C" data-total="90" data-boundaries='{"3": 45, "4": 60, "5": 75}'>
       <div class="grade-score-wrap">
         <span class="grade-label">Dina poäng</span>
@@ -2782,7 +2782,7 @@
       </div>
     </div>
   </header>
-  <div class="exam-note"><strong>Övningsprov:</strong> frågorna är genererade från kursmaterialet och granskade, men de är inte officiella tentafrågor. Använd dem för att träna bredd.</div>
+  <div class="exam-note"><strong>Övningsprov:</strong> frågorna är AI-genererade från kursmaterialet. De är inte officiella tentafrågor – kontrollera alltid mot föreläsningar och artiklar.</div>
   <div class="questions">
     <article class="qcard" id="gen-C-q1" data-q="1">
       <div class="qcard-head">
@@ -2959,7 +2959,7 @@
   <header class="exam-head">
     <p class="eyebrow">ETSN11 · Genererad övning</p>
     <h1>Övningsprov D</h1>
-    <p class="meta">9 uppgifter · 90 p · AI-genererad och granskad övning</p>
+    <p class="meta">9 uppgifter · 90 p · AI-genererad övning · kontrollera mot kursmaterialet</p>
     <div class="gradebar" data-exam="gen-D" data-total="90" data-boundaries='{"3": 45, "4": 60, "5": 75}'>
       <div class="grade-score-wrap">
         <span class="grade-label">Dina poäng</span>
@@ -2980,7 +2980,7 @@
       </div>
     </div>
   </header>
-  <div class="exam-note"><strong>Övningsprov:</strong> frågorna är genererade från kursmaterialet och granskade, men de är inte officiella tentafrågor. Använd dem för att träna bredd.</div>
+  <div class="exam-note"><strong>Övningsprov:</strong> frågorna är AI-genererade från kursmaterialet. De är inte officiella tentafrågor – kontrollera alltid mot föreläsningar och artiklar.</div>
   <div class="questions">
     <article class="qcard" id="gen-D-q1" data-q="1">
       <div class="qcard-head">
@@ -3157,7 +3157,7 @@
   <header class="exam-head">
     <p class="eyebrow">ETSN11 · Genererad övning</p>
     <h1>Övningsprov E</h1>
-    <p class="meta">9 uppgifter · 90 p · AI-genererad och granskad övning</p>
+    <p class="meta">9 uppgifter · 90 p · AI-genererad övning · kontrollera mot kursmaterialet</p>
     <div class="gradebar" data-exam="gen-E" data-total="90" data-boundaries='{"3": 45, "4": 60, "5": 75}'>
       <div class="grade-score-wrap">
         <span class="grade-label">Dina poäng</span>
@@ -3178,7 +3178,7 @@
       </div>
     </div>
   </header>
-  <div class="exam-note"><strong>Övningsprov:</strong> frågorna är genererade från kursmaterialet och granskade, men de är inte officiella tentafrågor. Använd dem för att träna bredd.</div>
+  <div class="exam-note"><strong>Övningsprov:</strong> frågorna är AI-genererade från kursmaterialet. De är inte officiella tentafrågor – kontrollera alltid mot föreläsningar och artiklar.</div>
   <div class="questions">
     <article class="qcard" id="gen-E-q1" data-q="1">
       <div class="qcard-head">
@@ -3355,7 +3355,7 @@
   <header class="exam-head">
     <p class="eyebrow">ETSN11 · Genererad övning</p>
     <h1>Övningsprov F</h1>
-    <p class="meta">9 uppgifter · 90 p · AI-genererad och granskad övning</p>
+    <p class="meta">9 uppgifter · 90 p · AI-genererad övning · kontrollera mot kursmaterialet</p>
     <div class="gradebar" data-exam="gen-F" data-total="90" data-boundaries='{"3": 45, "4": 60, "5": 75}'>
       <div class="grade-score-wrap">
         <span class="grade-label">Dina poäng</span>
@@ -3376,7 +3376,7 @@
       </div>
     </div>
   </header>
-  <div class="exam-note"><strong>Övningsprov:</strong> frågorna är genererade från kursmaterialet och granskade, men de är inte officiella tentafrågor. Använd dem för att träna bredd.</div>
+  <div class="exam-note"><strong>Övningsprov:</strong> frågorna är AI-genererade från kursmaterialet. De är inte officiella tentafrågor – kontrollera alltid mot föreläsningar och artiklar.</div>
   <div class="questions">
     <article class="qcard" id="gen-F-q1" data-q="1">
       <div class="qcard-head">
