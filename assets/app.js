@@ -105,14 +105,10 @@ document.addEventListener('click', function (e) {
   var toggle = document.querySelector('[data-theme-toggle]');
   if (!toggle) return;
   function sync() {
-    var light = root.getAttribute('data-theme') === 'light';
-    var label = light ? 'Mörkt' : 'Ljust';
-    var action = light ? 'Byt till mörkt läge' : 'Byt till ljust läge';
-    var text = toggle.querySelector('.theme-label');
-    if (text) text.textContent = label;
-    toggle.setAttribute('aria-label', action);
-    toggle.setAttribute('title', action);
-    toggle.setAttribute('aria-pressed', light ? 'true' : 'false');
+    var dark = root.getAttribute('data-theme') !== 'light';
+    toggle.setAttribute('aria-checked', dark ? 'true' : 'false');
+    toggle.setAttribute('aria-label', dark ? 'Mörkt tema' : 'Ljust tema');
+    toggle.setAttribute('title', dark ? 'Byt till ljust tema' : 'Byt till mörkt tema');
   }
   toggle.addEventListener('click', function () {
     var next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';

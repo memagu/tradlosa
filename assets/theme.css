@@ -42,16 +42,22 @@ main{max-width:1220px}
 .count{color:var(--muted);font-size:.8rem}
 .topbar-head{align-items:center}
 .topbar-actions{display:flex;align-items:center;gap:10px}
-.theme-toggle{appearance:none;display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font:inherit;font-size:.72rem;font-weight:750;line-height:1;padding:7px 10px;border-radius:999px;cursor:pointer;transition:border-color .15s ease,color .15s ease,background .15s ease}
-.theme-toggle:hover{border-color:var(--accent);color:var(--accent)}
-.theme-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.theme-toggle svg{width:15px;height:15px;display:block}
-html[data-theme="dark"] .theme-icon-sun{display:block}
-html[data-theme="dark"] .theme-icon-moon{display:none}
-html[data-theme="light"] .theme-icon-sun{display:none}
-html[data-theme="light"] .theme-icon-moon{display:block}
+.theme-switch{position:relative;display:inline-flex;width:64px;height:32px;padding:0;border:1px solid var(--line);border-radius:999px;background:var(--panel);cursor:pointer;transition:border-color .15s ease,box-shadow .15s ease;user-select:none}
+.theme-switch:hover{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.theme-switch:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.theme-slot{position:absolute;top:50%;z-index:2;display:grid;place-items:center;width:22px;height:22px;transform:translateY(-50%);color:var(--muted);transition:color .2s ease}
+.theme-slot-sun{left:5px}
+.theme-slot-moon{right:5px}
+.theme-icon{display:block;width:15px;height:15px}
+.theme-thumb{position:absolute;z-index:1;top:3px;left:3px;width:24px;height:24px;border-radius:50%;background:var(--accent);box-shadow:0 2px 6px rgba(11,111,122,.28);transition:transform .24s cubic-bezier(.2,.8,.25,1)}
+html[data-theme="dark"] .theme-thumb{transform:translateX(34px)}
+html[data-theme="light"] .theme-thumb{transform:translateX(0)}
+html[data-theme="dark"] .theme-slot-moon,
+html[data-theme="light"] .theme-slot-sun{color:#fff}
+html[data-theme="dark"] .theme-slot-sun,
+html[data-theme="light"] .theme-slot-moon{color:var(--muted)}
 @media(max-width:640px){.brand .brand-mark{display:inline}}
-@media(max-width:420px){.theme-toggle{padding:7px 8px}.theme-label{display:none}}
+@media(prefers-reduced-motion:reduce){.theme-thumb,.theme-slot{transition:none}}
 .tabs{display:flex;gap:4px;overflow-x:auto;padding-bottom:2px;scrollbar-width:none}
 .tabs::-webkit-scrollbar{display:none}
 .tab{white-space:nowrap}

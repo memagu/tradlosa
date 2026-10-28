@@ -849,10 +849,10 @@ def page_html(exams: list[Exam], practice: list[Exam], terms: list[dict]) -> str
       <div class="brand"><span class="brand-mark">ETSN11</span> <span>trådlösa nätverk</span></div>
       <div class="topbar-actions">
         <div class="count">{count}</div>
-        <button type="button" class="theme-toggle" data-theme-toggle aria-label="Byt till ljust läge" title="Byt till ljust läge">
-          <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"/></svg>
-          <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-          <span class="theme-label">Ljust</span>
+        <button type="button" class="theme-switch" data-theme-toggle role="switch" aria-checked="true" aria-label="Mörkt tema" title="Byt till ljust tema">
+          <span class="theme-slot theme-slot-sun" aria-hidden="true"><svg class="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"/></svg></span>
+          <span class="theme-slot theme-slot-moon" aria-hidden="true"><svg class="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span>
+          <span class="theme-thumb" aria-hidden="true"></span>
         </button>
       </div>
     </div>
