@@ -95,8 +95,49 @@ main{max-width:1220px}
 .gen-prompt ol,.gen-prompt ul{margin:8px 0 12px 1.3em;padding:0}
 .gen-prompt li{margin:4px 0}
 .gen-options{display:grid;gap:5px;margin:12px 0 0;padding:0;list-style:none}
-.gen-options li{padding:6px 9px;border:1px solid var(--line);border-radius:8px;background:#fff;font-size:.86rem}
-.gen-options li::before{content:"○";color:var(--muted);margin-right:7px}
+.gen-options li{
+  position:relative;
+  padding:7px 10px;
+  border:1px solid var(--line);
+  border-radius:9px;
+  background:#fff;
+  font-size:.86rem;
+  cursor:pointer;
+  transition:border-color .15s ease,background .15s ease,box-shadow .15s ease,transform .12s ease;
+}
+.gen-options li:hover{border-color:var(--accent);background:var(--accent-soft)}
+.gen-options li:active{transform:scale(.995)}
+.gen-options li:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.gen-options li::before{
+  content:"";
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:14px;
+  height:14px;
+  margin-right:8px;
+  border:1.5px solid var(--muted);
+  border-radius:50%;
+  vertical-align:-2px;
+  color:transparent;
+  font-size:9px;
+  font-weight:900;
+  line-height:1;
+  transition:background .15s ease,border-color .15s ease,color .15s ease;
+}
+.gen-options li.picked{
+  border-color:var(--accent);
+  background:var(--accent-soft);
+  box-shadow:0 2px 8px rgba(11,111,122,.08);
+  animation:option-pick .2s ease;
+}
+.gen-options li.picked::before{content:"✓";border-color:var(--accent);background:var(--accent);color:#fff}
+@keyframes option-pick{0%{transform:scale(.99)}55%{transform:scale(1.008)}100%{transform:scale(1)}}
+@media (prefers-reduced-motion:reduce){
+  .gen-options li{transition:none}
+  .gen-options li.picked{animation:none}
+  .gen-options li:active{transform:none}
+}
 .gen-type{display:inline-flex;padding:2px 7px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-size:.64rem;font-weight:850;letter-spacing:.05em;text-transform:uppercase}
 .answer-text{font-size:.9rem;line-height:1.65;padding:4px 4px 2px}
 .answer-text p{margin:0 0 10px}

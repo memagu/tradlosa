@@ -32,6 +32,30 @@
   });
 
 
+  // Question options are only a visual aid. They never award points or reveal answers.
+  var optionItems = Array.prototype.slice.call(document.querySelectorAll('.gen-options li'));
+  optionItems.forEach(function (item) {
+    item.setAttribute('role', 'checkbox');
+    item.setAttribute('tabindex', '0');
+    item.setAttribute('aria-checked', 'false');
+  });
+  function toggleOption(item) {
+    var on = item.classList.toggle('picked');
+    item.setAttribute('aria-checked', on ? 'true' : 'false');
+  }
+  document.addEventListener('click', function (e) {
+    var item = e.target.closest ? e.target.closest('.gen-options li') : null;
+    if (!item) return;
+    toggleOption(item);
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== ' ' && e.key !== 'Enter') return;
+    var item = e.target.closest ? e.target.closest('.gen-options li') : null;
+    if (!item) return;
+    e.preventDefault();
+    toggleOption(item);
+  });
+
   document.addEventListener('click', function (e) {
     var btn = e.target.closest ? e.target.closest('[data-open-question]') : null;
     if (!btn) return;
