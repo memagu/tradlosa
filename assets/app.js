@@ -80,3 +80,21 @@ document.addEventListener('click', function (e) {
     first.dispatchEvent(new Event('change', { bubbles: true }));
   }
 });
+
+// Jump from an "Alla frågor" card to the correct exam/set and question.
+document.addEventListener('click', function (e) {
+  var btn = e.target.closest ? e.target.closest('[data-open-all-question]') : null;
+  if (!btn) return;
+  var tab = document.getElementById(btn.getAttribute('data-tab'));
+  if (tab) tab.click();
+  var target = btn.getAttribute('data-panel');
+  var switchBtn = document.querySelector('[data-panel-target="' + target + '"]');
+  if (switchBtn) switchBtn.click();
+  var cardId = btn.getAttribute('data-card');
+  window.requestAnimationFrame(function () {
+    window.requestAnimationFrame(function () {
+      var card = document.getElementById(cardId);
+      if (card) card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+});

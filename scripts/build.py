@@ -593,6 +593,80 @@ COURSE_MATERIALS = [
 MATERIAL_DESC = {f: (t, d) for f, t, d in COURSE_MATERIALS}
 
 
+TAG_ORDER = [k for k in TAGS if k != "articles"]
+
+
+def clean_excerpt(q: Question) -> str:
+    if q.prompt_html:
+        text = re.sub(r"<[^>]+>", " ", q.prompt_html)
+        text = html.unescape(re.sub(r"\s+", " ", text)).strip()
+    else:
+        text = re.sub(r"^\d+\.\s*", "", q.title or "").strip()
+        text = re.sub(r"\(\d+\s*p\)", "", text).strip()
+    if not text:
+        text = "Bildfråga – öppna uppgiften för att se hela frågan."
+    return text[:240] + ("…" if len(text) > 240 else "")
+
+
+def all_tag_button(slug: str) -> str:
+    label = TAGS.get(slug, (slug,))[0]
+    return (
+        f'<button type="button" class="tag-btn tag-{slug}" data-filter-tag="{slug}" '
+        f'aria-pressed="false">{esc(label)}</button>'
+    )
+
+
+def all_item_html(q: Question, exam: Exam) -> str:
+    if exam.generated:
+        label = exam.title
+        kind = "AI-genererad övning"
+        tab = "tab-practice"
+        cls = "kind-gen"
+    elif exam.candidate:
+        label = exam.title
+        kind = "Exempel på inlämnad tenta"
+        tab = "tab-real"
+        cls = "kind-example"
+    else:
+        label = f"Tenta {exam.date}"
+        kind = "Riktig tenta"
+        tab = "tab-real"
+        cls = "kind-real"
+    return f"""<article class="all-item" data-tags="{esc("|".join(q.tags))}" data-generated="{1 if exam.generated else 0}">
+  <div class="all-item-top"><span class="all-exam">{esc(label)} · Uppgift {q.n}</span><span class="all-points">{fmt_num(q.points)} p</span></div>
+  <span class="all-kind {cls}">{esc(kind)}</span>
+  <h2>Uppgift {q.n}</h2>
+  <p class="all-excerpt">{esc(clean_excerpt(q))}</p>
+  <div class="all-tags">{"".join(all_tag_button(t) for t in q.tags)}</div>
+  <button type="button" class="all-open" data-open-all-question data-tab="{tab}" data-panel="exam-{exam.date}" data-card="{exam.date}-q{q.n}">Öppna uppgiften</button>
+</article>"""
+
+
+def all_panel_html(exams: list[Exam], practice: list[Exam]) -> str:
+    all_exams = exams + practice
+    items = "".join(all_item_html(q, e) for e in all_exams for q in e.questions)
+    chips = "".join(
+        f'<button type="button" class="filter-chip tag-{slug}" data-filter-tag="{slug}" aria-pressed="false">{esc(TAGS[slug][0])}</button>'
+        for slug in TAG_ORDER
+    )
+    total = sum(len(e.questions) for e in all_exams)
+    return f"""<section class="category-head all-head">
+  <p class="eyebrow">Alla frågor</p>
+  <h1>Hitta rätt uppgift</h1>
+  <p>Filtrera på ämne och välj om AI-genererade övningsprov ska ingå. AI-genererade frågor är på som standard.</p>
+</section>
+<div class="filter-panel">
+  <div class="filter-top">
+    <div><span class="filter-title">Filtrera på ämne</span><span class="filter-sub">Flera val matchar något av ämnena.</span></div>
+    <label class="all-toggle"><input type="checkbox" data-all-generated checked> Visa AI-genererade övningsprov</label>
+  </div>
+  <div class="filter-chips">{chips}</div>
+  <div class="filter-foot"><span data-filter-count>Visar {total} av {total} frågor</span><button type="button" class="btn ghost small" data-filter-clear>Rensa filter</button></div>
+</div>
+<div class="all-list">{items}</div>
+<p class="all-empty" hidden>Inga frågor matchar filtret.</p>"""
+
+
 def material_panel_html() -> str:
     cards = []
     for filename, title, desc in COURSE_MATERIALS:
@@ -700,7 +774,8 @@ def practice_panel_html(sets: list[Exam]) -> str:
 
 
 def page_html(exams: list[Exam], practice: list[Exam], terms: list[dict]) -> str:
-    tabs = f"""<button class="tab" id="tab-real" role="tab" aria-controls="cat-real" aria-selected="true" tabindex="0">Riktiga tentor</button>
+    tabs = f"""<button class="tab" id="tab-all" role="tab" aria-controls="exam-all" aria-selected="true" tabindex="0">Alla frågor</button>
+<button class="tab" id="tab-real" role="tab" aria-controls="cat-real" aria-selected="false" tabindex="-1">Riktiga tentor</button>
 <button class="tab" id="tab-practice" role="tab" aria-controls="cat-practice" aria-selected="false" tabindex="-1">Övningsprov</button>
 <button class="tab" id="tab-terms" role="tab" aria-controls="cat-terms" aria-selected="false" tabindex="-1">Begrepp</button>
 <button class="tab" id="tab-material" role="tab" aria-controls="cat-material" aria-selected="false" tabindex="-1">Kursmaterial</button>"""
@@ -728,7 +803,10 @@ def page_html(exams: list[Exam], practice: list[Exam], terms: list[dict]) -> str
   </div>
 </div>
 <main>
-  <section id="cat-real" role="tabpanel" aria-labelledby="tab-real" data-switch-scope>
+  <section id="exam-all" role="tabpanel" aria-labelledby="tab-all">
+    {all_panel_html(exams, practice)}
+  </section>
+  <section id="cat-real" role="tabpanel" aria-labelledby="tab-real" data-switch-scope hidden>
     {official_panel_html(exams)}
   </section>
   <section id="cat-practice" role="tabpanel" aria-labelledby="tab-practice" data-switch-scope hidden>

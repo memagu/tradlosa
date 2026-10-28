@@ -52,22 +52,27 @@
     var allItems = Array.prototype.slice.call(allPanel.querySelectorAll('.all-item'));
     var filterCount = allPanel.querySelector('[data-filter-count]');
     var allEmpty = allPanel.querySelector('.all-empty');
+    var generatedToggle = allPanel.querySelector('[data-all-generated]');
     var selectedTags = {};
     function applyTagFilter() {
       var shown = 0;
       var keys = Object.keys(selectedTags);
+      var includeGenerated = !generatedToggle || generatedToggle.checked;
       allItems.forEach(function (item) {
         var tags = (item.getAttribute('data-tags') || '').split('|');
-        var show = keys.length === 0 || tags.some(function (t) { return selectedTags[t]; });
+        var tagMatch = keys.length === 0 || tags.some(function (t) { return selectedTags[t]; });
+        var generated = item.getAttribute('data-generated') === '1';
+        var show = tagMatch && (includeGenerated || !generated);
         item.hidden = !show;
         if (show) shown += 1;
       });
       filterButtons.forEach(function (b) {
         b.setAttribute('aria-pressed', selectedTags[b.getAttribute('data-filter-tag')] ? 'true' : 'false');
       });
-      if (filterCount) filterCount.textContent = 'Visar ' + shown + ' av ' + allItems.length + ' uppgifter';
+      if (filterCount) filterCount.textContent = 'Visar ' + shown + ' av ' + allItems.length + ' frågor';
       if (allEmpty) allEmpty.hidden = shown !== 0;
     }
+    if (generatedToggle) generatedToggle.addEventListener('change', applyTagFilter);
     allPanel.addEventListener('click', function (e) {
       var tagBtn = e.target.closest ? e.target.closest('[data-filter-tag]') : null;
       if (tagBtn) {
@@ -79,6 +84,7 @@
       var clear = e.target.closest ? e.target.closest('[data-filter-clear]') : null;
       if (clear) {
         selectedTags = {};
+        if (generatedToggle) generatedToggle.checked = true;
         applyTagFilter();
       }
     });
