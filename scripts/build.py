@@ -1241,9 +1241,40 @@ def candidate_prompt(lines: list[str]) -> tuple[str, list[str]]:
 
 def build_candidates() -> list[Exam]:
     out = []
+    snapshot = {
+        item["date"]: item
+        for item in load_json(ROOT / "content" / "candidates.json", [])
+    }
     for date, filename in CANDIDATES.items():
         path = EXAM_DIR / filename
         if not path.exists():
+            saved = snapshot.get(date)
+            if not saved:
+                continue
+            questions = [
+                Question(
+                    n=item["n"],
+                    part=item["part"],
+                    points=float(item["points"]),
+                    title=f"Uppgift {item['n']}",
+                    page=0,
+                    segments=[],
+                    prompt_html=item.get("prompt_html", ""),
+                    options=item.get("options", []),
+                    tags=item.get("tags", []),
+                    mcq=bool(item.get("mcq")),
+                    answer_choices=item.get("answer_choices", ""),
+                )
+                for item in saved.get("questions", [])
+            ]
+            out.append(
+                Exam(
+                    date=date,
+                    title=saved.get("title", CANDIDATE_TITLES.get(date, date)),
+                    questions=questions,
+                    candidate=True,
+                )
+            )
             continue
         doc = pymupdf.open(path)
         blocks = []

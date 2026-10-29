@@ -29,25 +29,29 @@ assets/
   exams/<datum>/           beskurna fråge- och lösningsbilder
 content/
   generated_bank.json      frågebank för genererade övningsprov
+  candidates.json          frågesnapshot för de inlämnade tentorna
   terms.json               begreppsbank för matchning
   articles.json            artikelreferenser
+  llm_solutions.json       LLM-lösningar där officiellt facit saknas
 articles/                  nedladdade open-access-artiklar
 course-material/           föreläsnings-PDF:er
-old-exams/                 originaltentor och lösningsdokument
+old-exams/                 officiella tentor och lösningsdokument
 scripts/build.py           bygger index.html och bilderna
+requirements.txt           Python-beroenden
+AGENTS.md                  handoff- och arkitekturnoteringar
 ```
 
 ## Bygg och kör lokalt
 
 ```bash
-python3 -m pip install pymupdf pillow
+python3 -m pip install -r requirements.txt
 python3 scripts/build.py
 python3 -m http.server 8000 --bind 0.0.0.0
 ```
 
 Öppna <http://localhost:8000/>.
 
-Beroenden: Python 3, PyMuPDF (`pymupdf`) och Pillow. Bygget läser PDF:erna i `old-exams/`, renderar fråge- och lösningsbilder till `assets/exams/` och skriver `index.html`.
+Beroenden: Python 3.10+, PyMuPDF (`pymupdf`) och Pillow. Bygget läser de officiella PDF:erna i `old-exams/`, renderar fråge- och lösningsbilder till `assets/exams/` och skriver `index.html`. De tre inlämnade tentorna byggs från `content/candidates.json` när original-PDF:erna saknas, så en vanlig klon kan bygga om hela sajten utan studentmaterial.
 
 ## Publicera
 
@@ -57,7 +61,7 @@ Vid publicering behövs ingen separat byggnad: `index.html`, `assets/`, `course-
 
 ## Viktigt
 
-- De tre exemplen på inlämnade tentor är studentinlämningar där endast frågorna återges; deras svar och poäng visas inte. De är inte officiella lösningar. Original-PDF:erna är gitignorerade eftersom de innehåller studentuppgifter; de behövs bara lokalt om man vill bygga om kandidatdelen.
+- De tre exemplen på inlämnade tentor är studentinlämningar där endast frågorna återges; deras svar och poäng visas inte. De är inte officiella lösningar. Original-PDF:erna är gitignorerade eftersom de innehåller studentuppgifter. `content/candidates.json` innehåller en frågebank utan namn eller svar och används automatiskt om PDF:erna saknas.
 - Genererade övningsprov är just övningsmaterial. Kontrollera alltid mot kursmaterialet.
 - Artiklar som är open access ligger i `articles/`; begränsade artiklar länkas till förlaget i `content/articles.json`.
 - Publicera bara kursmaterial och tentor om du har rätt att göra det offentligt.
@@ -67,4 +71,5 @@ Vid publicering behövs ingen separat byggnad: `index.html`, `assets/`, `course-
 - 2023 års lösningsdokument saknar officiella svar för de fem första flervalsfrågorna; de visas därför med tydligt märkta LLM-förslag.
 - De tre inlämnade tentorna saknar officiella lösningar; även de har LLM-förslag baserade på kursmaterialet.
 - De inlämnade tentorna saknar bilder i den textbaserade återgivningen; original-PDF:erna länkas inte.
-- LLM-lösningarna är förslag, inte officiella facit.
+- LLM-lösningarna är förslag, inte officiella facit. Det gäller även rätt-val-raderna för 2023:s flervalsfrågor och de inlämnade tentorna.
+- Se `AGENTS.md` för teknisk handoff, kända begränsningar och verifieringsrutin.

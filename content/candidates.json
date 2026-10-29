@@ -1,0 +1,685 @@
+[
+  {
+    "date": "2024-04-10",
+    "title": "Exempel: tentamen 10 april 2024",
+    "questions": [
+      {
+        "n": 1,
+        "part": "A",
+        "points": 3,
+        "prompt_html": "<p>Which of the following statements are true for LoRa? (3p)</p>",
+        "options": [
+          "It is a network technology aimed at non-critical applications.",
+          "Animal and environmental monitoring are typical applications of this technology.",
+          "It uses delay-tolerant networking.",
+          "It uses a decentralized network architecture.",
+          "Industrial automation and robotics are typical applications of this technology.",
+          "It is a network technology aimed at time-critical applications.",
+          "This technology can be used for self-driving vehicles and drones.",
+          "It uses a centralized network architecture.",
+          "It is good for resource-constrained devices."
+        ],
+        "tags": [
+          "lpwan",
+          "cellular",
+          "dtn"
+        ],
+        "mcq": true,
+        "answer_choices": "1, 2, 8, 9"
+      },
+      {
+        "n": 2,
+        "part": "A",
+        "points": 3,
+        "prompt_html": "<p>Which of the following statements are true for a Centralized network architecture? (3p)</p>",
+        "options": [
+          "\"Centralized\" means that a gateway organizes the network.",
+          "This architecture can be used for time-critical applications.",
+          "ZigBee uses a centralized network architecture.",
+          "This architecture can be used for non-critical applications.",
+          "\"Centralized\" means that nodes use single-hop communication with the gateway.",
+          "\"Centralized\" means that the nodes are geographically close to each other.",
+          "5G uses a centralized network architecture.",
+          "\"Centralized\" means that nodes only communicate with one gateway.",
+          "\"Centralized\" means that the nodes organize themselves."
+        ],
+        "tags": [
+          "pan",
+          "cellular"
+        ],
+        "mcq": true,
+        "answer_choices": "2, 4, 5, 7"
+      },
+      {
+        "n": 3,
+        "part": "A",
+        "points": 3,
+        "prompt_html": "<p>Which of the following statements are true? (3p)</p>",
+        "options": [
+          "Radio communication underwater works well when high frequency bands are used.",
+          "Beamforming can be used to increase the radio range.",
+          "Higher frequency bands mean a longer radio range compared with lower frequency bands.",
+          "Beamforming can be used to increase the data communication capacity.",
+          "Radio communication in space works well when high frequency bands are used.",
+          "Higher frequency bands mean a shorter radio range compared with lower frequency bands."
+        ],
+        "tags": [
+          "cellular",
+          "space",
+          "underwater"
+        ],
+        "mcq": true,
+        "answer_choices": "2, 4, 5, 6"
+      },
+      {
+        "n": 4,
+        "part": "A",
+        "points": 3,
+        "prompt_html": "<p>Which of the following statements are true for resource-constrained networking? (3p)</p>",
+        "options": [
+          "LoRa is suitable for resource-constrained networking.",
+          "Gossiping is a MAC protocol aimed for resource-constrained networking.",
+          "Multi-hop communication can be used.",
+          "The nodes have limited power supply.",
+          "Single-hop communication can be used.",
+          "Resource-constrained networking and delay-tolerant networking use the same principles.",
+          "IEEE 802.11ax is suitable for resource-constrained networking.",
+          "The gateways have limited power supply."
+        ],
+        "tags": [
+          "wifi",
+          "pan",
+          "lpwan"
+        ],
+        "mcq": true,
+        "answer_choices": "1, 3, 4, 5"
+      },
+      {
+        "n": 5,
+        "part": "A",
+        "points": 3,
+        "prompt_html": "<p>Which of the following statements are true for sensor networks? (3p)</p>",
+        "options": [
+          "A decentralized network architecture can be used.",
+          "The aim of a sensor network is to communicate with a back-end system.",
+          "There are always multiple sinks in the network.",
+          "In underwater sensor networks, dolphins are used to transport data.",
+          "The aim of a sensor network is to transport data to a sink.",
+          "A centralized network architecture can be used.",
+          "There is always one sink in the network.",
+          "Each sensor must have its own IP-address.",
+          "Each sensor must have its own MAC/physical address."
+        ],
+        "tags": [
+          "cellular",
+          "underwater",
+          "backend"
+        ],
+        "mcq": true,
+        "answer_choices": "1, 5, 6, 9"
+      },
+      {
+        "n": 6,
+        "part": "A",
+        "points": 5,
+        "prompt_html": "<p>Describe a MAC protocol that can be used for systems where devices need to save energy. (5p)</p>",
+        "options": [],
+        "tags": [
+          "pan"
+        ],
+        "mcq": false,
+        "answer_choices": ""
+      },
+      {
+        "n": 7,
+        "part": "A",
+        "points": 4,
+        "prompt_html": "<p>What is a mesh network? (4p)</p>",
+        "options": [],
+        "tags": [
+          "wifi"
+        ],
+        "mcq": false,
+        "answer_choices": ""
+      },
+      {
+        "n": 8,
+        "part": "A",
+        "points": 3,
+        "prompt_html": "<p>What is a CDN and when is it suitable? (3p)</p>",
+        "options": [],
+        "tags": [
+          "pan",
+          "backend"
+        ],
+        "mcq": false,
+        "answer_choices": ""
+      },
+      {
+        "n": 9,
+        "part": "A",
+        "points": 3,
+        "prompt_html": "<p>What is mMTC and what type of network systems is it aimed at? (3p)</p>",
+        "options": [],
+        "tags": [
+          "pan",
+          "lpwan",
+          "cellular"
+        ],
+        "mcq": false,
+        "answer_choices": ""
+      },
+      {
+        "n": 10,
+        "part": "B",
+        "points": 8,
+        "prompt_html": "<p>We would like to design an edge computing server for a 5G base station. We analyze the traffic in the cell and find that users in total place requests according to an exponential distribution with average 10 requests/second (we can assume that there are “many users”). For modelling, we can assume that our server has an unlimited queue, that all requests are independent of each other, and that the service times are exponentially distributed. (8p)</p><p>a. What processing capacity (requests/second) does the server need to have in order for the server system to be stable? (2p)</p><p>b. What processing capacity (requests/second) does the server need to have to in average have 3 users in the system (server + queue)?  (3p)</p><p>c. For the processing capacity in (b), what will the average response time of a request be? (3p)</p>",
+        "options": [],
+        "tags": [
+          "pan",
+          "cellular",
+          "backend"
+        ],
+        "mcq": false,
+        "answer_choices": ""
+      },
+      {
+        "n": 11,
+        "part": "B",
+        "points": 10,
+        "prompt_html": "<p>We develop a wireless radio access system with a time-slotted contention based MAC protocol. Nodes can send data packets using one of 3 time slots. We model the system as an M/M/3 system without queue (Erlang system). The average arrival rate of data packets from the nodes is 200 packets per second, and the average service rate is 200 packets per second. (10p)</p><p>(a) What is the average time in the system for a data packet when it has received a time slot? (2p)</p><p>(b) What is the probability that a data packet takes maximum 10 milliseconds to send when it has received a time slot? (3p)</p><p>(c) What is the probability that a data packet is blocked because there is no empty slot when it arrives? (2p)</p><p>(d) What is the average throughput of the system? (3p)</p>",
+        "options": [],
+        "tags": [
+          "performance",
+          "probability",
+          "queue"
+        ],
+        "mcq": false,
+        "answer_choices": ""
+      },
+      {
+        "n": 12,
+        "part": "B",
+        "points": 6,
+        "prompt_html": "<p>Consider the ad-hoc network in the figure below. Dashed lines indicate nodes are within transmission range of each other. The network uses so called contention-based greedy forwarding. With greedy forwarding, a sender node selects the forwarding node closest to the destination. One way to do this is to keep track of neighbors&#x27; locations, but this increases overhead and breaks down when we have high mobility. Instead, the source node can send a Request-to-send (RTS) in broadcast, and potential forwarding nodes respond with a Clear-to- Send (CTS) at a time determined by their distance to the destination. The node closest to the destination will then respond first. (6p) Suppose we have the following timer function for the contention-based greedy forwarding: where is the distance from the forwarding node candidate to the target in meters and T is the resulting timer value in seconds. What will be the delay due to waiting for the contention timers to expire in the network below, with the source and target as labelled?</p>",
+        "options": [],
+        "tags": [
+          "basic"
+        ],
+        "mcq": false,
+        "answer_choices": ""
+      },
+      {
+        "n": 13,
+        "part": "B",
+        "points": 6,
+        "prompt_html": "<p>Consider a simple link layer protocol using Stop-and-wait ARQ. When the sender has transmitted a data frame, it waits for an ACK. If the sender has not received an ACK within a certain time period (time out), the sender retransmits the data frame. The probability of a data frame being lost is p, and the probability that an ACK frame being lost is q. (6p) Assume that p = 0.7 and q= 0.8. What is the average number of data transmissions to successfully send a data frame?</p>",
+        "options": [],
+        "tags": [
+          "pan",
+          "probability"
+        ],
+        "mcq": false,
+        "answer_choices": ""
+      },
+      {
+        "n": 14,
+        "part": "C",
+        "points": 15,
+        "prompt_html": "<p>(15p) The national parks in Africa experience lots of problems with illegal hunting. You have been given the task to help a national park in South Africa with a surveillance monitoring system. A simple map of the park is shown in the figure below. The area not marked in the map is a savanna, made up of large expanses of grasses interrupted by scattered shrubs and small trees. There are several different types of animals, including lion, leopard, rhinoceros, elephant, and African buffalo (The &quot;Big 5&quot; for hunting), in the park, and they all visit the water holes at regular times. At other times, they are spread out over the park. Your task is to design the network architecture for a surveillance system for the park. The surveillance system should detect potential hunters. If a hunter is detected, a position of the hunter should be estimated and a warning signal should be sent to the headquarter (placed in the top right town in the figure). You have access to all types of sensors, including heat and motion sensors, and various small microprocessor computers (Raspberry PIs). Also, you have access to trail cameras (small cameras that takes low-quality images when actuated). All equipment can use all types of communication technology standards. There is no cellular coverage within the national park (only in the towns). Starlink is available in South Africa. You have a decent budget for your solution, but it is preferrable if the system can have low maintenance and be deployed with minimum interference with the wildlife. Also, the park appreciates low operational costs.</p>",
+        "options": [],
+        "tags": [
+          "pan",
+          "lpwan",
+          "cellular"
+        ],
+        "mcq": false,
+        "answer_choices": ""
+      },
+      {
+        "n": 15,
+        "part": "C",
+        "points": 15,
+        "prompt_html": "<p>(15p) Your task is to design a network system for a company that is investing in a smart manufacturing environment. In the manufacturing building placed in a city, there will be several connected mobile robots and connected machines, which all should be connected to a local cloud server system. The robot intelligence is placed in the cloud, which means that the robots both send data and receive instructions. The connected machines continuously send process data that should be analyzed in the cloud. Also, there are workers in the building, who should be able to monitor both robots and machines using tablets and cell phones. Your task is to design a suitable network architecture for the manufacturing building. The company is willing to invest in new networking technologies if necessary. There is a local cloud server system already deployed.</p>",
+        "options": [],
+        "tags": [
+          "wifi",
+          "pan",
+          "backend"
+        ],
+        "mcq": false,
+        "answer_choices": ""
+      }
+    ]
+  },
+  {
+    "date": "2025-08-28",
+    "title": "Exempel: tentamen 28 augusti 2025",
+    "questions": [
+      {
+        "n": 1,
+        "part": "A",
+        "points": 5,
+        "prompt_html": "<p>Which of the following technologies and concepts are specifically aimed at time- critical applications? (5p)</p>",
+        "options": [
+          "Argos",
+          "5G URLLC",
+          "LoRa",
+          "NB-IoT",
+          "DTN",
+          "LTE-M",
+          "OFDMA",
+          "Starlink",
+          "WiFi 6 - mesh",
+          "Bluetooth Low Energy",
+          "Zigbee",
+          "5G eMBB",
+          "IEEE 802.11p",
+          "Licklider",
+          "Gossiping",
+          "5G mMTC"
+        ],
+        "tags": [
+          "wifi",
+          "pan",
+          "lpwan"
+        ],
+        "mcq": true,
+        "answer_choices": "2, 13"
+      },
+      {
+        "n": 2,
+        "part": "A",
+        "points": 5,
+        "prompt_html": "<p>Which of the following statements are true for non-critical applications? (5p)</p>",
+        "options": [
+          "They require low communication error rates.",
+          "They always use devices that require low energy consumption.",
+          "They require contention-based MAC protocols.",
+          "\"Non-critical\" means that the application data is not very important for the user.",
+          "The network's communication range will be short to save energy.",
+          "They can be based on a DTN architecture.",
+          "They can use centralized network architectures.",
+          "They require contention-free MAC protocols.",
+          "\"Non-critical\" means that the application can tolerate delays and packet loss.",
+          "They always use radio-based communication links.",
+          "The can use decentralized network architectures."
+        ],
+        "tags": [
+          "cellular",
+          "dtn"
+        ],
+        "mcq": true,
+        "answer_choices": "6, 7, 9, 11"
+      },
+      {
+        "n": 3,
+        "part": "A",
+        "points": 5,
+        "prompt_html": "<p>Which of the following statements are true for communication networks in outer space? (5p)</p>",
+        "options": [
+          "A space link provides full-duplex communication between two nodes.",
+          "They can use radio communication links.",
+          "They can use acoustic communication links.",
+          "They often have solar-powered systems.",
+          "Space relays are used as base stations on planets.",
+          "A space link provides one-way communication between two nodes.",
+          "Space relays are used as DTN nodes.",
+          "They often have wind-powered systems.",
+          "Licklider is a protocol used in networks in outer space.",
+          "They can use DTNs for time-critical applications.",
+          "Space relays are used to re-direct communication links.",
+          "They can use optical communication links."
+        ],
+        "tags": [
+          "cellular",
+          "ntn",
+          "space"
+        ],
+        "mcq": true,
+        "answer_choices": "2, 4, 6, 7, 9, 11, 12"
+      },
+      {
+        "n": 4,
+        "part": "A",
+        "points": 5,
+        "prompt_html": "<p>Describe the purpose, the general architecture and functions for an ad-hoc network. (5p)</p>",
+        "options": [],
+        "tags": [
+          "pan"
+        ],
+        "mcq": false,
+        "answer_choices": ""
+      },
+      {
+        "n": 5,
+        "part": "A",
+        "points": 5,
+        "prompt_html": "<p>Describe the purpose, general architecture and functions for a sensor network. (5p)</p>",
+        "options": [],
+        "tags": [
+          "pan",
+          "lpwan",
+          "ntn"
+        ],
+        "mcq": false,
+        "answer_choices": ""
+      },
+      {
+        "n": 6,
+        "part": "A",
+        "points": 5,
+        "prompt_html": "<p>Describe the main purpose, general network architecture and functions for a CDN. (5p)</p>",
+        "options": [],
+        "tags": [
+          "pan",
+          "backend"
+        ],
+        "mcq": false,
+        "answer_choices": ""
+      },
+      {
+        "n": 7,
+        "part": "A",
+        "points": 10,
+        "prompt_html": "<p>You are designing an MAC protocol that uses a TDD (Time-division duplex) system with reservations, see an illustration in the figure. A data frame includes three slots (1, 2, 3). Before the data frame, there is a preamble frame for reservations. There are three high-priority users (1, 2, 3) that can reserve their corresponding slot when they have data to send. When a high-priority user has signaled by using its corresponding preamble slot, this user will sends its data in its coming data slot. Also, there are low-priority users that can send data when a high-priority user is not using their data slot. These users send requests that are placed in a queue and handled first-come-first served. For simplicity, we can assume that this queue is never empty. For each data frame, each high-priority user reserves its slot with probability 0.4. Each data frame is independent of each other. (10p)</p><p>(a) What is the probability that all slots in a data frame are reserved by the high-priority users? (2p)</p><p>(b) What is the probability that exactly one of the slots in a data frame is used by a low-priority user? (4p)</p><p>(c) What is the average number of data frame slots that can be used by the low-priority users? (4p)</p>",
+        "options": [],
+        "tags": [
+          "pan",
+          "performance",
+          "probability",
+          "queue"
+        ],
+        "mcq": false,
+        "answer_choices": ""
+      },
+      {
+        "n": 8,
+        "part": "A",
+        "points": 10,
+        "prompt_html": "<p>You are designing a video streaming server. You model the server as a single-server queueing system with an unlimited queue. Users send requests to the server according to a Poisson process with average 7 requests per second. The average service time for a request is 0.1 seconds and all service times and requests are independent of each other. (10p)</p><p>(a) What is the probability that there are exactly 7 arriving new requests during one second? (2p)</p><p>(b) Assume that you model the service times with an exponential distribution. What is the average response time for a request? (2p)</p><p>(c) Assume that you model the service times with a deterministic distribution. What is the average response time for a request?  (3p)</p><p>(d) In (b) and (c), what is the average throughput of requests? (3p)</p>",
+        "options": [],
+        "tags": [
+          "performance",
+          "probability",
+          "queue"
+        ],
+        "mcq": false,
+        "answer_choices": ""
+      },
+      {
+        "n": 9,
+        "part": "A",
+        "points": 10,
+        "prompt_html": "<p>Consider a simple link layer protocol using Stop-and-wait ARQ. When the sender has transmitted a data frame, it waits for an ACK. If the sender has not received an ACK within a certain time period (time out), the sender retransmits the data frame. The probability of a data frame being lost is p, and the probability that an ACK frame being lost is q. Assume that p = 0.7 and q= 0.8. Also, assume that the transmission time for a data frame is 0.2 seconds and that the transmission time for an ACK frame is 0.1 seconds. Also, assume that the time-out period is 1 second. You can ignore all propagation and processing delays, and the sender has always data to send.  (10p)</p><p>a.  What is the probability that a data frame and the following ACK are correctly received? (2p)</p><p>b.  What is the average number of data transmissions to successfully send a data frame? (3p)</p><p>c.  In average, how long time does it take to send 10 correctly received data frames? (2p)</p><p>d. What is the efficiency of the data transfer in c? (3p)</p>",
+        "options": [],
+        "tags": [
+          "pan",
+          "probability"
+        ],
+        "mcq": false,
+        "answer_choices": ""
+      },
+      {
+        "n": 10,
+        "part": "B",
+        "points": 15,
+        "prompt_html": "<p>Näsudden is a peninsula on the south-west coast of Gotland, see the figure below. Näsudden is a strategically important area for the Swedish military defense. Also, it is an important area for large-scale wind power farms, both on land-based and sea-based. The sea-based wind turbines are placed maximum 10 km from the shore. Näsudden is about 2 km wide (measured from the east shore to the west shore). One challenge with wind power farms is that they can cause disturbances for military surveillance systems. Therefore, the small company Elevated Launch together with Vattenfall, one of the major Swedish energy production companies, have suggested a solution for this challenge. Their suggestion is let the wind power turbines be part of the military surveillance system and use the sea-based wind turbines to extend the surveillance area. The surveillance system should detect incoming ships, both on and under the water. Also, it should detect low-flying planes and drones. When a ship or flying object is detected, an alarm message, including a location and images, should be sent with to the headquarters on land. The headquarters can then send ships, planes and/or military drones to the specified location. Your task is to help Elevated Launch and Vattenfall with this surveillance system. You have a decent budget, since it is part of the Swedish military defense, and you have access to all available network technology and equipment, for example sensors, buoys, drones, AUV:s, ships, etc. The wind power turbines have electricity and they are large enough to place equipment on. The sea-based wind power turbines must used as one part of your surveillance system. (15p)</p>",
+        "options": [],
+        "tags": [
+          "pan",
+          "underwater"
+        ],
+        "mcq": false,
+        "answer_choices": ""
+      },
+      {
+        "n": 11,
+        "part": "B",
+        "points": 15,
+        "prompt_html": "<p>Foodora has started a trial with food-delivery robots together with Stockholm municipality, see figure below. About 15 Foodora robots are driving around the area of Södermalm, see map below, delivering food to customers. Currently, the robots are autonomous, using sensors and cameras to avoid crashing into people and other things in their way. The robots have a range of about 3 kilometers. When they have delivered food, they go back to the main central placed in the middle of Södermalm for re-charging and receiving instructions for new deliveries. Foodora would like to develop a solution for cloud robotics, meaning that the robots should be connected to a network and that the robot AI computing is performed in the cloud instead of in the robot itself. Your task is to help Foodora with this cloud robotics solution. The robots have sensors and cameras, but all computing should be placed in a cloud-based back-end. You must suggest a complete network design solution that is suitable for the Foodora food-delivery robots. The robots will continue to operate in Södermalm. You have a decent budget for your solution and all available required technologies.</p>",
+        "options": [],
+        "tags": [
+          "pan",
+          "cellular",
+          "backend"
+        ],
+        "mcq": false,
+        "answer_choices": ""
+      }
+    ]
+  },
+  {
+    "date": "2026-04-09",
+    "title": "Exempel: tentamen 9 april 2026",
+    "questions": [
+      {
+        "n": 1,
+        "part": "A",
+        "points": 3,
+        "prompt_html": "<p>Which of the following statements are true for LPWAN?</p>",
+        "options": [
+          "eMBB is a 5G user scenario that fits with LPWAN.",
+          "LPWAN is a technology aimed at resource-constrained communication.",
+          "NB-IoT is an LPWAN technology.",
+          "LPWAN is a technology aimed at time-critical applications.",
+          "ZigBee is an LPWAN technology.",
+          "WiFi 6/7 is an LPWAN technology.",
+          "mMTC is a 5G user scenario that fits with LPWAN."
+        ],
+        "tags": [
+          "wifi",
+          "pan",
+          "lpwan"
+        ],
+        "mcq": true,
+        "answer_choices": "2, 3, 7"
+      },
+      {
+        "n": 2,
+        "part": "A",
+        "points": 3,
+        "prompt_html": "<p>Which of the following statements are true for a Centralized network architecture? (3p)</p>",
+        "options": [
+          "This architecture can be used for non-critical applications.",
+          "\"Centralized\" means that nodes can only communicate with one base station.",
+          "\"Centralized\" means that the nodes are geographically close to each other.",
+          "5G uses a centralized network architecture.",
+          "\"Centralized\" means that the nodes organize themselves.",
+          "This architecture can be used for time-critical applications.",
+          "\"Centralized\" means that nodes use single-hop communication with the base station.",
+          "\"Centralized\" means that a base station organizes the network.",
+          "ZigBee uses a centralized network architecture."
+        ],
+        "tags": [
+          "pan",
+          "cellular"
+        ],
+        "mcq": true,
+        "answer_choices": "1, 4, 6, 7, 8"
+      },
+      {
+        "n": 3,
+        "part": "A",
+        "points": 3,
+        "prompt_html": "<p>Which of the following statements are true for sensor networks? (3p)</p>",
+        "options": [
+          "There is always one sink in the network.",
+          "A centralized network architecture can be used.",
+          "Each sensor must have its own MAC/physical address.",
+          "A sensor network always uses an DTN architecture.",
+          "In a sensor network, there can be some mobile nodes.",
+          "The aim of a sensor network is to transport data to a sink.",
+          "A decentralized network architecture can be used.",
+          "The aim of a sensor network is to communicate with a back-end system.",
+          "There are always multiple sinks in the network.",
+          "Each sensor must have its own IP-address.",
+          "A sensor network can only include stationary nodes."
+        ],
+        "tags": [
+          "cellular",
+          "dtn",
+          "backend"
+        ],
+        "mcq": true,
+        "answer_choices": "2, 3, 5, 6, 7"
+      },
+      {
+        "n": 4,
+        "part": "A",
+        "points": 3,
+        "prompt_html": "<p>Which of the following statements are true for mesh networks. (3p)</p>",
+        "options": [
+          "LoRa is an example of a technology that uses a mesh network architecture.",
+          "A mesh network uses a centralized network architecture.",
+          "In a mesh network, all nodes are stationary.",
+          "A mesh network is a type of ad-hoc network.",
+          "In a mesh network, there can be mobile nodes.",
+          "In a mesh network there can be several types of MAC protocols.",
+          "ZigBee is an example of a technology that uses a mesh network architecture.",
+          "In a mesh network all nodes use the same MAC protocol."
+        ],
+        "tags": [
+          "wifi",
+          "pan",
+          "lpwan"
+        ],
+        "mcq": true,
+        "answer_choices": "4, 5, 6, 7"
+      },
+      {
+        "n": 5,
+        "part": "A",
+        "points": 3,
+        "prompt_html": "<p>Which of the following statements are true for radio communication links?</p>",
+        "options": [
+          "High frequencies on Earth generally have a longer range than low frequencies.",
+          "Underwater radio links generally use lower frequency spectrum than radio links on Earth.",
+          "Underwater radio links generally use similar frequency spectrum as radio links on Earth.",
+          "Radio links in space generally use similar frequency spectrum as radio links on Earth.",
+          "High frequencies generally can carry more data than low frequencies.",
+          "High frequencies generally can carry less data than low frequencies.",
+          "High frequencies on Earth generally have a shorter range than low frequencies.",
+          "Radio links in space generally use lower frequency spectrum than radio links on Earth.",
+          "Radio links in space generally use higher frequency spectrum than radio links on Earth.",
+          "Underwater radio links generally use higher frequency spectrum as radio links on Earth."
+        ],
+        "tags": [
+          "cellular",
+          "space",
+          "underwater"
+        ],
+        "mcq": true,
+        "answer_choices": "2, 5, 7, 9"
+      },
+      {
+        "n": 6,
+        "part": "A",
+        "points": 5,
+        "prompt_html": "<p>Describe the purpose and different architectures for private 5G networks. (5p)</p>",
+        "options": [],
+        "tags": [
+          "cellular"
+        ],
+        "mcq": false,
+        "answer_choices": ""
+      },
+      {
+        "n": 7,
+        "part": "A",
+        "points": 5,
+        "prompt_html": "<p>Describe the purpose and general architecture of LoRa networks. (5p)</p>",
+        "options": [],
+        "tags": [
+          "lpwan"
+        ],
+        "mcq": false,
+        "answer_choices": ""
+      },
+      {
+        "n": 8,
+        "part": "A",
+        "points": 5,
+        "prompt_html": "<p>Shortly describe a network architecture for connecting a moon village with the Internet on Earth. For full points, you need to include the most important parts of this network architecture. (5p)</p>",
+        "options": [],
+        "tags": [
+          "ntn",
+          "space",
+          "dtn"
+        ],
+        "mcq": false,
+        "answer_choices": ""
+      },
+      {
+        "n": 9,
+        "part": "A",
+        "points": 10,
+        "prompt_html": "<p>We would like to design an edge computing server for a 5G base station. We analyze the traffic in the cell and find that users in total place requests according to an Poisson distribution with average 10 requests/second (we can assume that there are &quot;many users&quot;).  For modelling, we can assume that all requests are independent of each other and that our server has an unlimited queue.</p><p>(a) What processing capacity (requests/second) does the server need to have in order for the server system to be stable? (2p)</p><p>First, we assume that the service time for each request is exponentially distributed.</p><p>(b) What processing capacity (requests/second) does the server need to have in order to have an average response time (T) of maximum 100 milliseconds? (2p)</p><p>(c) For the processing capacity in (b), what will the average number of requests in the system be? (2p)</p><p>Second, we model that the service time for each request is deterministic and that the processing capacity is the same as calculated in (b).</p><p>(d) What is the average response time (T) for requests using this model? (4p)</p>",
+        "options": [],
+        "tags": [
+          "pan",
+          "cellular",
+          "backend"
+        ],
+        "mcq": false,
+        "answer_choices": ""
+      },
+      {
+        "n": 10,
+        "part": "B",
+        "points": 10,
+        "prompt_html": "<p>A cell in a wireless network consists of a base station with several connected users, The MAC protocol in the cell uses a Time-division Multiple Access (TDMA) protocol with five slots in each TDMA frame. A user that has received a slot in a TDMA frame keeps the same slot in the coming frames until it disconnects. New user requests for a slot in a TDMA frame arrive according to a Poisson process with an average rate of 2 arrivals per minute, and if a user receives a slot, it stays connected for a negative exponential distributed time, with mean 4 minutes. If a user request arrives and there is no TDMA slot available, the user cannot connect to the network and drops out (we can ignore any re-attempts that would change the arrival process). (10p)</p><p>a) Suppose the time starts with no connected users in the cell. What is the probability that all five TDMA slots will be occupied after three minutes, if we assume that no users disconnect during this time period? (3p)</p><p>b) What is the probability that there will be a TDMA slot available when a new user request for a slot arrives? (3p)</p><p>c) How many TDMA slots are used on average in each frame? (4p)</p>",
+        "options": [],
+        "tags": [
+          "pan",
+          "performance",
+          "probability",
+          "queue"
+        ],
+        "mcq": false,
+        "answer_choices": ""
+      },
+      {
+        "n": 11,
+        "part": "B",
+        "points": 10,
+        "prompt_html": "<p>You are developing a Massive MIMO system. In Massive MIMO, a type of time-slotted system based on so called coherence intervals is used. For each coherence interval, there are a limited number of so called pilots. A user needs a pilot in order to be able to send data. Each coherence interval is 10 milliseconds, and there are 4 users that submit requests for pilots independent of each other. The probability that a specific user submits a request for a pilot in the next coherence interval is 0.25. If there are more users requests than pilots when a new coherence interval starts, the pilots are distributed randomly among the users. If a user does not get a pilot in a coherence interval, the user backs off and continues to send requests with the same probability as before. (10p)</p><p>(a) Assume that we have decided to have 3 pilots in each coherence interval. What is the probability that a user gets a pilot if the user submits a request? (4p)</p><p>(b) Assume that we have two design choices: Alternative 1: 2 pilots in each coherence interval, where each pilot correspond to maximum 300 bits of transmitted data. Alternative 2: 3 pilots in each coherence interval, where each pilot correspond to maximum 200 bits of transmitted data. Assume that a user has 500 bits of data to send. Which alternative will give this user the lowest average time for sending this data? (6p)</p>",
+        "options": [],
+        "tags": [
+          "wifi",
+          "pan",
+          "cellular"
+        ],
+        "mcq": false,
+        "answer_choices": ""
+      },
+      {
+        "n": 12,
+        "part": "B",
+        "points": 15,
+        "prompt_html": "<p>You have been asked to help the Swedish Defense Research Agency (FOI). The Swedish government has decided to upgrade the defense system around the Swedish island Gotland (see pdf-resource 12_Gotland for more information). Therefore, FOI has started a project that will develop a surveillance system for the area (both in the air and underwater) around Gotland. The surveillance system should detect incoming unwanted underwater or flying moving objects, for example foreign submarines, Autonomous Underwater Vehicles (AUVs) or drones. When an unwanted object is detected, an alarm signal should be sent to the command center placed in Visby, on the west coast of Gotland. With the alarm signal, there should be an estimated position of the unwanted object. When an alarm is received, the Swedish Navy will send helicopters and ships to the area where the object was detected. Your task is to propose a complete network system design for this surveillance system. Since Gotland is a rather large island, you can focus on the areas around the small island Östergarnsholm, shown in the image below (The area is marked with yellow in the pdf-resource 12_Gotland). Östergarnsholm is a small, flat island about 4 km from the east coast of Gotland. The maximum depth of the sea within 1 km radius of the island is about 30 m. On the south tip of the island, there is a meteorological tower. In addition, there is meteorological measurement equipment placed in the sea around the island, see the image. Also, there is a lighthouse on the island. You are quite flexible regarding infrastructures and equipment, and FOI has a decent budget for the project.</p>",
+        "options": [],
+        "tags": [
+          "pan",
+          "underwater"
+        ],
+        "mcq": false,
+        "answer_choices": ""
+      },
+      {
+        "n": 13,
+        "part": "B",
+        "points": 15,
+        "prompt_html": "<p>Your task is to help Helsingborg West Harbour with their project on self-driving trucks. The trucks will move containers within the harbour area. The trucks will be controlled by a software application placed in a back-end server. The software application will send instructions to the trucks about their path trajectory, so that the trucks&#x27; movements are optimized. The trucks will continuously send information about their current position to the software application. As a fall- back solution, the trucks will have their own internal collision-avoidance mechanism so that they do not collide into each other or other things. Your task is to propose a complete network system design for this self-driving application. Your solution should be based on well-known commercial technologies. The image below shows Helsingborg West Harbour.</p>",
+        "options": [],
+        "tags": [
+          "pan",
+          "cellular",
+          "backend"
+        ],
+        "mcq": false,
+        "answer_choices": ""
+      }
+    ]
+  }
+]
