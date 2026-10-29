@@ -106,6 +106,35 @@ Q_TAGS = {
     ("2025-10-30", 10): ["underwater", "ntn", "pan"],
 }
 
+OFFICIAL_MCQ = (
+    {("2023-10-25", n) for n in range(1, 6)}
+    | {("2024-11-01", n) for n in range(1, 6)}
+    | {("2025-10-30", n) for n in range(1, 4)}
+)
+
+# Choice labels shown in the answer panel. Image exams use letters; parsed
+# HTML options use the visible 1-based numbers.
+MCQ_ANSWER_CHOICES = {
+    ("2023-10-25", 1): "a, b, d, g",
+    ("2023-10-25", 2): "b, d",
+    ("2023-10-25", 3): "b, d, f",
+    ("2023-10-25", 4): "a, d, h",
+    ("2023-10-25", 5): "c, d, g",
+    ("2024-04-10", 1): "1, 2, 8, 9",
+    ("2024-04-10", 2): "2, 4, 5, 7",
+    ("2024-04-10", 3): "2, 4, 5, 6",
+    ("2024-04-10", 4): "1, 3, 4, 5",
+    ("2024-04-10", 5): "1, 5, 6, 9",
+    ("2025-08-28", 1): "2, 13",
+    ("2025-08-28", 2): "6, 7, 9, 11",
+    ("2025-08-28", 3): "2, 4, 6, 7, 9, 11, 12",
+    ("2026-04-09", 1): "2, 3, 7",
+    ("2026-04-09", 2): "1, 4, 6, 7, 8",
+    ("2026-04-09", 3): "2, 3, 5, 6, 7",
+    ("2026-04-09", 4): "4, 5, 6, 7",
+    ("2026-04-09", 5): "2, 5, 7, 9",
+}
+
 DRAW_TOOLS = """
 <div class="draw-tools" role="toolbar" aria-label="Rita på bilden">
   <button type="button" class="draw-btn" data-draw-mode="pen" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg><span>Penna</span></button>
@@ -145,6 +174,8 @@ class Question:
     llm_solution: str = ""
     source_label: str = ""
     note: str = ""
+    mcq: bool = False
+    answer_choices: str = ""
 
 
 @dataclass
@@ -319,6 +350,8 @@ def build_official() -> list[Exam]:
                 q.tags.append("queue")
             if date == "2023-10-25" and q.n == 14:
                 q.note = "Figuren som uppgiften hänvisar till saknas i original-PDF:en."
+            q.mcq = (date, q.n) in OFFICIAL_MCQ
+            q.answer_choices = MCQ_ANSWER_CHOICES.get((date, q.n), "")
             q.q_image = f"assets/exams/{date}/q{q.n:02d}.webp"
             img = render_segments(qdoc, q.segments)
             if img is not None:
@@ -410,6 +443,11 @@ def scoring_html(q: Question, date: str) -> str:
 
 
 def answer_html(q: Question) -> str:
+    choice = (
+        f'<div class="answer-choice"><span>Rätt val</span><strong>{esc(q.answer_choices)}</strong></div>'
+        if q.answer_choices
+        else ""
+    )
     if q.s_image:
         dims = f' width="{q.s_size[0]}" height="{q.s_size[1]}"' if q.s_size else ""
         body = f'<img loading="lazy" decoding="async" src="{q.s_image}" alt="Lösning till uppgift {q.n}"{dims}>'
@@ -422,7 +460,7 @@ def answer_html(q: Question) -> str:
         note = f'<p class="src">{q.source_label}</p>' if q.source_label else ""
         return f"""      <details class="answer">
         <summary><span class="chev" aria-hidden="true"></span><span class="label">Visa lösning</span></summary>
-        <div class="answer-body"><div class="answer-inner"><div class="answer-scroll"><div class="answer-text">{q.solution_html}{note}</div></div></div></div>
+        <div class="answer-body"><div class="answer-inner"><div class="answer-scroll"><div class="answer-text">{choice}{q.solution_html}{note}</div></div></div></div>
       </details>
 """
     if q.llm_solution:
@@ -431,7 +469,7 @@ def answer_html(q: Question) -> str:
         <summary><span class="chev" aria-hidden="true"></span><span class="label">Visa LLM-lösning</span></summary>
         <div class="answer-body"><div class="answer-inner"><div class="answer-scroll"><div class="answer-text">
           <p class="answer-warning"><strong>Officiell lösning saknas.</strong> Följande är ett LLM-förslag som utgår från kursmaterialet. Kontrollera alltid mot föreläsningar och artiklar.</p>
-          {q.llm_solution}{note}
+          {choice}{q.llm_solution}{note}
         </div></div></div></div>
       </details>
 """
@@ -440,6 +478,16 @@ def answer_html(q: Question) -> str:
         <div class="answer-body"><div class="answer-inner"><div class="answer-scroll"><div class="answer-text">Det finns ingen officiell lösning för den här uppgiften i kursens lösningsdokument. Använd uppgiften som övning och jämför med kursmaterialet.</div></div></div></div>
       </details>
 """
+
+
+def writing_html(q: Question, date: str) -> str:
+    if q.mcq or q.options:
+        return ""
+    return f"""
+      <div class="write-answer">
+        <label for="answer-{date}-{q.n}">Ditt svar <span>Sparas lokalt i webbläsaren</span></label>
+        <textarea id="answer-{date}-{q.n}" data-answer-notes data-key="{esc(date)}-{q.n}" rows="4" placeholder="Skriv ditt svar här …"></textarea>
+      </div>"""
 
 
 def card_html(q: Question, date: str) -> str:
@@ -458,7 +506,7 @@ def card_html(q: Question, date: str) -> str:
         if q.options:
             options = (
                 '<ul class="gen-options">'
-                + "".join(f"<li>{o}</li>" for o in q.options)
+                + "".join(f"<li>{esc(o)}</li>" for o in q.options)
                 + "</ul>"
             )
         body = f'<div class="gen-prompt">{q.prompt_html}{options}</div>'
@@ -475,6 +523,7 @@ def card_html(q: Question, date: str) -> str:
         <span class="points" data-card-points>0 / {pts} p</span>
       </div>
 {tags_html(q)}      {qbody}
+{writing_html(q, date)}
 {scoring_html(q, date)}{answer_html(q)}    </article>
 """
 
@@ -903,6 +952,31 @@ def build_generated() -> list[Exam]:
             continue
         questions = []
         for n, item in enumerate(chosen, 1):
+            solution_html = item.get("solution", "")
+            choice_match = re.search(
+                r"<strong>True:</strong>\s*([0-9][0-9,\s]*)", solution_html
+            )
+            answer_choices = (
+                choice_match.group(1).strip().rstrip(" .") if choice_match else ""
+            )
+            if choice_match:
+                false_match = re.search(
+                    r"<strong>False:</strong>\s*([0-9][0-9,\s]*)", solution_html
+                )
+                solution_html = re.sub(
+                    r"^\s*<p><strong>True:</strong>.*?</p>",
+                    "",
+                    solution_html,
+                    count=1,
+                    flags=re.S,
+                )
+                if false_match:
+                    solution_html = (
+                        '<p><strong>Fel:</strong> '
+                        + false_match.group(1).strip().rstrip(" .")
+                        + ".</p>"
+                        + solution_html
+                    )
             questions.append(
                 Question(
                     n=n,
@@ -923,7 +997,9 @@ def build_generated() -> list[Exam]:
                     generated=True,
                     prompt_html=item.get("prompt", ""),
                     options=item.get("options", []),
-                    solution_html=item.get("solution", ""),
+                    solution_html=solution_html,
+                    mcq=bool(item.get("options")),
+                    answer_choices=answer_choices,
                     source_label=(
                         item.get("source_label", "")
                         + (
@@ -1106,7 +1182,7 @@ def guess_tags(text: str) -> list[str]:
 def clean_candidate_lines(lines: list[str]) -> list[str]:
     out = []
     for line in lines:
-        t = line.strip()
+        t = html.unescape(line.strip())
         if not t:
             continue
         if "Candidate " in t or t.startswith("Examination "):
@@ -1117,13 +1193,15 @@ def clean_candidate_lines(lines: list[str]) -> list[str]:
             continue
         if re.match(r"^Part\s+[ABC]\b", t, re.I):
             continue
+        if re.match(r"^Totalpoäng\b", t, re.I):
+            continue
         if t.lower().startswith("uppgift") and "poäng" in t.lower():
             continue
         out.append(t)
     return out
 
 
-def candidate_prompt(lines: list[str]) -> str:
+def candidate_prompt(lines: list[str]) -> tuple[str, list[str]]:
     # Stop before the candidate's answer field.
     stop = len(lines)
     for i, line in enumerate(lines):
@@ -1132,32 +1210,33 @@ def candidate_prompt(lines: list[str]) -> str:
             break
     lines = lines[:stop]
     if not lines:
-        return ""
+        return "", []
     prompt_lines = []
     option_lines = []
     in_options = False
-    has_options = False
     for line in lines:
         if re.search(r"select one or more alternatives", line, re.I):
             in_options = True
-            has_options = True
             continue
         if in_options:
             option_lines.append(line)
         else:
             prompt_lines.append(line)
-    html_parts = []
-    if prompt_lines:
-        html_parts.append("".join(f"<p>{esc(x)}</p>" for x in prompt_lines))
-    if has_options:
-        html_parts.append('<p class="src">Välj ett eller flera alternativ.</p>')
-    if option_lines:
-        html_parts.append(
-            '<ul class="gen-options">'
-            + "".join(f"<li>{esc(x)}</li>" for x in option_lines)
-            + "</ul>"
+    paragraphs = []
+    current = []
+    for line in prompt_lines:
+        starts_part = re.match(r"^\(?[a-hA-H][\).]\s+", line)
+        starts_transition = re.match(
+            r"^(?:First|Second|Third|Finally|Next|Then)\b", line, re.I
         )
-    return "".join(html_parts)
+        if current and (starts_part or starts_transition):
+            paragraphs.append(" ".join(current))
+            current = []
+        current.append(line)
+    if current:
+        paragraphs.append(" ".join(current))
+    html = "".join(f"<p>{esc(p)}</p>" for p in paragraphs)
+    return html, option_lines
 
 
 def build_candidates() -> list[Exam]:
@@ -1207,7 +1286,7 @@ def build_candidates() -> list[Exam]:
                         continue
                     lines.append(text)
             lines = clean_candidate_lines(lines)
-            prompt = candidate_prompt(lines)
+            prompt, options = candidate_prompt(lines)
             text_for_tags = " ".join(lines[:30])
             pts = points_map.get(n)
             if not pts:
@@ -1224,7 +1303,10 @@ def build_candidates() -> list[Exam]:
                     page=pno + 1,
                     segments=[],
                     prompt_html=prompt,
+                    options=options,
                     tags=guess_tags(text_for_tags),
+                    mcq=bool(options),
+                    answer_choices=MCQ_ANSWER_CHOICES.get((date, n), ""),
                 )
             )
         # only use the questions whose text really exists

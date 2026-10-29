@@ -14,7 +14,7 @@ Varje uppgift har färgkodade ämnes taggar som länkar till relevant sida i kur
 
 Sajten innehåller 54 frågor i den genererade frågebanken (6 prov), 92 begrepp och 36 artikelreferenser. 13 open-access-artiklar finns i `articles/`, och köteorikompendiet `course-material/QueuingSystems.pdf` finns också lokalt. Tentamensbilderna beskärs automatiskt till innehållet; tom yta och rubriker för nästa del (`Part B/C`) tas bort.
 
-Varje fråga har en **Alla poäng**-knapp som fyller i hela poängraden direkt. Svarsalternativen numreras och går att klicka för att markera dem visuellt, men markeringen påverkar inte poängen och avslöjar inte rätt svar – poängen prickas fortfarande av manuellt. Bakgrunden är en långsam nätverksgraf med pulser längs länkarna; noderna tänds när pulser skickas och tas emot. Grafen parallax-scrollar mjukt och repeteras lodrätt, så den fortsätter röra sig även på mycket långa sidor. Sidan är mörk som standard; reglaget uppe till höger glider mellan sol och måne och valet sparas i webbläsaren.
+Varje fråga har en **Alla poäng**-knapp som fyller i hela poängraden direkt. Svarsalternativen numreras och går att klicka för att markera dem visuellt, men markeringen påverkar inte poängen och avslöjar inte rätt svar – poängen prickas fortfarande av manuellt. Flervalslösningar visar en tydlig **Rätt val**-rad, och textfrågor har en egen svarsruta som sparas lokalt i webbläsaren. Bakgrunden är en långsam nätverksgraf med pulser längs länkarna; noderna tänds när pulser skickas och tas emot. Grafen parallax-scrollar mjukt och repeteras lodrätt, så den fortsätter röra sig även på mycket långa sidor. Sidan är mörk som standard; reglaget uppe till höger glider mellan sol och måne och valet sparas i webbläsaren.
 
 ## Struktur
 

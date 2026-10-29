@@ -118,3 +118,26 @@ document.addEventListener('click', function (e) {
   });
   sync();
 })();
+
+// Local answer notes for free-text questions.
+(function () {
+  var notes = Array.prototype.slice.call(document.querySelectorAll('[data-answer-notes]'));
+  if (!notes.length) return;
+  function fit(area) {
+    area.style.height = 'auto';
+    area.style.height = Math.max(96, area.scrollHeight) + 'px';
+  }
+  notes.forEach(function (area) {
+    var key = 'etsn11-note-' + (area.getAttribute('data-key') || '');
+    try {
+      var saved = localStorage.getItem(key);
+      if (saved !== null) area.value = saved;
+    } catch (e) {}
+    fit(area);
+    area.addEventListener('input', function () {
+      fit(area);
+      try { localStorage.setItem(key, area.value); } catch (e) {}
+    });
+  });
+  window.addEventListener('resize', function () { notes.forEach(fit); });
+})();
